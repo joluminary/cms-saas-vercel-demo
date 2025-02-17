@@ -21,105 +21,6 @@ export type Scalars = {
   JSON: { input: any; output: any; }
 };
 
-export type ArticleGroupPage = IData & _IContent & _IPage & {
-  __typename?: 'ArticleGroupPage';
-  LandingPageSeoSettings?: Maybe<PageSeoSettingsProperty>;
-  MainContent?: Maybe<Array<Maybe<_IContent>>>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-  articleGroupIntro?: Maybe<RichText>;
-  articleGroupTitle?: Maybe<Scalars['String']['output']>;
-};
-
-
-export type ArticleGroupPage_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type ArticleGroupPage_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type ArticleGroupPageAutocomplete = {
-  __typename?: 'ArticleGroupPageAutocomplete';
-  LandingPageSeoSettings?: Maybe<PageSeoSettingsPropertyAutocomplete>;
-  MainContent?: Maybe<_IContentAutocomplete>;
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-  articleGroupIntro?: Maybe<RichTextAutocomplete>;
-  articleGroupTitle?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-};
-
-
-export type ArticleGroupPageAutocompletearticleGroupTitleArgs = {
-  limit?: Scalars['Int']['input'];
-  value: Scalars['String']['input'];
-};
-
-export type ArticleGroupPageFacet = {
-  __typename?: 'ArticleGroupPageFacet';
-  LandingPageSeoSettings?: Maybe<PageSeoSettingsPropertyFacet>;
-  MainContent?: Maybe<_IContentFacet>;
-  _metadata?: Maybe<IContentMetadataFacet>;
-  articleGroupIntro?: Maybe<RichTextFacet>;
-  articleGroupTitle?: Maybe<Array<Maybe<StringFacet>>>;
-};
-
-
-export type ArticleGroupPageFacetarticleGroupTitleArgs = {
-  filters?: InputMaybe<Array<Scalars['String']['input']>>;
-  limit?: Scalars['Int']['input'];
-  orderBy?: InputMaybe<OrderBy>;
-  orderType?: InputMaybe<OrderByFacetType>;
-};
-
-export type ArticleGroupPageOrderByInput = {
-  LandingPageSeoSettings?: InputMaybe<PageSeoSettingsPropertyOrderByInput>;
-  MainContent?: InputMaybe<_IContentOrderByInput>;
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-  articleGroupIntro?: InputMaybe<RichTextOrderByInput>;
-  articleGroupTitle?: InputMaybe<OrderBy>;
-};
-
-export type ArticleGroupPageOutput = {
-  __typename?: 'ArticleGroupPageOutput';
-  autocomplete?: Maybe<ArticleGroupPageAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<ArticleGroupPageFacet>;
-  items?: Maybe<Array<Maybe<ArticleGroupPage>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type ArticleGroupPageOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type ArticleGroupPageWhereInput = {
-  LandingPageSeoSettings?: InputMaybe<PageSeoSettingsPropertyWhereInput>;
-  MainContent?: InputMaybe<_IContentWhereInput>;
-  _and?: InputMaybe<Array<InputMaybe<ArticleGroupPageWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<ArticleGroupPageWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<ArticleGroupPageWhereInput>>>;
-  articleGroupIntro?: InputMaybe<RichTextWhereInput>;
-  articleGroupTitle?: InputMaybe<StringFilterInput>;
-};
-
 export type ArticleListElement = IData & _IComponent & _IContent & {
   __typename?: 'ArticleListElement';
   /** @deprecated Use `_link` field instead */
@@ -187,163 +88,9 @@ export type ArticleListElementWhereInput = {
   _or?: InputMaybe<Array<InputMaybe<ArticleListElementWhereInput>>>;
 };
 
-export type ArticlePage = IData & _IContent & _IPage & {
-  __typename?: 'ArticlePage';
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-  articleAuthors?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  articleBody?: Maybe<RichText>;
-  articleHeroImage?: Maybe<ContentReference>;
-  articleSeoSettings?: Maybe<PageSeoSettingsProperty>;
-  articleSummary?: Maybe<RichText>;
-  articleTitle?: Maybe<Scalars['String']['output']>;
-};
-
-
-export type ArticlePage_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type ArticlePage_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type ArticlePageAutocomplete = {
-  __typename?: 'ArticlePageAutocomplete';
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-  articleBody?: Maybe<RichTextAutocomplete>;
-  articleHeroImage?: Maybe<ContentReferenceAutocomplete>;
-  articleSeoSettings?: Maybe<PageSeoSettingsPropertyAutocomplete>;
-  articleSummary?: Maybe<RichTextAutocomplete>;
-};
-
-export type ArticlePageFacet = {
-  __typename?: 'ArticlePageFacet';
-  _metadata?: Maybe<IContentMetadataFacet>;
-  articleBody?: Maybe<RichTextFacet>;
-  articleHeroImage?: Maybe<ContentReferenceFacet>;
-  articleSeoSettings?: Maybe<PageSeoSettingsPropertyFacet>;
-  articleSummary?: Maybe<RichTextFacet>;
-};
-
-export type ArticlePageOrderByInput = {
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-  articleBody?: InputMaybe<RichTextOrderByInput>;
-  articleHeroImage?: InputMaybe<ContentReferenceOrderByInput>;
-  articleSeoSettings?: InputMaybe<PageSeoSettingsPropertyOrderByInput>;
-  articleSummary?: InputMaybe<RichTextOrderByInput>;
-};
-
-export type ArticlePageOutput = {
-  __typename?: 'ArticlePageOutput';
-  autocomplete?: Maybe<ArticlePageAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<ArticlePageFacet>;
-  items?: Maybe<Array<Maybe<ArticlePage>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type ArticlePageOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type ArticlePageWhereInput = {
-  _and?: InputMaybe<Array<InputMaybe<ArticlePageWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<ArticlePageWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<ArticlePageWhereInput>>>;
-  articleBody?: InputMaybe<RichTextWhereInput>;
-  articleHeroImage?: InputMaybe<ContentReferenceWhereInput>;
-  articleSeoSettings?: InputMaybe<PageSeoSettingsPropertyWhereInput>;
-  articleSummary?: InputMaybe<RichTextWhereInput>;
-};
-
-export type BannerBlock = IData & _IComponent & _IContent & {
-  __typename?: 'BannerBlock';
-  Title?: Maybe<Scalars['String']['output']>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type BannerBlock_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type BannerBlock_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type BannerBlockAutocomplete = {
-  __typename?: 'BannerBlockAutocomplete';
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type BannerBlockFacet = {
-  __typename?: 'BannerBlockFacet';
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type BannerBlockOrderByInput = {
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type BannerBlockOutput = {
-  __typename?: 'BannerBlockOutput';
-  autocomplete?: Maybe<BannerBlockAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<BannerBlockFacet>;
-  items?: Maybe<Array<Maybe<BannerBlock>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type BannerBlockOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type BannerBlockWhereInput = {
-  _and?: InputMaybe<Array<InputMaybe<BannerBlockWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<BannerBlockWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<BannerBlockWhereInput>>>;
-};
-
 export type BlankExperience = IData & _IContent & _IExperience & _IPage & {
   __typename?: 'BlankExperience';
   BlankExperienceSeoSettings?: Maybe<PageSeoSettingsProperty>;
-  SeoSettings?: Maybe<PageSeoSettingsProperty>;
   /** @deprecated Use `_link` field instead */
   _children?: Maybe<QueryRef>;
   _deleted?: Maybe<Scalars['Bool']['output']>;
@@ -369,7 +116,6 @@ export type BlankExperience_linkArgs = {
 export type BlankExperienceAutocomplete = {
   __typename?: 'BlankExperienceAutocomplete';
   BlankExperienceSeoSettings?: Maybe<PageSeoSettingsPropertyAutocomplete>;
-  SeoSettings?: Maybe<PageSeoSettingsPropertyAutocomplete>;
   _metadata?: Maybe<IContentMetadataAutocomplete>;
   composition?: Maybe<CompositionStructureNodeAutocomplete>;
 };
@@ -377,14 +123,12 @@ export type BlankExperienceAutocomplete = {
 export type BlankExperienceFacet = {
   __typename?: 'BlankExperienceFacet';
   BlankExperienceSeoSettings?: Maybe<PageSeoSettingsPropertyFacet>;
-  SeoSettings?: Maybe<PageSeoSettingsPropertyFacet>;
   _metadata?: Maybe<IContentMetadataFacet>;
   composition?: Maybe<CompositionStructureNodeFacet>;
 };
 
 export type BlankExperienceOrderByInput = {
   BlankExperienceSeoSettings?: InputMaybe<PageSeoSettingsPropertyOrderByInput>;
-  SeoSettings?: InputMaybe<PageSeoSettingsPropertyOrderByInput>;
   _metadata?: InputMaybe<IContentMetadataOrderByInput>;
   _minimumScore?: InputMaybe<Scalars['Float']['input']>;
   _modified?: InputMaybe<OrderBy>;
@@ -410,7 +154,6 @@ export type BlankExperienceOutputtotalArgs = {
 
 export type BlankExperienceWhereInput = {
   BlankExperienceSeoSettings?: InputMaybe<PageSeoSettingsPropertyWhereInput>;
-  SeoSettings?: InputMaybe<PageSeoSettingsPropertyWhereInput>;
   _and?: InputMaybe<Array<InputMaybe<BlankExperienceWhereInput>>>;
   _fulltext?: InputMaybe<SearchableStringFilterInput>;
   _metadata?: InputMaybe<IContentMetadataWhereInput>;
@@ -488,6 +231,73 @@ export type BlankSectionWhereInput = {
   _not?: InputMaybe<Array<InputMaybe<BlankSectionWhereInput>>>;
   _or?: InputMaybe<Array<InputMaybe<BlankSectionWhereInput>>>;
   composition?: InputMaybe<CompositionStructureNodeWhereInput>;
+};
+
+export type BlogListingBlock = IData & _IComponent & _IContent & {
+  __typename?: 'BlogListingBlock';
+  BlogListingItemCount?: Maybe<Scalars['Int']['output']>;
+  BlogListingShowFilters?: Maybe<Scalars['Boolean']['output']>;
+  /** @deprecated Use `_link` field instead */
+  _children?: Maybe<QueryRef>;
+  _deleted?: Maybe<Scalars['Bool']['output']>;
+  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  _id?: Maybe<Scalars['String']['output']>;
+  _link?: Maybe<QueryRef>;
+  _metadata?: Maybe<IContentMetadata>;
+  _modified?: Maybe<Scalars['Date']['output']>;
+  _score?: Maybe<Scalars['Float']['output']>;
+};
+
+
+export type BlogListingBlock_fulltextArgs = {
+  highlight?: InputMaybe<HighlightOptions>;
+};
+
+
+export type BlogListingBlock_linkArgs = {
+  type?: InputMaybe<LinkTypes>;
+};
+
+export type BlogListingBlockAutocomplete = {
+  __typename?: 'BlogListingBlockAutocomplete';
+  _metadata?: Maybe<IContentMetadataAutocomplete>;
+};
+
+export type BlogListingBlockFacet = {
+  __typename?: 'BlogListingBlockFacet';
+  _metadata?: Maybe<IContentMetadataFacet>;
+};
+
+export type BlogListingBlockOrderByInput = {
+  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
+  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
+  _modified?: InputMaybe<OrderBy>;
+  _ranking?: InputMaybe<Ranking>;
+  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
+  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type BlogListingBlockOutput = {
+  __typename?: 'BlogListingBlockOutput';
+  autocomplete?: Maybe<BlogListingBlockAutocomplete>;
+  cursor?: Maybe<Scalars['String']['output']>;
+  facets?: Maybe<BlogListingBlockFacet>;
+  items?: Maybe<Array<Maybe<BlogListingBlock>>>;
+  total?: Maybe<Scalars['Int']['output']>;
+};
+
+
+export type BlogListingBlockOutputtotalArgs = {
+  all?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type BlogListingBlockWhereInput = {
+  _and?: InputMaybe<Array<InputMaybe<BlogListingBlockWhereInput>>>;
+  _fulltext?: InputMaybe<SearchableStringFilterInput>;
+  _metadata?: InputMaybe<IContentMetadataWhereInput>;
+  _modified?: InputMaybe<DateFilterInput>;
+  _not?: InputMaybe<Array<InputMaybe<BlogListingBlockWhereInput>>>;
+  _or?: InputMaybe<Array<InputMaybe<BlogListingBlockWhereInput>>>;
 };
 
 export type BlogPostPage = IData & _IContent & _IPage & {
@@ -733,11 +543,6 @@ export type ButtonBlock = IData & _IComponent & _IContent & {
   _metadata?: Maybe<IContentMetadata>;
   _modified?: Maybe<Scalars['Date']['output']>;
   _score?: Maybe<Scalars['Float']['output']>;
-  buttonType?: Maybe<Scalars['String']['output']>;
-  className?: Maybe<Scalars['String']['output']>;
-  link?: Maybe<ContentUrl>;
-  text?: Maybe<Scalars['String']['output']>;
-  variant?: Maybe<Scalars['String']['output']>;
 };
 
 
@@ -754,14 +559,12 @@ export type ButtonBlockAutocomplete = {
   __typename?: 'ButtonBlockAutocomplete';
   ButtonUrl?: Maybe<ContentUrlAutocomplete>;
   _metadata?: Maybe<IContentMetadataAutocomplete>;
-  link?: Maybe<ContentUrlAutocomplete>;
 };
 
 export type ButtonBlockFacet = {
   __typename?: 'ButtonBlockFacet';
   ButtonUrl?: Maybe<ContentUrlFacet>;
   _metadata?: Maybe<IContentMetadataFacet>;
-  link?: Maybe<ContentUrlFacet>;
 };
 
 export type ButtonBlockOrderByInput = {
@@ -772,7 +575,6 @@ export type ButtonBlockOrderByInput = {
   _ranking?: InputMaybe<Ranking>;
   /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
   _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-  link?: InputMaybe<ContentUrlOrderByInput>;
 };
 
 export type ButtonBlockOutput = {
@@ -796,33 +598,24 @@ export type ButtonBlockProperty = {
   ButtonType?: Maybe<Scalars['String']['output']>;
   ButtonUrl?: Maybe<ContentUrl>;
   ButtonVariant?: Maybe<Scalars['String']['output']>;
-  buttonType?: Maybe<Scalars['String']['output']>;
-  className?: Maybe<Scalars['String']['output']>;
-  link?: Maybe<ContentUrl>;
-  text?: Maybe<Scalars['String']['output']>;
-  variant?: Maybe<Scalars['String']['output']>;
 };
 
 export type ButtonBlockPropertyAutocomplete = {
   __typename?: 'ButtonBlockPropertyAutocomplete';
   ButtonUrl?: Maybe<ContentUrlAutocomplete>;
-  link?: Maybe<ContentUrlAutocomplete>;
 };
 
 export type ButtonBlockPropertyFacet = {
   __typename?: 'ButtonBlockPropertyFacet';
   ButtonUrl?: Maybe<ContentUrlFacet>;
-  link?: Maybe<ContentUrlFacet>;
 };
 
 export type ButtonBlockPropertyOrderByInput = {
   ButtonUrl?: InputMaybe<ContentUrlOrderByInput>;
-  link?: InputMaybe<ContentUrlOrderByInput>;
 };
 
 export type ButtonBlockPropertyWhereInput = {
   ButtonUrl?: InputMaybe<ContentUrlWhereInput>;
-  link?: InputMaybe<ContentUrlWhereInput>;
 };
 
 export type ButtonBlockWhereInput = {
@@ -833,7 +626,6 @@ export type ButtonBlockWhereInput = {
   _modified?: InputMaybe<DateFilterInput>;
   _not?: InputMaybe<Array<InputMaybe<ButtonBlockWhereInput>>>;
   _or?: InputMaybe<Array<InputMaybe<ButtonBlockWhereInput>>>;
-  link?: InputMaybe<ContentUrlWhereInput>;
 };
 
 export type CTAElement = IData & _IComponent & _IContent & {
@@ -931,8 +723,8 @@ export type CardBlock = IData & _IComponent & _IContent & {
   CardHeading?: Maybe<Scalars['String']['output']>;
   CardIcon?: Maybe<ContentReference>;
   CardImage?: Maybe<ContentReference>;
-  CardImageLayout?: Maybe<Scalars['String']['output']>;
-  CardSubheading?: Maybe<Scalars['String']['output']>;
+  CardSubHeading?: Maybe<Scalars['String']['output']>;
+  ImageLayout?: Maybe<Scalars['String']['output']>;
   /** @deprecated Use `_link` field instead */
   _children?: Maybe<QueryRef>;
   _deleted?: Maybe<Scalars['Bool']['output']>;
@@ -1303,6 +1095,73 @@ export type ContentMetadatadisplayNameArgs = {
   highlight?: InputMaybe<HighlightOptions>;
 };
 
+export type ContentRecsBlock = IData & _IComponent & _IContent & {
+  __typename?: 'ContentRecsBlock';
+  BlockDeliveryApiKey?: Maybe<Scalars['String']['output']>;
+  BlockRecommendationCount?: Maybe<Scalars['Int']['output']>;
+  /** @deprecated Use `_link` field instead */
+  _children?: Maybe<QueryRef>;
+  _deleted?: Maybe<Scalars['Bool']['output']>;
+  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  _id?: Maybe<Scalars['String']['output']>;
+  _link?: Maybe<QueryRef>;
+  _metadata?: Maybe<IContentMetadata>;
+  _modified?: Maybe<Scalars['Date']['output']>;
+  _score?: Maybe<Scalars['Float']['output']>;
+};
+
+
+export type ContentRecsBlock_fulltextArgs = {
+  highlight?: InputMaybe<HighlightOptions>;
+};
+
+
+export type ContentRecsBlock_linkArgs = {
+  type?: InputMaybe<LinkTypes>;
+};
+
+export type ContentRecsBlockAutocomplete = {
+  __typename?: 'ContentRecsBlockAutocomplete';
+  _metadata?: Maybe<IContentMetadataAutocomplete>;
+};
+
+export type ContentRecsBlockFacet = {
+  __typename?: 'ContentRecsBlockFacet';
+  _metadata?: Maybe<IContentMetadataFacet>;
+};
+
+export type ContentRecsBlockOrderByInput = {
+  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
+  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
+  _modified?: InputMaybe<OrderBy>;
+  _ranking?: InputMaybe<Ranking>;
+  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
+  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type ContentRecsBlockOutput = {
+  __typename?: 'ContentRecsBlockOutput';
+  autocomplete?: Maybe<ContentRecsBlockAutocomplete>;
+  cursor?: Maybe<Scalars['String']['output']>;
+  facets?: Maybe<ContentRecsBlockFacet>;
+  items?: Maybe<Array<Maybe<ContentRecsBlock>>>;
+  total?: Maybe<Scalars['Int']['output']>;
+};
+
+
+export type ContentRecsBlockOutputtotalArgs = {
+  all?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type ContentRecsBlockWhereInput = {
+  _and?: InputMaybe<Array<InputMaybe<ContentRecsBlockWhereInput>>>;
+  _fulltext?: InputMaybe<SearchableStringFilterInput>;
+  _metadata?: InputMaybe<IContentMetadataWhereInput>;
+  _modified?: InputMaybe<DateFilterInput>;
+  _not?: InputMaybe<Array<InputMaybe<ContentRecsBlockWhereInput>>>;
+  _or?: InputMaybe<Array<InputMaybe<ContentRecsBlockWhereInput>>>;
+};
+
 export type ContentRecsElement = IData & _IComponent & _IContent & {
   __typename?: 'ContentRecsElement';
   ElementDeliveryApiKey?: Maybe<Scalars['String']['output']>;
@@ -1618,303 +1477,6 @@ export type Decay = {
   scale?: InputMaybe<Scalars['Int']['input']>;
 };
 
-export type DefaultImage = IData & _IContent & _IImage & _IMedia & {
-  __typename?: 'DefaultImage';
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type DefaultImage_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type DefaultImage_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type DefaultImageAutocomplete = {
-  __typename?: 'DefaultImageAutocomplete';
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type DefaultImageFacet = {
-  __typename?: 'DefaultImageFacet';
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type DefaultImageOrderByInput = {
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type DefaultImageOutput = {
-  __typename?: 'DefaultImageOutput';
-  autocomplete?: Maybe<DefaultImageAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<DefaultImageFacet>;
-  items?: Maybe<Array<Maybe<DefaultImage>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type DefaultImageOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type DefaultImageWhereInput = {
-  _and?: InputMaybe<Array<InputMaybe<DefaultImageWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<DefaultImageWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<DefaultImageWhereInput>>>;
-};
-
-export type DefaultVideo = IData & _IContent & _IMedia & _IVideo & {
-  __typename?: 'DefaultVideo';
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type DefaultVideo_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type DefaultVideo_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type DefaultVideoAutocomplete = {
-  __typename?: 'DefaultVideoAutocomplete';
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type DefaultVideoFacet = {
-  __typename?: 'DefaultVideoFacet';
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type DefaultVideoOrderByInput = {
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type DefaultVideoOutput = {
-  __typename?: 'DefaultVideoOutput';
-  autocomplete?: Maybe<DefaultVideoAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<DefaultVideoFacet>;
-  items?: Maybe<Array<Maybe<DefaultVideo>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type DefaultVideoOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type DefaultVideoWhereInput = {
-  _and?: InputMaybe<Array<InputMaybe<DefaultVideoWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<DefaultVideoWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<DefaultVideoWhereInput>>>;
-};
-
-export type Dictionary = IData & _IComponent & _IContent & {
-  __typename?: 'Dictionary';
-  DictionaryItems?: Maybe<Array<Maybe<DictionaryItemProperty>>>;
-  DictionaryKey?: Maybe<Scalars['String']['output']>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type DictionaryDictionaryKeyArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type Dictionary_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type Dictionary_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type DictionaryAutocomplete = {
-  __typename?: 'DictionaryAutocomplete';
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type DictionaryFacet = {
-  __typename?: 'DictionaryFacet';
-  DictionaryItems?: Maybe<Array<Maybe<StringFacet>>>;
-  DictionaryKey?: Maybe<Array<Maybe<StringFacet>>>;
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-
-export type DictionaryFacetDictionaryItemsArgs = {
-  filters?: InputMaybe<Array<Scalars['String']['input']>>;
-  limit?: Scalars['Int']['input'];
-  orderBy?: InputMaybe<OrderBy>;
-  orderType?: InputMaybe<OrderByFacetType>;
-};
-
-
-export type DictionaryFacetDictionaryKeyArgs = {
-  filters?: InputMaybe<Array<Scalars['String']['input']>>;
-  limit?: Scalars['Int']['input'];
-  orderBy?: InputMaybe<OrderBy>;
-  orderType?: InputMaybe<OrderByFacetType>;
-};
-
-export type DictionaryItem = IData & _IComponent & _IContent & {
-  __typename?: 'DictionaryItem';
-  DictionaryItemKey?: Maybe<Scalars['String']['output']>;
-  DictionaryItemValue?: Maybe<Scalars['String']['output']>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type DictionaryItem_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type DictionaryItem_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type DictionaryItemAutocomplete = {
-  __typename?: 'DictionaryItemAutocomplete';
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type DictionaryItemFacet = {
-  __typename?: 'DictionaryItemFacet';
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type DictionaryItemOrderByInput = {
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type DictionaryItemOutput = {
-  __typename?: 'DictionaryItemOutput';
-  autocomplete?: Maybe<DictionaryItemAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<DictionaryItemFacet>;
-  items?: Maybe<Array<Maybe<DictionaryItem>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type DictionaryItemOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type DictionaryItemProperty = {
-  __typename?: 'DictionaryItemProperty';
-  DictionaryItemKey?: Maybe<Scalars['String']['output']>;
-  DictionaryItemValue?: Maybe<Scalars['String']['output']>;
-};
-
-export type DictionaryItemWhereInput = {
-  _and?: InputMaybe<Array<InputMaybe<DictionaryItemWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<DictionaryItemWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<DictionaryItemWhereInput>>>;
-};
-
-export type DictionaryOrderByInput = {
-  DictionaryItems?: InputMaybe<OrderBy>;
-  DictionaryKey?: InputMaybe<OrderBy>;
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type DictionaryOutput = {
-  __typename?: 'DictionaryOutput';
-  autocomplete?: Maybe<DictionaryAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<DictionaryFacet>;
-  items?: Maybe<Array<Maybe<Dictionary>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type DictionaryOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type DictionaryWhereInput = {
-  DictionaryItems?: InputMaybe<StringFilterInput>;
-  DictionaryKey?: InputMaybe<SearchableStringFilterInput>;
-  _and?: InputMaybe<Array<InputMaybe<DictionaryWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<DictionaryWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<DictionaryWhereInput>>>;
-};
-
 export type GenericMedia = IData & _IContent & _IMedia & {
   __typename?: 'GenericMedia';
   /** @deprecated Use `_link` field instead */
@@ -1978,91 +1540,6 @@ export type GenericMediaWhereInput = {
   _modified?: InputMaybe<DateFilterInput>;
   _not?: InputMaybe<Array<InputMaybe<GenericMediaWhereInput>>>;
   _or?: InputMaybe<Array<InputMaybe<GenericMediaWhereInput>>>;
-};
-
-export type HeaderBlock = IData & _IComponent & _IContent & {
-  __typename?: 'HeaderBlock';
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-  site_logo?: Maybe<ContentReference>;
-  site_logo_dark?: Maybe<ContentReference>;
-  site_main_navigation?: Maybe<Array<Maybe<_IContent>>>;
-  site_utility_navigation?: Maybe<Array<Maybe<_IContent>>>;
-};
-
-
-export type HeaderBlock_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type HeaderBlock_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type HeaderBlockAutocomplete = {
-  __typename?: 'HeaderBlockAutocomplete';
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-  site_logo?: Maybe<ContentReferenceAutocomplete>;
-  site_logo_dark?: Maybe<ContentReferenceAutocomplete>;
-  site_main_navigation?: Maybe<_IContentAutocomplete>;
-  site_utility_navigation?: Maybe<_IContentAutocomplete>;
-};
-
-export type HeaderBlockFacet = {
-  __typename?: 'HeaderBlockFacet';
-  _metadata?: Maybe<IContentMetadataFacet>;
-  site_logo?: Maybe<ContentReferenceFacet>;
-  site_logo_dark?: Maybe<ContentReferenceFacet>;
-  site_main_navigation?: Maybe<_IContentFacet>;
-  site_utility_navigation?: Maybe<_IContentFacet>;
-};
-
-export type HeaderBlockOrderByInput = {
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-  site_logo?: InputMaybe<ContentReferenceOrderByInput>;
-  site_logo_dark?: InputMaybe<ContentReferenceOrderByInput>;
-  site_main_navigation?: InputMaybe<_IContentOrderByInput>;
-  site_utility_navigation?: InputMaybe<_IContentOrderByInput>;
-};
-
-export type HeaderBlockOutput = {
-  __typename?: 'HeaderBlockOutput';
-  autocomplete?: Maybe<HeaderBlockAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<HeaderBlockFacet>;
-  items?: Maybe<Array<Maybe<HeaderBlock>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type HeaderBlockOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type HeaderBlockWhereInput = {
-  _and?: InputMaybe<Array<InputMaybe<HeaderBlockWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<HeaderBlockWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<HeaderBlockWhereInput>>>;
-  site_logo?: InputMaybe<ContentReferenceWhereInput>;
-  site_logo_dark?: InputMaybe<ContentReferenceWhereInput>;
-  site_main_navigation?: InputMaybe<_IContentWhereInput>;
-  site_utility_navigation?: InputMaybe<_IContentWhereInput>;
 };
 
 export type HeadingElement = IData & _IComponent & _IContent & {
@@ -2237,6 +1714,159 @@ export type HighlightOptions = {
   enabled?: InputMaybe<Scalars['Boolean']['input']>;
   endToken?: InputMaybe<Scalars['String']['input']>;
   startToken?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HomePageHeroBlock = IData & _IComponent & _IContent & {
+  __typename?: 'HomePageHeroBlock';
+  HomeHeroBlockHeading?: Maybe<Scalars['String']['output']>;
+  HomeHeroBlockSubHeading?: Maybe<Scalars['String']['output']>;
+  HomeHeroButtonBlock?: Maybe<ButtonBlockProperty>;
+  HomeHeroLeftImage?: Maybe<ContentReference>;
+  HomeHeroRightImage?: Maybe<ContentReference>;
+  /** @deprecated Use `_link` field instead */
+  _children?: Maybe<QueryRef>;
+  _deleted?: Maybe<Scalars['Bool']['output']>;
+  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  _id?: Maybe<Scalars['String']['output']>;
+  _link?: Maybe<QueryRef>;
+  _metadata?: Maybe<IContentMetadata>;
+  _modified?: Maybe<Scalars['Date']['output']>;
+  _score?: Maybe<Scalars['Float']['output']>;
+};
+
+
+export type HomePageHeroBlock_fulltextArgs = {
+  highlight?: InputMaybe<HighlightOptions>;
+};
+
+
+export type HomePageHeroBlock_linkArgs = {
+  type?: InputMaybe<LinkTypes>;
+};
+
+export type HomePageHeroBlockAutocomplete = {
+  __typename?: 'HomePageHeroBlockAutocomplete';
+  HomeHeroButtonBlock?: Maybe<ButtonBlockPropertyAutocomplete>;
+  HomeHeroLeftImage?: Maybe<ContentReferenceAutocomplete>;
+  HomeHeroRightImage?: Maybe<ContentReferenceAutocomplete>;
+  _metadata?: Maybe<IContentMetadataAutocomplete>;
+};
+
+export type HomePageHeroBlockFacet = {
+  __typename?: 'HomePageHeroBlockFacet';
+  HomeHeroButtonBlock?: Maybe<ButtonBlockPropertyFacet>;
+  HomeHeroLeftImage?: Maybe<ContentReferenceFacet>;
+  HomeHeroRightImage?: Maybe<ContentReferenceFacet>;
+  _metadata?: Maybe<IContentMetadataFacet>;
+};
+
+export type HomePageHeroBlockOrderByInput = {
+  HomeHeroButtonBlock?: InputMaybe<ButtonBlockPropertyOrderByInput>;
+  HomeHeroLeftImage?: InputMaybe<ContentReferenceOrderByInput>;
+  HomeHeroRightImage?: InputMaybe<ContentReferenceOrderByInput>;
+  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
+  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
+  _modified?: InputMaybe<OrderBy>;
+  _ranking?: InputMaybe<Ranking>;
+  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
+  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type HomePageHeroBlockOutput = {
+  __typename?: 'HomePageHeroBlockOutput';
+  autocomplete?: Maybe<HomePageHeroBlockAutocomplete>;
+  cursor?: Maybe<Scalars['String']['output']>;
+  facets?: Maybe<HomePageHeroBlockFacet>;
+  items?: Maybe<Array<Maybe<HomePageHeroBlock>>>;
+  total?: Maybe<Scalars['Int']['output']>;
+};
+
+
+export type HomePageHeroBlockOutputtotalArgs = {
+  all?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type HomePageHeroBlockWhereInput = {
+  HomeHeroButtonBlock?: InputMaybe<ButtonBlockPropertyWhereInput>;
+  HomeHeroLeftImage?: InputMaybe<ContentReferenceWhereInput>;
+  HomeHeroRightImage?: InputMaybe<ContentReferenceWhereInput>;
+  _and?: InputMaybe<Array<InputMaybe<HomePageHeroBlockWhereInput>>>;
+  _fulltext?: InputMaybe<SearchableStringFilterInput>;
+  _metadata?: InputMaybe<IContentMetadataWhereInput>;
+  _modified?: InputMaybe<DateFilterInput>;
+  _not?: InputMaybe<Array<InputMaybe<HomePageHeroBlockWhereInput>>>;
+  _or?: InputMaybe<Array<InputMaybe<HomePageHeroBlockWhereInput>>>;
+};
+
+export type HtmlBlock = IData & _IComponent & _IContent & {
+  __typename?: 'HtmlBlock';
+  HtmlBlockHeading?: Maybe<Scalars['String']['output']>;
+  HtmlContent?: Maybe<RichText>;
+  /** @deprecated Use `_link` field instead */
+  _children?: Maybe<QueryRef>;
+  _deleted?: Maybe<Scalars['Bool']['output']>;
+  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  _id?: Maybe<Scalars['String']['output']>;
+  _link?: Maybe<QueryRef>;
+  _metadata?: Maybe<IContentMetadata>;
+  _modified?: Maybe<Scalars['Date']['output']>;
+  _score?: Maybe<Scalars['Float']['output']>;
+};
+
+
+export type HtmlBlock_fulltextArgs = {
+  highlight?: InputMaybe<HighlightOptions>;
+};
+
+
+export type HtmlBlock_linkArgs = {
+  type?: InputMaybe<LinkTypes>;
+};
+
+export type HtmlBlockAutocomplete = {
+  __typename?: 'HtmlBlockAutocomplete';
+  HtmlContent?: Maybe<RichTextAutocomplete>;
+  _metadata?: Maybe<IContentMetadataAutocomplete>;
+};
+
+export type HtmlBlockFacet = {
+  __typename?: 'HtmlBlockFacet';
+  HtmlContent?: Maybe<RichTextFacet>;
+  _metadata?: Maybe<IContentMetadataFacet>;
+};
+
+export type HtmlBlockOrderByInput = {
+  HtmlContent?: InputMaybe<RichTextOrderByInput>;
+  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
+  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
+  _modified?: InputMaybe<OrderBy>;
+  _ranking?: InputMaybe<Ranking>;
+  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
+  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type HtmlBlockOutput = {
+  __typename?: 'HtmlBlockOutput';
+  autocomplete?: Maybe<HtmlBlockAutocomplete>;
+  cursor?: Maybe<Scalars['String']['output']>;
+  facets?: Maybe<HtmlBlockFacet>;
+  items?: Maybe<Array<Maybe<HtmlBlock>>>;
+  total?: Maybe<Scalars['Int']['output']>;
+};
+
+
+export type HtmlBlockOutputtotalArgs = {
+  all?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type HtmlBlockWhereInput = {
+  HtmlContent?: InputMaybe<RichTextWhereInput>;
+  _and?: InputMaybe<Array<InputMaybe<HtmlBlockWhereInput>>>;
+  _fulltext?: InputMaybe<SearchableStringFilterInput>;
+  _metadata?: InputMaybe<IContentMetadataWhereInput>;
+  _modified?: InputMaybe<DateFilterInput>;
+  _not?: InputMaybe<Array<InputMaybe<HtmlBlockWhereInput>>>;
+  _or?: InputMaybe<Array<InputMaybe<HtmlBlockWhereInput>>>;
 };
 
 export type ICompositionComponentNode = {
@@ -3017,6 +2647,88 @@ export type LandingPageWhereInput = {
   _or?: InputMaybe<Array<InputMaybe<LandingPageWhereInput>>>;
 };
 
+export type LayoutContainerBlock = IData & _IComponent & _IContent & {
+  __typename?: 'LayoutContainerBlock';
+  ColumnsCount?: Maybe<Scalars['Int']['output']>;
+  ContainerBackgroundColor?: Maybe<Scalars['String']['output']>;
+  ContainerBackgroundImage?: Maybe<ContentReference>;
+  ContainerMarginBottom?: Maybe<Scalars['String']['output']>;
+  ContainerMarginTop?: Maybe<Scalars['String']['output']>;
+  ContainerPaddingBottom?: Maybe<Scalars['String']['output']>;
+  ContainerPaddingTop?: Maybe<Scalars['String']['output']>;
+  GapSize?: Maybe<Scalars['String']['output']>;
+  LayoutContentArea?: Maybe<Array<Maybe<_IContent>>>;
+  /** @deprecated Use `_link` field instead */
+  _children?: Maybe<QueryRef>;
+  _deleted?: Maybe<Scalars['Bool']['output']>;
+  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  _id?: Maybe<Scalars['String']['output']>;
+  _link?: Maybe<QueryRef>;
+  _metadata?: Maybe<IContentMetadata>;
+  _modified?: Maybe<Scalars['Date']['output']>;
+  _score?: Maybe<Scalars['Float']['output']>;
+};
+
+
+export type LayoutContainerBlock_fulltextArgs = {
+  highlight?: InputMaybe<HighlightOptions>;
+};
+
+
+export type LayoutContainerBlock_linkArgs = {
+  type?: InputMaybe<LinkTypes>;
+};
+
+export type LayoutContainerBlockAutocomplete = {
+  __typename?: 'LayoutContainerBlockAutocomplete';
+  ContainerBackgroundImage?: Maybe<ContentReferenceAutocomplete>;
+  LayoutContentArea?: Maybe<_IContentAutocomplete>;
+  _metadata?: Maybe<IContentMetadataAutocomplete>;
+};
+
+export type LayoutContainerBlockFacet = {
+  __typename?: 'LayoutContainerBlockFacet';
+  ContainerBackgroundImage?: Maybe<ContentReferenceFacet>;
+  LayoutContentArea?: Maybe<_IContentFacet>;
+  _metadata?: Maybe<IContentMetadataFacet>;
+};
+
+export type LayoutContainerBlockOrderByInput = {
+  ContainerBackgroundImage?: InputMaybe<ContentReferenceOrderByInput>;
+  LayoutContentArea?: InputMaybe<_IContentOrderByInput>;
+  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
+  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
+  _modified?: InputMaybe<OrderBy>;
+  _ranking?: InputMaybe<Ranking>;
+  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
+  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type LayoutContainerBlockOutput = {
+  __typename?: 'LayoutContainerBlockOutput';
+  autocomplete?: Maybe<LayoutContainerBlockAutocomplete>;
+  cursor?: Maybe<Scalars['String']['output']>;
+  facets?: Maybe<LayoutContainerBlockFacet>;
+  items?: Maybe<Array<Maybe<LayoutContainerBlock>>>;
+  total?: Maybe<Scalars['Int']['output']>;
+};
+
+
+export type LayoutContainerBlockOutputtotalArgs = {
+  all?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type LayoutContainerBlockWhereInput = {
+  ContainerBackgroundImage?: InputMaybe<ContentReferenceWhereInput>;
+  LayoutContentArea?: InputMaybe<_IContentWhereInput>;
+  _and?: InputMaybe<Array<InputMaybe<LayoutContainerBlockWhereInput>>>;
+  _fulltext?: InputMaybe<SearchableStringFilterInput>;
+  _metadata?: InputMaybe<IContentMetadataWhereInput>;
+  _modified?: InputMaybe<DateFilterInput>;
+  _not?: InputMaybe<Array<InputMaybe<LayoutContainerBlockWhereInput>>>;
+  _or?: InputMaybe<Array<InputMaybe<LayoutContainerBlockWhereInput>>>;
+};
+
 export type LayoutSettingsBlock = IData & _IComponent & _IContent & {
   __typename?: 'LayoutSettingsBlock';
   /** @deprecated Use `_link` field instead */
@@ -3250,7 +2962,7 @@ export enum Locales {
   ALL = 'ALL',
   NEUTRAL = 'NEUTRAL',
   en = 'en',
-  sv = 'sv'
+  nl = 'nl'
 }
 
 export type MediaMetadata = IContentMetadata & IInstanceMetadata & IMediaMetadata & {
@@ -3437,96 +3149,6 @@ export type MenuNavigationBlockWhereInput = {
   _or?: InputMaybe<Array<InputMaybe<MenuNavigationBlockWhereInput>>>;
 };
 
-export type NavigationMenuBlock = IData & _IComponent & _IContent & {
-  __typename?: 'NavigationMenuBlock';
-  MenuNavigationHeading?: Maybe<Scalars['String']['output']>;
-  NavigationLinks?: Maybe<Array<Maybe<Link>>>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type NavigationMenuBlock_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type NavigationMenuBlock_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type NavigationMenuBlockAutocomplete = {
-  __typename?: 'NavigationMenuBlockAutocomplete';
-  NavigationLinks?: Maybe<LinkAutocomplete>;
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type NavigationMenuBlockFacet = {
-  __typename?: 'NavigationMenuBlockFacet';
-  NavigationLinks?: Maybe<LinkFacet>;
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type NavigationMenuBlockOrderByInput = {
-  NavigationLinks?: InputMaybe<LinkOrderByInput>;
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type NavigationMenuBlockOutput = {
-  __typename?: 'NavigationMenuBlockOutput';
-  autocomplete?: Maybe<NavigationMenuBlockAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<NavigationMenuBlockFacet>;
-  items?: Maybe<Array<Maybe<NavigationMenuBlock>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type NavigationMenuBlockOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type NavigationMenuBlockProperty = {
-  __typename?: 'NavigationMenuBlockProperty';
-  MenuNavigationHeading?: Maybe<Scalars['String']['output']>;
-  NavigationLinks?: Maybe<Array<Maybe<Link>>>;
-};
-
-export type NavigationMenuBlockPropertyFacet = {
-  __typename?: 'NavigationMenuBlockPropertyFacet';
-  NavigationLinks?: Maybe<LinkFacet>;
-};
-
-export type NavigationMenuBlockPropertyOrderByInput = {
-  NavigationLinks?: InputMaybe<LinkOrderByInput>;
-};
-
-export type NavigationMenuBlockPropertyWhereInput = {
-  NavigationLinks?: InputMaybe<LinkWhereInput>;
-};
-
-export type NavigationMenuBlockWhereInput = {
-  NavigationLinks?: InputMaybe<LinkWhereInput>;
-  _and?: InputMaybe<Array<InputMaybe<NavigationMenuBlockWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<NavigationMenuBlockWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<NavigationMenuBlockWhereInput>>>;
-};
-
 export type OdpEmbedBlock = IData & _IComponent & _IContent & {
   __typename?: 'OdpEmbedBlock';
   ContentId?: Maybe<Scalars['String']['output']>;
@@ -3593,79 +3215,6 @@ export type OdpEmbedBlockWhereInput = {
   _or?: InputMaybe<Array<InputMaybe<OdpEmbedBlockWhereInput>>>;
 };
 
-export type OfficeLocation = IData & _IComponent & _IContent & {
-  __typename?: 'OfficeLocation';
-  OfficeAddressCity?: Maybe<Scalars['String']['output']>;
-  OfficeAddressCountry?: Maybe<Scalars['String']['output']>;
-  OfficeAddressPostalCode?: Maybe<Scalars['String']['output']>;
-  OfficeAddressStreet1?: Maybe<Scalars['String']['output']>;
-  OfficeAddressStreet2?: Maybe<Scalars['String']['output']>;
-  OfficeEmail?: Maybe<Scalars['String']['output']>;
-  OfficePhone?: Maybe<Scalars['String']['output']>;
-  OfficeTitle?: Maybe<Scalars['String']['output']>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type OfficeLocation_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type OfficeLocation_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type OfficeLocationAutocomplete = {
-  __typename?: 'OfficeLocationAutocomplete';
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type OfficeLocationFacet = {
-  __typename?: 'OfficeLocationFacet';
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type OfficeLocationOrderByInput = {
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type OfficeLocationOutput = {
-  __typename?: 'OfficeLocationOutput';
-  autocomplete?: Maybe<OfficeLocationAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<OfficeLocationFacet>;
-  items?: Maybe<Array<Maybe<OfficeLocation>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type OfficeLocationOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type OfficeLocationWhereInput = {
-  _and?: InputMaybe<Array<InputMaybe<OfficeLocationWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<OfficeLocationWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<OfficeLocationWhereInput>>>;
-};
-
 export enum OrderBy {
   ASC = 'ASC',
   DESC = 'DESC'
@@ -3692,7 +3241,6 @@ export type PageSeoSettings = IData & _IComponent & _IContent & {
   _metadata?: Maybe<IContentMetadata>;
   _modified?: Maybe<Scalars['Date']['output']>;
   _score?: Maybe<Scalars['Float']['output']>;
-  metaTitle?: Maybe<Scalars['String']['output']>;
 };
 
 
@@ -3808,7 +3356,6 @@ export type PageSeoSettingsProperty = {
   MetaKeywords?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   MetaTitle?: Maybe<Scalars['String']['output']>;
   SharingImage?: Maybe<ContentReference>;
-  metaTitle?: Maybe<Scalars['String']['output']>;
 };
 
 
@@ -3978,49 +3525,45 @@ export type ParagraphElementWhereInput = {
 
 export type Query = {
   __typename?: 'Query';
-  ArticleGroupPage?: Maybe<ArticleGroupPageOutput>;
   ArticleListElement?: Maybe<ArticleListElementOutput>;
-  ArticlePage?: Maybe<ArticlePageOutput>;
-  BannerBlock?: Maybe<BannerBlockOutput>;
   BlankExperience?: Maybe<BlankExperienceOutput>;
   BlankSection?: Maybe<BlankSectionOutput>;
+  BlogListingBlock?: Maybe<BlogListingBlockOutput>;
   BlogPostPage?: Maybe<BlogPostPageOutput>;
   BlogSectionExperience?: Maybe<BlogSectionExperienceOutput>;
   ButtonBlock?: Maybe<ButtonBlockOutput>;
   CTAElement?: Maybe<CTAElementOutput>;
   CardBlock?: Maybe<CardBlockOutput>;
   CarouselBlock?: Maybe<CarouselBlockOutput>;
+  ContentRecsBlock?: Maybe<ContentRecsBlockOutput>;
   ContentRecsElement?: Maybe<ContentRecsElementOutput>;
   Data?: Maybe<DataOutput>;
-  DefaultImage?: Maybe<DefaultImageOutput>;
-  DefaultVideo?: Maybe<DefaultVideoOutput>;
-  Dictionary?: Maybe<DictionaryOutput>;
-  DictionaryItem?: Maybe<DictionaryItemOutput>;
   GenericMedia?: Maybe<GenericMediaOutput>;
-  HeaderBlock?: Maybe<HeaderBlockOutput>;
   HeadingElement?: Maybe<HeadingElementOutput>;
   HeroBlock?: Maybe<HeroBlockOutput>;
+  HomePageHeroBlock?: Maybe<HomePageHeroBlockOutput>;
+  HtmlBlock?: Maybe<HtmlBlockOutput>;
   Image?: Maybe<ImageOutput>;
   ImageElement?: Maybe<ImageElementOutput>;
   ImageMedia?: Maybe<ImageMediaOutput>;
   LandingPage?: Maybe<LandingPageOutput>;
+  LayoutContainerBlock?: Maybe<LayoutContainerBlockOutput>;
   LayoutSettingsBlock?: Maybe<LayoutSettingsBlockOutput>;
   MegaMenuGroupBlock?: Maybe<MegaMenuGroupBlockOutput>;
   MenuNavigationBlock?: Maybe<MenuNavigationBlockOutput>;
-  NavigationMenuBlock?: Maybe<NavigationMenuBlockOutput>;
   OdpEmbedBlock?: Maybe<OdpEmbedBlockOutput>;
-  OfficeLocation?: Maybe<OfficeLocationOutput>;
   PageSeoSettings?: Maybe<PageSeoSettingsOutput>;
   ParagraphElement?: Maybe<ParagraphElementOutput>;
   QuoteBlock?: Maybe<QuoteBlockOutput>;
   RichTextElement?: Maybe<RichTextElementOutput>;
+  StandardPage?: Maybe<StandardPageOutput>;
+  StartPage?: Maybe<StartPageOutput>;
   SysContentFolder?: Maybe<SysContentFolderOutput>;
   TestimonialElement?: Maybe<TestimonialElementOutput>;
   TextBlock?: Maybe<TextBlockOutput>;
   Video?: Maybe<VideoOutput>;
   VideoElement?: Maybe<VideoElementOutput>;
   VideoMedia?: Maybe<VideoMediaOutput>;
-  WebsiteFooter?: Maybe<WebsiteFooterOutput>;
   _Component?: Maybe<_ComponentOutput>;
   _Content?: Maybe<_ContentOutput>;
   _Experience?: Maybe<_ExperienceOutput>;
@@ -4030,18 +3573,6 @@ export type Query = {
   _Page?: Maybe<_PageOutput>;
   _Section?: Maybe<_SectionOutput>;
   _Video?: Maybe<_VideoOutput>;
-  elementTesting?: Maybe<elementTestingOutput>;
-};
-
-
-export type QueryArticleGroupPageArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<ArticleGroupPageOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<ArticleGroupPageWhereInput>;
 };
 
 
@@ -4053,28 +3584,6 @@ export type QueryArticleListElementArgs = {
   orderBy?: InputMaybe<ArticleListElementOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<ArticleListElementWhereInput>;
-};
-
-
-export type QueryArticlePageArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<ArticlePageOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<ArticlePageWhereInput>;
-};
-
-
-export type QueryBannerBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<BannerBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<BannerBlockWhereInput>;
 };
 
 
@@ -4097,6 +3606,17 @@ export type QueryBlankSectionArgs = {
   orderBy?: InputMaybe<BlankSectionOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<BlankSectionWhereInput>;
+};
+
+
+export type QueryBlogListingBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<BlogListingBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<BlogListingBlockWhereInput>;
 };
 
 
@@ -4166,6 +3686,17 @@ export type QueryCarouselBlockArgs = {
 };
 
 
+export type QueryContentRecsBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<ContentRecsBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<ContentRecsBlockWhereInput>;
+};
+
+
 export type QueryContentRecsElementArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -4188,50 +3719,6 @@ export type QueryDataArgs = {
 };
 
 
-export type QueryDefaultImageArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<DefaultImageOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<DefaultImageWhereInput>;
-};
-
-
-export type QueryDefaultVideoArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<DefaultVideoOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<DefaultVideoWhereInput>;
-};
-
-
-export type QueryDictionaryArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<DictionaryOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<DictionaryWhereInput>;
-};
-
-
-export type QueryDictionaryItemArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<DictionaryItemOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<DictionaryItemWhereInput>;
-};
-
-
 export type QueryGenericMediaArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -4240,17 +3727,6 @@ export type QueryGenericMediaArgs = {
   orderBy?: InputMaybe<GenericMediaOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<GenericMediaWhereInput>;
-};
-
-
-export type QueryHeaderBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<HeaderBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<HeaderBlockWhereInput>;
 };
 
 
@@ -4273,6 +3749,28 @@ export type QueryHeroBlockArgs = {
   orderBy?: InputMaybe<HeroBlockOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<HeroBlockWhereInput>;
+};
+
+
+export type QueryHomePageHeroBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<HomePageHeroBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<HomePageHeroBlockWhereInput>;
+};
+
+
+export type QueryHtmlBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<HtmlBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<HtmlBlockWhereInput>;
 };
 
 
@@ -4320,6 +3818,17 @@ export type QueryLandingPageArgs = {
 };
 
 
+export type QueryLayoutContainerBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<LayoutContainerBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<LayoutContainerBlockWhereInput>;
+};
+
+
 export type QueryLayoutSettingsBlockArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -4353,17 +3862,6 @@ export type QueryMenuNavigationBlockArgs = {
 };
 
 
-export type QueryNavigationMenuBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<NavigationMenuBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<NavigationMenuBlockWhereInput>;
-};
-
-
 export type QueryOdpEmbedBlockArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -4372,17 +3870,6 @@ export type QueryOdpEmbedBlockArgs = {
   orderBy?: InputMaybe<OdpEmbedBlockOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<OdpEmbedBlockWhereInput>;
-};
-
-
-export type QueryOfficeLocationArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<OfficeLocationOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<OfficeLocationWhereInput>;
 };
 
 
@@ -4427,6 +3914,28 @@ export type QueryRichTextElementArgs = {
   orderBy?: InputMaybe<RichTextElementOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<RichTextElementWhereInput>;
+};
+
+
+export type QueryStandardPageArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<StandardPageOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<StandardPageWhereInput>;
+};
+
+
+export type QueryStartPageArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<StartPageOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<StartPageWhereInput>;
 };
 
 
@@ -4493,17 +4002,6 @@ export type QueryVideoMediaArgs = {
   orderBy?: InputMaybe<VideoMediaOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<VideoMediaWhereInput>;
-};
-
-
-export type QueryWebsiteFooterArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<WebsiteFooterOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<WebsiteFooterWhereInput>;
 };
 
 
@@ -4605,62 +4103,47 @@ export type Query_VideoArgs = {
   where?: InputMaybe<_VideoWhereInput>;
 };
 
-
-export type QueryelementTestingArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<elementTestingOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<elementTestingWhereInput>;
-};
-
 export type QueryRef = {
   __typename?: 'QueryRef';
-  ArticleGroupPage?: Maybe<ArticleGroupPageOutput>;
   ArticleListElement?: Maybe<ArticleListElementOutput>;
-  ArticlePage?: Maybe<ArticlePageOutput>;
-  BannerBlock?: Maybe<BannerBlockOutput>;
   BlankExperience?: Maybe<BlankExperienceOutput>;
   BlankSection?: Maybe<BlankSectionOutput>;
+  BlogListingBlock?: Maybe<BlogListingBlockOutput>;
   BlogPostPage?: Maybe<BlogPostPageOutput>;
   BlogSectionExperience?: Maybe<BlogSectionExperienceOutput>;
   ButtonBlock?: Maybe<ButtonBlockOutput>;
   CTAElement?: Maybe<CTAElementOutput>;
   CardBlock?: Maybe<CardBlockOutput>;
   CarouselBlock?: Maybe<CarouselBlockOutput>;
+  ContentRecsBlock?: Maybe<ContentRecsBlockOutput>;
   ContentRecsElement?: Maybe<ContentRecsElementOutput>;
   Data?: Maybe<DataOutput>;
-  DefaultImage?: Maybe<DefaultImageOutput>;
-  DefaultVideo?: Maybe<DefaultVideoOutput>;
-  Dictionary?: Maybe<DictionaryOutput>;
-  DictionaryItem?: Maybe<DictionaryItemOutput>;
   GenericMedia?: Maybe<GenericMediaOutput>;
-  HeaderBlock?: Maybe<HeaderBlockOutput>;
   HeadingElement?: Maybe<HeadingElementOutput>;
   HeroBlock?: Maybe<HeroBlockOutput>;
+  HomePageHeroBlock?: Maybe<HomePageHeroBlockOutput>;
+  HtmlBlock?: Maybe<HtmlBlockOutput>;
   Image?: Maybe<ImageOutput>;
   ImageElement?: Maybe<ImageElementOutput>;
   ImageMedia?: Maybe<ImageMediaOutput>;
   LandingPage?: Maybe<LandingPageOutput>;
+  LayoutContainerBlock?: Maybe<LayoutContainerBlockOutput>;
   LayoutSettingsBlock?: Maybe<LayoutSettingsBlockOutput>;
   MegaMenuGroupBlock?: Maybe<MegaMenuGroupBlockOutput>;
   MenuNavigationBlock?: Maybe<MenuNavigationBlockOutput>;
-  NavigationMenuBlock?: Maybe<NavigationMenuBlockOutput>;
   OdpEmbedBlock?: Maybe<OdpEmbedBlockOutput>;
-  OfficeLocation?: Maybe<OfficeLocationOutput>;
   PageSeoSettings?: Maybe<PageSeoSettingsOutput>;
   ParagraphElement?: Maybe<ParagraphElementOutput>;
   QuoteBlock?: Maybe<QuoteBlockOutput>;
   RichTextElement?: Maybe<RichTextElementOutput>;
+  StandardPage?: Maybe<StandardPageOutput>;
+  StartPage?: Maybe<StartPageOutput>;
   SysContentFolder?: Maybe<SysContentFolderOutput>;
   TestimonialElement?: Maybe<TestimonialElementOutput>;
   TextBlock?: Maybe<TextBlockOutput>;
   Video?: Maybe<VideoOutput>;
   VideoElement?: Maybe<VideoElementOutput>;
   VideoMedia?: Maybe<VideoMediaOutput>;
-  WebsiteFooter?: Maybe<WebsiteFooterOutput>;
   _Component?: Maybe<_ComponentOutput>;
   _Content?: Maybe<_ContentOutput>;
   _Experience?: Maybe<_ExperienceOutput>;
@@ -4670,18 +4153,6 @@ export type QueryRef = {
   _Page?: Maybe<_PageOutput>;
   _Section?: Maybe<_SectionOutput>;
   _Video?: Maybe<_VideoOutput>;
-  elementTesting?: Maybe<elementTestingOutput>;
-};
-
-
-export type QueryRefArticleGroupPageArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<ArticleGroupPageOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<ArticleGroupPageWhereInput>;
 };
 
 
@@ -4693,28 +4164,6 @@ export type QueryRefArticleListElementArgs = {
   orderBy?: InputMaybe<ArticleListElementOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<ArticleListElementWhereInput>;
-};
-
-
-export type QueryRefArticlePageArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<ArticlePageOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<ArticlePageWhereInput>;
-};
-
-
-export type QueryRefBannerBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<BannerBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<BannerBlockWhereInput>;
 };
 
 
@@ -4737,6 +4186,17 @@ export type QueryRefBlankSectionArgs = {
   orderBy?: InputMaybe<BlankSectionOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<BlankSectionWhereInput>;
+};
+
+
+export type QueryRefBlogListingBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<BlogListingBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<BlogListingBlockWhereInput>;
 };
 
 
@@ -4806,6 +4266,17 @@ export type QueryRefCarouselBlockArgs = {
 };
 
 
+export type QueryRefContentRecsBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<ContentRecsBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<ContentRecsBlockWhereInput>;
+};
+
+
 export type QueryRefContentRecsElementArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -4828,50 +4299,6 @@ export type QueryRefDataArgs = {
 };
 
 
-export type QueryRefDefaultImageArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<DefaultImageOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<DefaultImageWhereInput>;
-};
-
-
-export type QueryRefDefaultVideoArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<DefaultVideoOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<DefaultVideoWhereInput>;
-};
-
-
-export type QueryRefDictionaryArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<DictionaryOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<DictionaryWhereInput>;
-};
-
-
-export type QueryRefDictionaryItemArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<DictionaryItemOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<DictionaryItemWhereInput>;
-};
-
-
 export type QueryRefGenericMediaArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -4880,17 +4307,6 @@ export type QueryRefGenericMediaArgs = {
   orderBy?: InputMaybe<GenericMediaOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<GenericMediaWhereInput>;
-};
-
-
-export type QueryRefHeaderBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<HeaderBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<HeaderBlockWhereInput>;
 };
 
 
@@ -4913,6 +4329,28 @@ export type QueryRefHeroBlockArgs = {
   orderBy?: InputMaybe<HeroBlockOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<HeroBlockWhereInput>;
+};
+
+
+export type QueryRefHomePageHeroBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<HomePageHeroBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<HomePageHeroBlockWhereInput>;
+};
+
+
+export type QueryRefHtmlBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<HtmlBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<HtmlBlockWhereInput>;
 };
 
 
@@ -4960,6 +4398,17 @@ export type QueryRefLandingPageArgs = {
 };
 
 
+export type QueryRefLayoutContainerBlockArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<LayoutContainerBlockOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<LayoutContainerBlockWhereInput>;
+};
+
+
 export type QueryRefLayoutSettingsBlockArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -4993,17 +4442,6 @@ export type QueryRefMenuNavigationBlockArgs = {
 };
 
 
-export type QueryRefNavigationMenuBlockArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<NavigationMenuBlockOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<NavigationMenuBlockWhereInput>;
-};
-
-
 export type QueryRefOdpEmbedBlockArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -5012,17 +4450,6 @@ export type QueryRefOdpEmbedBlockArgs = {
   orderBy?: InputMaybe<OdpEmbedBlockOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<OdpEmbedBlockWhereInput>;
-};
-
-
-export type QueryRefOfficeLocationArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<OfficeLocationOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<OfficeLocationWhereInput>;
 };
 
 
@@ -5067,6 +4494,28 @@ export type QueryRefRichTextElementArgs = {
   orderBy?: InputMaybe<RichTextElementOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<RichTextElementWhereInput>;
+};
+
+
+export type QueryRefStandardPageArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<StandardPageOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<StandardPageWhereInput>;
+};
+
+
+export type QueryRefStartPageArgs = {
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: Scalars['Int']['input'];
+  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
+  orderBy?: InputMaybe<StartPageOrderByInput>;
+  skip?: Scalars['Int']['input'];
+  where?: InputMaybe<StartPageWhereInput>;
 };
 
 
@@ -5133,17 +4582,6 @@ export type QueryRefVideoMediaArgs = {
   orderBy?: InputMaybe<VideoMediaOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<VideoMediaWhereInput>;
-};
-
-
-export type QueryRefWebsiteFooterArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<WebsiteFooterOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<WebsiteFooterWhereInput>;
 };
 
 
@@ -5243,17 +4681,6 @@ export type QueryRef_VideoArgs = {
   orderBy?: InputMaybe<_VideoOrderByInput>;
   skip?: Scalars['Int']['input'];
   where?: InputMaybe<_VideoWhereInput>;
-};
-
-
-export type QueryRefelementTestingArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<elementTestingOrderByInput>;
-  skip?: Scalars['Int']['input'];
-  where?: InputMaybe<elementTestingWhereInput>;
 };
 
 export type QuoteBlock = IData & _IComponent & _IContent & {
@@ -5502,6 +4929,225 @@ export type SearchableStringFilterInput = {
   startsWith?: InputMaybe<Scalars['String']['input']>;
   /** expands query value with synonyms. Example: if `H2O` is a synonym of `water`, then querying for `water` will also return results with `H2O`. */
   synonyms?: InputMaybe<Array<InputMaybe<SynonymSlot>>>;
+};
+
+export type StandardPage = IData & _IContent & _IPage & {
+  __typename?: 'StandardPage';
+  MainBody?: Maybe<SearchableRichText>;
+  SeoSettings?: Maybe<PageSeoSettingsProperty>;
+  StandardPageHeading?: Maybe<Scalars['String']['output']>;
+  StandardPromoImage?: Maybe<ContentReference>;
+  StandardSubHeading?: Maybe<Scalars['String']['output']>;
+  /** @deprecated Use `_link` field instead */
+  _children?: Maybe<QueryRef>;
+  _deleted?: Maybe<Scalars['Bool']['output']>;
+  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  _id?: Maybe<Scalars['String']['output']>;
+  _link?: Maybe<QueryRef>;
+  _metadata?: Maybe<IContentMetadata>;
+  _modified?: Maybe<Scalars['Date']['output']>;
+  _score?: Maybe<Scalars['Float']['output']>;
+};
+
+
+export type StandardPageStandardPageHeadingArgs = {
+  highlight?: InputMaybe<HighlightOptions>;
+};
+
+
+export type StandardPageStandardSubHeadingArgs = {
+  highlight?: InputMaybe<HighlightOptions>;
+};
+
+
+export type StandardPage_fulltextArgs = {
+  highlight?: InputMaybe<HighlightOptions>;
+};
+
+
+export type StandardPage_linkArgs = {
+  type?: InputMaybe<LinkTypes>;
+};
+
+export type StandardPageAutocomplete = {
+  __typename?: 'StandardPageAutocomplete';
+  SeoSettings?: Maybe<PageSeoSettingsPropertyAutocomplete>;
+  StandardPromoImage?: Maybe<ContentReferenceAutocomplete>;
+  _metadata?: Maybe<IContentMetadataAutocomplete>;
+};
+
+export type StandardPageFacet = {
+  __typename?: 'StandardPageFacet';
+  MainBody?: Maybe<SearchableRichTextFacet>;
+  SeoSettings?: Maybe<PageSeoSettingsPropertyFacet>;
+  StandardPageHeading?: Maybe<Array<Maybe<StringFacet>>>;
+  StandardPromoImage?: Maybe<ContentReferenceFacet>;
+  StandardSubHeading?: Maybe<Array<Maybe<StringFacet>>>;
+  _metadata?: Maybe<IContentMetadataFacet>;
+};
+
+
+export type StandardPageFacetStandardPageHeadingArgs = {
+  filters?: InputMaybe<Array<Scalars['String']['input']>>;
+  limit?: Scalars['Int']['input'];
+  orderBy?: InputMaybe<OrderBy>;
+  orderType?: InputMaybe<OrderByFacetType>;
+};
+
+
+export type StandardPageFacetStandardSubHeadingArgs = {
+  filters?: InputMaybe<Array<Scalars['String']['input']>>;
+  limit?: Scalars['Int']['input'];
+  orderBy?: InputMaybe<OrderBy>;
+  orderType?: InputMaybe<OrderByFacetType>;
+};
+
+export type StandardPageOrderByInput = {
+  MainBody?: InputMaybe<SearchableRichTextOrderByInput>;
+  SeoSettings?: InputMaybe<PageSeoSettingsPropertyOrderByInput>;
+  StandardPageHeading?: InputMaybe<OrderBy>;
+  StandardPromoImage?: InputMaybe<ContentReferenceOrderByInput>;
+  StandardSubHeading?: InputMaybe<OrderBy>;
+  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
+  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
+  _modified?: InputMaybe<OrderBy>;
+  _ranking?: InputMaybe<Ranking>;
+  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
+  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type StandardPageOutput = {
+  __typename?: 'StandardPageOutput';
+  autocomplete?: Maybe<StandardPageAutocomplete>;
+  cursor?: Maybe<Scalars['String']['output']>;
+  facets?: Maybe<StandardPageFacet>;
+  items?: Maybe<Array<Maybe<StandardPage>>>;
+  total?: Maybe<Scalars['Int']['output']>;
+};
+
+
+export type StandardPageOutputtotalArgs = {
+  all?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type StandardPageWhereInput = {
+  MainBody?: InputMaybe<SearchableRichTextWhereInput>;
+  SeoSettings?: InputMaybe<PageSeoSettingsPropertyWhereInput>;
+  StandardPageHeading?: InputMaybe<SearchableStringFilterInput>;
+  StandardPromoImage?: InputMaybe<ContentReferenceWhereInput>;
+  StandardSubHeading?: InputMaybe<SearchableStringFilterInput>;
+  _and?: InputMaybe<Array<InputMaybe<StandardPageWhereInput>>>;
+  _fulltext?: InputMaybe<SearchableStringFilterInput>;
+  _metadata?: InputMaybe<IContentMetadataWhereInput>;
+  _modified?: InputMaybe<DateFilterInput>;
+  _not?: InputMaybe<Array<InputMaybe<StandardPageWhereInput>>>;
+  _or?: InputMaybe<Array<InputMaybe<StandardPageWhereInput>>>;
+};
+
+export type StartPage = IData & _IContent & _IPage & {
+  __typename?: 'StartPage';
+  FooterNavigationContentArea?: Maybe<Array<Maybe<_IContent>>>;
+  FooterNavigationCopyrightText?: Maybe<Scalars['String']['output']>;
+  FooterNavigationSubLinks?: Maybe<Array<Maybe<Link>>>;
+  HomePageHeroContentArea?: Maybe<Array<Maybe<_IContent>>>;
+  HomePageMainContentArea?: Maybe<Array<Maybe<_IContent>>>;
+  MainNavigationContentArea?: Maybe<Array<Maybe<_IContent>>>;
+  SeoSettings?: Maybe<PageSeoSettingsProperty>;
+  SiteImageLogo?: Maybe<ContentReference>;
+  UtilityNavigationContentArea?: Maybe<Array<Maybe<_IContent>>>;
+  /** @deprecated Use `_link` field instead */
+  _children?: Maybe<QueryRef>;
+  _deleted?: Maybe<Scalars['Bool']['output']>;
+  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  _id?: Maybe<Scalars['String']['output']>;
+  _link?: Maybe<QueryRef>;
+  _metadata?: Maybe<IContentMetadata>;
+  _modified?: Maybe<Scalars['Date']['output']>;
+  _score?: Maybe<Scalars['Float']['output']>;
+};
+
+
+export type StartPage_fulltextArgs = {
+  highlight?: InputMaybe<HighlightOptions>;
+};
+
+
+export type StartPage_linkArgs = {
+  type?: InputMaybe<LinkTypes>;
+};
+
+export type StartPageAutocomplete = {
+  __typename?: 'StartPageAutocomplete';
+  FooterNavigationContentArea?: Maybe<_IContentAutocomplete>;
+  FooterNavigationSubLinks?: Maybe<LinkAutocomplete>;
+  HomePageHeroContentArea?: Maybe<_IContentAutocomplete>;
+  HomePageMainContentArea?: Maybe<_IContentAutocomplete>;
+  MainNavigationContentArea?: Maybe<_IContentAutocomplete>;
+  SeoSettings?: Maybe<PageSeoSettingsPropertyAutocomplete>;
+  SiteImageLogo?: Maybe<ContentReferenceAutocomplete>;
+  UtilityNavigationContentArea?: Maybe<_IContentAutocomplete>;
+  _metadata?: Maybe<IContentMetadataAutocomplete>;
+};
+
+export type StartPageFacet = {
+  __typename?: 'StartPageFacet';
+  FooterNavigationContentArea?: Maybe<_IContentFacet>;
+  FooterNavigationSubLinks?: Maybe<LinkFacet>;
+  HomePageHeroContentArea?: Maybe<_IContentFacet>;
+  HomePageMainContentArea?: Maybe<_IContentFacet>;
+  MainNavigationContentArea?: Maybe<_IContentFacet>;
+  SeoSettings?: Maybe<PageSeoSettingsPropertyFacet>;
+  SiteImageLogo?: Maybe<ContentReferenceFacet>;
+  UtilityNavigationContentArea?: Maybe<_IContentFacet>;
+  _metadata?: Maybe<IContentMetadataFacet>;
+};
+
+export type StartPageOrderByInput = {
+  FooterNavigationContentArea?: InputMaybe<_IContentOrderByInput>;
+  FooterNavigationSubLinks?: InputMaybe<LinkOrderByInput>;
+  HomePageHeroContentArea?: InputMaybe<_IContentOrderByInput>;
+  HomePageMainContentArea?: InputMaybe<_IContentOrderByInput>;
+  MainNavigationContentArea?: InputMaybe<_IContentOrderByInput>;
+  SeoSettings?: InputMaybe<PageSeoSettingsPropertyOrderByInput>;
+  SiteImageLogo?: InputMaybe<ContentReferenceOrderByInput>;
+  UtilityNavigationContentArea?: InputMaybe<_IContentOrderByInput>;
+  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
+  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
+  _modified?: InputMaybe<OrderBy>;
+  _ranking?: InputMaybe<Ranking>;
+  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
+  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type StartPageOutput = {
+  __typename?: 'StartPageOutput';
+  autocomplete?: Maybe<StartPageAutocomplete>;
+  cursor?: Maybe<Scalars['String']['output']>;
+  facets?: Maybe<StartPageFacet>;
+  items?: Maybe<Array<Maybe<StartPage>>>;
+  total?: Maybe<Scalars['Int']['output']>;
+};
+
+
+export type StartPageOutputtotalArgs = {
+  all?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type StartPageWhereInput = {
+  FooterNavigationContentArea?: InputMaybe<_IContentWhereInput>;
+  FooterNavigationSubLinks?: InputMaybe<LinkWhereInput>;
+  HomePageHeroContentArea?: InputMaybe<_IContentWhereInput>;
+  HomePageMainContentArea?: InputMaybe<_IContentWhereInput>;
+  MainNavigationContentArea?: InputMaybe<_IContentWhereInput>;
+  SeoSettings?: InputMaybe<PageSeoSettingsPropertyWhereInput>;
+  SiteImageLogo?: InputMaybe<ContentReferenceWhereInput>;
+  UtilityNavigationContentArea?: InputMaybe<_IContentWhereInput>;
+  _and?: InputMaybe<Array<InputMaybe<StartPageWhereInput>>>;
+  _fulltext?: InputMaybe<SearchableStringFilterInput>;
+  _metadata?: InputMaybe<IContentMetadataWhereInput>;
+  _modified?: InputMaybe<DateFilterInput>;
+  _not?: InputMaybe<Array<InputMaybe<StartPageWhereInput>>>;
+  _or?: InputMaybe<Array<InputMaybe<StartPageWhereInput>>>;
 };
 
 export type StringFacet = {
@@ -5965,99 +5611,6 @@ export type VideoWhereInput = {
   _modified?: InputMaybe<DateFilterInput>;
   _not?: InputMaybe<Array<InputMaybe<VideoWhereInput>>>;
   _or?: InputMaybe<Array<InputMaybe<VideoWhereInput>>>;
-};
-
-export type WebsiteFooter = IData & _IComponent & _IContent & {
-  __typename?: 'WebsiteFooter';
-  FooterFirstLinkList?: Maybe<NavigationMenuBlockProperty>;
-  FooterLegalLinks?: Maybe<Array<Maybe<Link>>>;
-  FooterLogo?: Maybe<ContentReference>;
-  FooterLogoAltText?: Maybe<Scalars['String']['output']>;
-  FooterMainOfficeLocation?: Maybe<Array<Maybe<_IContent>>>;
-  FooterSecondLinkList?: Maybe<NavigationMenuBlockProperty>;
-  FooterThirdLinkList?: Maybe<NavigationMenuBlockProperty>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type WebsiteFooter_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type WebsiteFooter_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type WebsiteFooterAutocomplete = {
-  __typename?: 'WebsiteFooterAutocomplete';
-  FooterLegalLinks?: Maybe<LinkAutocomplete>;
-  FooterLogo?: Maybe<ContentReferenceAutocomplete>;
-  FooterMainOfficeLocation?: Maybe<_IContentAutocomplete>;
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type WebsiteFooterFacet = {
-  __typename?: 'WebsiteFooterFacet';
-  FooterFirstLinkList?: Maybe<NavigationMenuBlockPropertyFacet>;
-  FooterLegalLinks?: Maybe<LinkFacet>;
-  FooterLogo?: Maybe<ContentReferenceFacet>;
-  FooterMainOfficeLocation?: Maybe<_IContentFacet>;
-  FooterSecondLinkList?: Maybe<NavigationMenuBlockPropertyFacet>;
-  FooterThirdLinkList?: Maybe<NavigationMenuBlockPropertyFacet>;
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type WebsiteFooterOrderByInput = {
-  FooterFirstLinkList?: InputMaybe<NavigationMenuBlockPropertyOrderByInput>;
-  FooterLegalLinks?: InputMaybe<LinkOrderByInput>;
-  FooterLogo?: InputMaybe<ContentReferenceOrderByInput>;
-  FooterMainOfficeLocation?: InputMaybe<_IContentOrderByInput>;
-  FooterSecondLinkList?: InputMaybe<NavigationMenuBlockPropertyOrderByInput>;
-  FooterThirdLinkList?: InputMaybe<NavigationMenuBlockPropertyOrderByInput>;
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type WebsiteFooterOutput = {
-  __typename?: 'WebsiteFooterOutput';
-  autocomplete?: Maybe<WebsiteFooterAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<WebsiteFooterFacet>;
-  items?: Maybe<Array<Maybe<WebsiteFooter>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type WebsiteFooterOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type WebsiteFooterWhereInput = {
-  FooterFirstLinkList?: InputMaybe<NavigationMenuBlockPropertyWhereInput>;
-  FooterLegalLinks?: InputMaybe<LinkWhereInput>;
-  FooterLogo?: InputMaybe<ContentReferenceWhereInput>;
-  FooterMainOfficeLocation?: InputMaybe<_IContentWhereInput>;
-  FooterSecondLinkList?: InputMaybe<NavigationMenuBlockPropertyWhereInput>;
-  FooterThirdLinkList?: InputMaybe<NavigationMenuBlockPropertyWhereInput>;
-  _and?: InputMaybe<Array<InputMaybe<WebsiteFooterWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<WebsiteFooterWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<WebsiteFooterWhereInput>>>;
 };
 
 export type _Component = IData & _IComponent & _IContent & {
@@ -6883,73 +6436,6 @@ export type _VideoWhereInput = {
   _or?: InputMaybe<Array<InputMaybe<_VideoWhereInput>>>;
 };
 
-export type elementTesting = IData & _IComponent & _IContent & {
-  __typename?: 'elementTesting';
-  Title?: Maybe<Scalars['String']['output']>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-  readTime?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type elementTesting_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type elementTesting_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type elementTestingAutocomplete = {
-  __typename?: 'elementTestingAutocomplete';
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type elementTestingFacet = {
-  __typename?: 'elementTestingFacet';
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type elementTestingOrderByInput = {
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type elementTestingOutput = {
-  __typename?: 'elementTestingOutput';
-  autocomplete?: Maybe<elementTestingAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<elementTestingFacet>;
-  items?: Maybe<Array<Maybe<elementTesting>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type elementTestingOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type elementTestingWhereInput = {
-  _and?: InputMaybe<Array<InputMaybe<elementTestingWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<elementTestingWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<elementTestingWhereInput>>>;
-};
-
 export enum system_Locales {
   ALL = 'ALL',
   NEUTRAL = 'NEUTRAL'
@@ -7189,23 +6675,17 @@ export type CTAElementDataFragment = { __typename?: 'CTAElement', cta_text?: str
   ) | null } & { ' $fragmentName'?: 'CTAElementDataFragment' };
 
 export type CarouselBlockDataFragment = { __typename?: 'CarouselBlock', CarouselItemsContentArea?: Array<(
-    { __typename?: 'ArticleGroupPage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_ArticleGroupPage_Fragment': IContentListItem_ArticleGroupPage_Fragment } }
-  ) | (
     { __typename?: 'ArticleListElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_ArticleListElement_Fragment': IContentListItem_ArticleListElement_Fragment;'BlockData_ArticleListElement_Fragment': BlockData_ArticleListElement_Fragment;'ArticleListElementDataFragment': ArticleListElementDataFragment } }
-  ) | (
-    { __typename?: 'ArticlePage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_ArticlePage_Fragment': IContentListItem_ArticlePage_Fragment } }
-  ) | (
-    { __typename?: 'BannerBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_BannerBlock_Fragment': IContentListItem_BannerBlock_Fragment;'BlockData_BannerBlock_Fragment': BlockData_BannerBlock_Fragment } }
   ) | (
     { __typename?: 'BlankExperience' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlankExperience_Fragment': IContentListItem_BlankExperience_Fragment } }
   ) | (
     { __typename?: 'BlankSection' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlankSection_Fragment': IContentListItem_BlankSection_Fragment;'BlockData_BlankSection_Fragment': BlockData_BlankSection_Fragment;'BlankSectionDataFragment': BlankSectionDataFragment } }
+  ) | (
+    { __typename?: 'BlogListingBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_BlogListingBlock_Fragment': IContentListItem_BlogListingBlock_Fragment;'BlockData_BlogListingBlock_Fragment': BlockData_BlogListingBlock_Fragment } }
   ) | (
     { __typename?: 'BlogPostPage' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlogPostPage_Fragment': IContentListItem_BlogPostPage_Fragment } }
@@ -7225,32 +6705,26 @@ export type CarouselBlockDataFragment = { __typename?: 'CarouselBlock', Carousel
     { __typename?: 'CarouselBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_CarouselBlock_Fragment': IContentListItem_CarouselBlock_Fragment;'BlockData_CarouselBlock_Fragment': BlockData_CarouselBlock_Fragment;'CarouselBlockDataFragment': CarouselBlockDataFragment } }
   ) | (
+    { __typename?: 'ContentRecsBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_ContentRecsBlock_Fragment': IContentListItem_ContentRecsBlock_Fragment;'BlockData_ContentRecsBlock_Fragment': BlockData_ContentRecsBlock_Fragment } }
+  ) | (
     { __typename?: 'ContentRecsElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_ContentRecsElement_Fragment': IContentListItem_ContentRecsElement_Fragment;'BlockData_ContentRecsElement_Fragment': BlockData_ContentRecsElement_Fragment;'ContentRecsElementDataFragment': ContentRecsElementDataFragment } }
   ) | (
-    { __typename?: 'DefaultImage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DefaultImage_Fragment': IContentListItem_DefaultImage_Fragment } }
-  ) | (
-    { __typename?: 'DefaultVideo' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DefaultVideo_Fragment': IContentListItem_DefaultVideo_Fragment } }
-  ) | (
-    { __typename?: 'Dictionary' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_Dictionary_Fragment': IContentListItem_Dictionary_Fragment;'BlockData_Dictionary_Fragment': BlockData_Dictionary_Fragment } }
-  ) | (
-    { __typename?: 'DictionaryItem' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DictionaryItem_Fragment': IContentListItem_DictionaryItem_Fragment;'BlockData_DictionaryItem_Fragment': BlockData_DictionaryItem_Fragment } }
-  ) | (
     { __typename?: 'GenericMedia' }
     & { ' $fragmentRefs'?: { 'IContentListItem_GenericMedia_Fragment': IContentListItem_GenericMedia_Fragment } }
-  ) | (
-    { __typename?: 'HeaderBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_HeaderBlock_Fragment': IContentListItem_HeaderBlock_Fragment;'BlockData_HeaderBlock_Fragment': BlockData_HeaderBlock_Fragment } }
   ) | (
     { __typename?: 'HeadingElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_HeadingElement_Fragment': IContentListItem_HeadingElement_Fragment;'BlockData_HeadingElement_Fragment': BlockData_HeadingElement_Fragment;'HeadingElementDataFragment': HeadingElementDataFragment } }
   ) | (
     { __typename?: 'HeroBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_HeroBlock_Fragment': IContentListItem_HeroBlock_Fragment;'BlockData_HeroBlock_Fragment': BlockData_HeroBlock_Fragment;'HeroBlockDataFragment': HeroBlockDataFragment } }
+  ) | (
+    { __typename?: 'HomePageHeroBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_HomePageHeroBlock_Fragment': IContentListItem_HomePageHeroBlock_Fragment;'BlockData_HomePageHeroBlock_Fragment': BlockData_HomePageHeroBlock_Fragment } }
+  ) | (
+    { __typename?: 'HtmlBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_HtmlBlock_Fragment': IContentListItem_HtmlBlock_Fragment;'BlockData_HtmlBlock_Fragment': BlockData_HtmlBlock_Fragment } }
   ) | (
     { __typename?: 'Image' }
     & { ' $fragmentRefs'?: { 'IContentListItem_Image_Fragment': IContentListItem_Image_Fragment } }
@@ -7264,6 +6738,9 @@ export type CarouselBlockDataFragment = { __typename?: 'CarouselBlock', Carousel
     { __typename?: 'LandingPage' }
     & { ' $fragmentRefs'?: { 'IContentListItem_LandingPage_Fragment': IContentListItem_LandingPage_Fragment } }
   ) | (
+    { __typename?: 'LayoutContainerBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_LayoutContainerBlock_Fragment': IContentListItem_LayoutContainerBlock_Fragment;'BlockData_LayoutContainerBlock_Fragment': BlockData_LayoutContainerBlock_Fragment } }
+  ) | (
     { __typename?: 'LayoutSettingsBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_LayoutSettingsBlock_Fragment': IContentListItem_LayoutSettingsBlock_Fragment;'BlockData_LayoutSettingsBlock_Fragment': BlockData_LayoutSettingsBlock_Fragment;'LayoutSettingsBlockDataFragment': LayoutSettingsBlockDataFragment } }
   ) | (
@@ -7273,14 +6750,8 @@ export type CarouselBlockDataFragment = { __typename?: 'CarouselBlock', Carousel
     { __typename?: 'MenuNavigationBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_MenuNavigationBlock_Fragment': IContentListItem_MenuNavigationBlock_Fragment;'BlockData_MenuNavigationBlock_Fragment': BlockData_MenuNavigationBlock_Fragment;'MenuNavigationBlockDataFragment': MenuNavigationBlockDataFragment } }
   ) | (
-    { __typename?: 'NavigationMenuBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_NavigationMenuBlock_Fragment': IContentListItem_NavigationMenuBlock_Fragment;'BlockData_NavigationMenuBlock_Fragment': BlockData_NavigationMenuBlock_Fragment } }
-  ) | (
     { __typename?: 'OdpEmbedBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_OdpEmbedBlock_Fragment': IContentListItem_OdpEmbedBlock_Fragment;'BlockData_OdpEmbedBlock_Fragment': BlockData_OdpEmbedBlock_Fragment;'OdpEmbedBlockDataFragment': OdpEmbedBlockDataFragment } }
-  ) | (
-    { __typename?: 'OfficeLocation' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_OfficeLocation_Fragment': IContentListItem_OfficeLocation_Fragment;'BlockData_OfficeLocation_Fragment': BlockData_OfficeLocation_Fragment } }
   ) | (
     { __typename?: 'PageSeoSettings' }
     & { ' $fragmentRefs'?: { 'IContentListItem_PageSeoSettings_Fragment': IContentListItem_PageSeoSettings_Fragment;'BlockData_PageSeoSettings_Fragment': BlockData_PageSeoSettings_Fragment;'PageSeoSettingsDataFragment': PageSeoSettingsDataFragment } }
@@ -7293,6 +6764,12 @@ export type CarouselBlockDataFragment = { __typename?: 'CarouselBlock', Carousel
   ) | (
     { __typename?: 'RichTextElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_RichTextElement_Fragment': IContentListItem_RichTextElement_Fragment;'BlockData_RichTextElement_Fragment': BlockData_RichTextElement_Fragment;'RichTextElementDataFragment': RichTextElementDataFragment } }
+  ) | (
+    { __typename?: 'StandardPage' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_StandardPage_Fragment': IContentListItem_StandardPage_Fragment } }
+  ) | (
+    { __typename?: 'StartPage' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_StartPage_Fragment': IContentListItem_StartPage_Fragment } }
   ) | (
     { __typename?: 'SysContentFolder' }
     & { ' $fragmentRefs'?: { 'IContentListItem_SysContentFolder_Fragment': IContentListItem_SysContentFolder_Fragment } }
@@ -7311,9 +6788,6 @@ export type CarouselBlockDataFragment = { __typename?: 'CarouselBlock', Carousel
   ) | (
     { __typename?: 'VideoMedia' }
     & { ' $fragmentRefs'?: { 'IContentListItem_VideoMedia_Fragment': IContentListItem_VideoMedia_Fragment;'VideoMediaComponentDataFragment': VideoMediaComponentDataFragment } }
-  ) | (
-    { __typename?: 'WebsiteFooter' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_WebsiteFooter_Fragment': IContentListItem_WebsiteFooter_Fragment;'BlockData_WebsiteFooter_Fragment': BlockData_WebsiteFooter_Fragment } }
   ) | (
     { __typename?: '_Component' }
     & { ' $fragmentRefs'?: { 'IContentListItem__Component_Fragment': IContentListItem__Component_Fragment;'BlockData__Component_Fragment': BlockData__Component_Fragment } }
@@ -7341,9 +6815,6 @@ export type CarouselBlockDataFragment = { __typename?: 'CarouselBlock', Carousel
   ) | (
     { __typename?: '_Video' }
     & { ' $fragmentRefs'?: { 'IContentListItem__Video_Fragment': IContentListItem__Video_Fragment } }
-  ) | (
-    { __typename?: 'elementTesting' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_elementTesting_Fragment': IContentListItem_elementTesting_Fragment;'BlockData_elementTesting_Fragment': BlockData_elementTesting_Fragment } }
   ) | null> | null } & { ' $fragmentName'?: 'CarouselBlockDataFragment' };
 
 export type ContentRecsElementDataFragment = { __typename?: 'ContentRecsElement', ElementDeliveryApiKey?: string | null, ElementRecommendationCount?: number | null } & { ' $fragmentName'?: 'ContentRecsElementDataFragment' };
@@ -7364,23 +6835,17 @@ export type ImageElementDataFragment = { __typename?: 'ImageElement', altText?: 
   ) | null } & { ' $fragmentName'?: 'ImageElementDataFragment' };
 
 export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBlock', contactInfoHeading?: string | null, copyright?: string | null, appIdentifiers?: string | null, mainMenu?: Array<(
-    { __typename?: 'ArticleGroupPage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_ArticleGroupPage_Fragment': IContentListItem_ArticleGroupPage_Fragment } }
-  ) | (
     { __typename?: 'ArticleListElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_ArticleListElement_Fragment': IContentListItem_ArticleListElement_Fragment } }
-  ) | (
-    { __typename?: 'ArticlePage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_ArticlePage_Fragment': IContentListItem_ArticlePage_Fragment } }
-  ) | (
-    { __typename?: 'BannerBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_BannerBlock_Fragment': IContentListItem_BannerBlock_Fragment } }
   ) | (
     { __typename?: 'BlankExperience' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlankExperience_Fragment': IContentListItem_BlankExperience_Fragment } }
   ) | (
     { __typename?: 'BlankSection' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlankSection_Fragment': IContentListItem_BlankSection_Fragment } }
+  ) | (
+    { __typename?: 'BlogListingBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_BlogListingBlock_Fragment': IContentListItem_BlogListingBlock_Fragment } }
   ) | (
     { __typename?: 'BlogPostPage' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlogPostPage_Fragment': IContentListItem_BlogPostPage_Fragment } }
@@ -7400,32 +6865,26 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
     { __typename?: 'CarouselBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_CarouselBlock_Fragment': IContentListItem_CarouselBlock_Fragment } }
   ) | (
+    { __typename?: 'ContentRecsBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_ContentRecsBlock_Fragment': IContentListItem_ContentRecsBlock_Fragment } }
+  ) | (
     { __typename?: 'ContentRecsElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_ContentRecsElement_Fragment': IContentListItem_ContentRecsElement_Fragment } }
   ) | (
-    { __typename?: 'DefaultImage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DefaultImage_Fragment': IContentListItem_DefaultImage_Fragment } }
-  ) | (
-    { __typename?: 'DefaultVideo' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DefaultVideo_Fragment': IContentListItem_DefaultVideo_Fragment } }
-  ) | (
-    { __typename?: 'Dictionary' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_Dictionary_Fragment': IContentListItem_Dictionary_Fragment } }
-  ) | (
-    { __typename?: 'DictionaryItem' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DictionaryItem_Fragment': IContentListItem_DictionaryItem_Fragment } }
-  ) | (
     { __typename?: 'GenericMedia' }
     & { ' $fragmentRefs'?: { 'IContentListItem_GenericMedia_Fragment': IContentListItem_GenericMedia_Fragment } }
-  ) | (
-    { __typename?: 'HeaderBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_HeaderBlock_Fragment': IContentListItem_HeaderBlock_Fragment } }
   ) | (
     { __typename?: 'HeadingElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_HeadingElement_Fragment': IContentListItem_HeadingElement_Fragment } }
   ) | (
     { __typename?: 'HeroBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_HeroBlock_Fragment': IContentListItem_HeroBlock_Fragment } }
+  ) | (
+    { __typename?: 'HomePageHeroBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_HomePageHeroBlock_Fragment': IContentListItem_HomePageHeroBlock_Fragment } }
+  ) | (
+    { __typename?: 'HtmlBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_HtmlBlock_Fragment': IContentListItem_HtmlBlock_Fragment } }
   ) | (
     { __typename?: 'Image' }
     & { ' $fragmentRefs'?: { 'IContentListItem_Image_Fragment': IContentListItem_Image_Fragment } }
@@ -7439,6 +6898,9 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
     { __typename?: 'LandingPage' }
     & { ' $fragmentRefs'?: { 'IContentListItem_LandingPage_Fragment': IContentListItem_LandingPage_Fragment } }
   ) | (
+    { __typename?: 'LayoutContainerBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_LayoutContainerBlock_Fragment': IContentListItem_LayoutContainerBlock_Fragment } }
+  ) | (
     { __typename?: 'LayoutSettingsBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_LayoutSettingsBlock_Fragment': IContentListItem_LayoutSettingsBlock_Fragment } }
   ) | (
@@ -7448,14 +6910,8 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
     { __typename?: 'MenuNavigationBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_MenuNavigationBlock_Fragment': IContentListItem_MenuNavigationBlock_Fragment } }
   ) | (
-    { __typename?: 'NavigationMenuBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_NavigationMenuBlock_Fragment': IContentListItem_NavigationMenuBlock_Fragment } }
-  ) | (
     { __typename?: 'OdpEmbedBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_OdpEmbedBlock_Fragment': IContentListItem_OdpEmbedBlock_Fragment } }
-  ) | (
-    { __typename?: 'OfficeLocation' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_OfficeLocation_Fragment': IContentListItem_OfficeLocation_Fragment } }
   ) | (
     { __typename?: 'PageSeoSettings' }
     & { ' $fragmentRefs'?: { 'IContentListItem_PageSeoSettings_Fragment': IContentListItem_PageSeoSettings_Fragment } }
@@ -7468,6 +6924,12 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
   ) | (
     { __typename?: 'RichTextElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_RichTextElement_Fragment': IContentListItem_RichTextElement_Fragment } }
+  ) | (
+    { __typename?: 'StandardPage' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_StandardPage_Fragment': IContentListItem_StandardPage_Fragment } }
+  ) | (
+    { __typename?: 'StartPage' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_StartPage_Fragment': IContentListItem_StartPage_Fragment } }
   ) | (
     { __typename?: 'SysContentFolder' }
     & { ' $fragmentRefs'?: { 'IContentListItem_SysContentFolder_Fragment': IContentListItem_SysContentFolder_Fragment } }
@@ -7486,9 +6948,6 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
   ) | (
     { __typename?: 'VideoMedia' }
     & { ' $fragmentRefs'?: { 'IContentListItem_VideoMedia_Fragment': IContentListItem_VideoMedia_Fragment;'VideoMediaComponentDataFragment': VideoMediaComponentDataFragment } }
-  ) | (
-    { __typename?: 'WebsiteFooter' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_WebsiteFooter_Fragment': IContentListItem_WebsiteFooter_Fragment } }
   ) | (
     { __typename?: '_Component' }
     & { ' $fragmentRefs'?: { 'IContentListItem__Component_Fragment': IContentListItem__Component_Fragment } }
@@ -7516,27 +6975,18 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
   ) | (
     { __typename?: '_Video' }
     & { ' $fragmentRefs'?: { 'IContentListItem__Video_Fragment': IContentListItem__Video_Fragment } }
-  ) | (
-    { __typename?: 'elementTesting' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_elementTesting_Fragment': IContentListItem_elementTesting_Fragment } }
   ) | null> | null, serviceButtons?: Array<(
-    { __typename?: 'ArticleGroupPage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_ArticleGroupPage_Fragment': IContentListItem_ArticleGroupPage_Fragment } }
-  ) | (
     { __typename?: 'ArticleListElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_ArticleListElement_Fragment': IContentListItem_ArticleListElement_Fragment } }
-  ) | (
-    { __typename?: 'ArticlePage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_ArticlePage_Fragment': IContentListItem_ArticlePage_Fragment } }
-  ) | (
-    { __typename?: 'BannerBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_BannerBlock_Fragment': IContentListItem_BannerBlock_Fragment } }
   ) | (
     { __typename?: 'BlankExperience' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlankExperience_Fragment': IContentListItem_BlankExperience_Fragment } }
   ) | (
     { __typename?: 'BlankSection' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlankSection_Fragment': IContentListItem_BlankSection_Fragment } }
+  ) | (
+    { __typename?: 'BlogListingBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_BlogListingBlock_Fragment': IContentListItem_BlogListingBlock_Fragment } }
   ) | (
     { __typename?: 'BlogPostPage' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlogPostPage_Fragment': IContentListItem_BlogPostPage_Fragment } }
@@ -7556,32 +7006,26 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
     { __typename?: 'CarouselBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_CarouselBlock_Fragment': IContentListItem_CarouselBlock_Fragment } }
   ) | (
+    { __typename?: 'ContentRecsBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_ContentRecsBlock_Fragment': IContentListItem_ContentRecsBlock_Fragment } }
+  ) | (
     { __typename?: 'ContentRecsElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_ContentRecsElement_Fragment': IContentListItem_ContentRecsElement_Fragment } }
   ) | (
-    { __typename?: 'DefaultImage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DefaultImage_Fragment': IContentListItem_DefaultImage_Fragment } }
-  ) | (
-    { __typename?: 'DefaultVideo' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DefaultVideo_Fragment': IContentListItem_DefaultVideo_Fragment } }
-  ) | (
-    { __typename?: 'Dictionary' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_Dictionary_Fragment': IContentListItem_Dictionary_Fragment } }
-  ) | (
-    { __typename?: 'DictionaryItem' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DictionaryItem_Fragment': IContentListItem_DictionaryItem_Fragment } }
-  ) | (
     { __typename?: 'GenericMedia' }
     & { ' $fragmentRefs'?: { 'IContentListItem_GenericMedia_Fragment': IContentListItem_GenericMedia_Fragment } }
-  ) | (
-    { __typename?: 'HeaderBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_HeaderBlock_Fragment': IContentListItem_HeaderBlock_Fragment } }
   ) | (
     { __typename?: 'HeadingElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_HeadingElement_Fragment': IContentListItem_HeadingElement_Fragment } }
   ) | (
     { __typename?: 'HeroBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_HeroBlock_Fragment': IContentListItem_HeroBlock_Fragment } }
+  ) | (
+    { __typename?: 'HomePageHeroBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_HomePageHeroBlock_Fragment': IContentListItem_HomePageHeroBlock_Fragment } }
+  ) | (
+    { __typename?: 'HtmlBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_HtmlBlock_Fragment': IContentListItem_HtmlBlock_Fragment } }
   ) | (
     { __typename?: 'Image' }
     & { ' $fragmentRefs'?: { 'IContentListItem_Image_Fragment': IContentListItem_Image_Fragment } }
@@ -7595,6 +7039,9 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
     { __typename?: 'LandingPage' }
     & { ' $fragmentRefs'?: { 'IContentListItem_LandingPage_Fragment': IContentListItem_LandingPage_Fragment } }
   ) | (
+    { __typename?: 'LayoutContainerBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_LayoutContainerBlock_Fragment': IContentListItem_LayoutContainerBlock_Fragment } }
+  ) | (
     { __typename?: 'LayoutSettingsBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_LayoutSettingsBlock_Fragment': IContentListItem_LayoutSettingsBlock_Fragment } }
   ) | (
@@ -7604,14 +7051,8 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
     { __typename?: 'MenuNavigationBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_MenuNavigationBlock_Fragment': IContentListItem_MenuNavigationBlock_Fragment } }
   ) | (
-    { __typename?: 'NavigationMenuBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_NavigationMenuBlock_Fragment': IContentListItem_NavigationMenuBlock_Fragment } }
-  ) | (
     { __typename?: 'OdpEmbedBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_OdpEmbedBlock_Fragment': IContentListItem_OdpEmbedBlock_Fragment } }
-  ) | (
-    { __typename?: 'OfficeLocation' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_OfficeLocation_Fragment': IContentListItem_OfficeLocation_Fragment } }
   ) | (
     { __typename?: 'PageSeoSettings' }
     & { ' $fragmentRefs'?: { 'IContentListItem_PageSeoSettings_Fragment': IContentListItem_PageSeoSettings_Fragment } }
@@ -7624,6 +7065,12 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
   ) | (
     { __typename?: 'RichTextElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_RichTextElement_Fragment': IContentListItem_RichTextElement_Fragment } }
+  ) | (
+    { __typename?: 'StandardPage' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_StandardPage_Fragment': IContentListItem_StandardPage_Fragment } }
+  ) | (
+    { __typename?: 'StartPage' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_StartPage_Fragment': IContentListItem_StartPage_Fragment } }
   ) | (
     { __typename?: 'SysContentFolder' }
     & { ' $fragmentRefs'?: { 'IContentListItem_SysContentFolder_Fragment': IContentListItem_SysContentFolder_Fragment } }
@@ -7642,9 +7089,6 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
   ) | (
     { __typename?: 'VideoMedia' }
     & { ' $fragmentRefs'?: { 'IContentListItem_VideoMedia_Fragment': IContentListItem_VideoMedia_Fragment;'VideoMediaComponentDataFragment': VideoMediaComponentDataFragment } }
-  ) | (
-    { __typename?: 'WebsiteFooter' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_WebsiteFooter_Fragment': IContentListItem_WebsiteFooter_Fragment } }
   ) | (
     { __typename?: '_Component' }
     & { ' $fragmentRefs'?: { 'IContentListItem__Component_Fragment': IContentListItem__Component_Fragment } }
@@ -7672,27 +7116,18 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
   ) | (
     { __typename?: '_Video' }
     & { ' $fragmentRefs'?: { 'IContentListItem__Video_Fragment': IContentListItem__Video_Fragment } }
-  ) | (
-    { __typename?: 'elementTesting' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_elementTesting_Fragment': IContentListItem_elementTesting_Fragment } }
   ) | null> | null, contactInfo?: { __typename?: 'RichText', json?: any | null, html?: string | null } | null, footerMenus?: Array<(
-    { __typename?: 'ArticleGroupPage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_ArticleGroupPage_Fragment': IContentListItem_ArticleGroupPage_Fragment } }
-  ) | (
     { __typename?: 'ArticleListElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_ArticleListElement_Fragment': IContentListItem_ArticleListElement_Fragment } }
-  ) | (
-    { __typename?: 'ArticlePage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_ArticlePage_Fragment': IContentListItem_ArticlePage_Fragment } }
-  ) | (
-    { __typename?: 'BannerBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_BannerBlock_Fragment': IContentListItem_BannerBlock_Fragment } }
   ) | (
     { __typename?: 'BlankExperience' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlankExperience_Fragment': IContentListItem_BlankExperience_Fragment } }
   ) | (
     { __typename?: 'BlankSection' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlankSection_Fragment': IContentListItem_BlankSection_Fragment } }
+  ) | (
+    { __typename?: 'BlogListingBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_BlogListingBlock_Fragment': IContentListItem_BlogListingBlock_Fragment } }
   ) | (
     { __typename?: 'BlogPostPage' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlogPostPage_Fragment': IContentListItem_BlogPostPage_Fragment } }
@@ -7712,32 +7147,26 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
     { __typename?: 'CarouselBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_CarouselBlock_Fragment': IContentListItem_CarouselBlock_Fragment } }
   ) | (
+    { __typename?: 'ContentRecsBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_ContentRecsBlock_Fragment': IContentListItem_ContentRecsBlock_Fragment } }
+  ) | (
     { __typename?: 'ContentRecsElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_ContentRecsElement_Fragment': IContentListItem_ContentRecsElement_Fragment } }
   ) | (
-    { __typename?: 'DefaultImage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DefaultImage_Fragment': IContentListItem_DefaultImage_Fragment } }
-  ) | (
-    { __typename?: 'DefaultVideo' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DefaultVideo_Fragment': IContentListItem_DefaultVideo_Fragment } }
-  ) | (
-    { __typename?: 'Dictionary' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_Dictionary_Fragment': IContentListItem_Dictionary_Fragment } }
-  ) | (
-    { __typename?: 'DictionaryItem' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DictionaryItem_Fragment': IContentListItem_DictionaryItem_Fragment } }
-  ) | (
     { __typename?: 'GenericMedia' }
     & { ' $fragmentRefs'?: { 'IContentListItem_GenericMedia_Fragment': IContentListItem_GenericMedia_Fragment } }
-  ) | (
-    { __typename?: 'HeaderBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_HeaderBlock_Fragment': IContentListItem_HeaderBlock_Fragment } }
   ) | (
     { __typename?: 'HeadingElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_HeadingElement_Fragment': IContentListItem_HeadingElement_Fragment } }
   ) | (
     { __typename?: 'HeroBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_HeroBlock_Fragment': IContentListItem_HeroBlock_Fragment } }
+  ) | (
+    { __typename?: 'HomePageHeroBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_HomePageHeroBlock_Fragment': IContentListItem_HomePageHeroBlock_Fragment } }
+  ) | (
+    { __typename?: 'HtmlBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_HtmlBlock_Fragment': IContentListItem_HtmlBlock_Fragment } }
   ) | (
     { __typename?: 'Image' }
     & { ' $fragmentRefs'?: { 'IContentListItem_Image_Fragment': IContentListItem_Image_Fragment } }
@@ -7751,6 +7180,9 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
     { __typename?: 'LandingPage' }
     & { ' $fragmentRefs'?: { 'IContentListItem_LandingPage_Fragment': IContentListItem_LandingPage_Fragment } }
   ) | (
+    { __typename?: 'LayoutContainerBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_LayoutContainerBlock_Fragment': IContentListItem_LayoutContainerBlock_Fragment } }
+  ) | (
     { __typename?: 'LayoutSettingsBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_LayoutSettingsBlock_Fragment': IContentListItem_LayoutSettingsBlock_Fragment } }
   ) | (
@@ -7760,14 +7192,8 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
     { __typename?: 'MenuNavigationBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_MenuNavigationBlock_Fragment': IContentListItem_MenuNavigationBlock_Fragment } }
   ) | (
-    { __typename?: 'NavigationMenuBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_NavigationMenuBlock_Fragment': IContentListItem_NavigationMenuBlock_Fragment } }
-  ) | (
     { __typename?: 'OdpEmbedBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_OdpEmbedBlock_Fragment': IContentListItem_OdpEmbedBlock_Fragment } }
-  ) | (
-    { __typename?: 'OfficeLocation' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_OfficeLocation_Fragment': IContentListItem_OfficeLocation_Fragment } }
   ) | (
     { __typename?: 'PageSeoSettings' }
     & { ' $fragmentRefs'?: { 'IContentListItem_PageSeoSettings_Fragment': IContentListItem_PageSeoSettings_Fragment } }
@@ -7780,6 +7206,12 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
   ) | (
     { __typename?: 'RichTextElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_RichTextElement_Fragment': IContentListItem_RichTextElement_Fragment } }
+  ) | (
+    { __typename?: 'StandardPage' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_StandardPage_Fragment': IContentListItem_StandardPage_Fragment } }
+  ) | (
+    { __typename?: 'StartPage' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_StartPage_Fragment': IContentListItem_StartPage_Fragment } }
   ) | (
     { __typename?: 'SysContentFolder' }
     & { ' $fragmentRefs'?: { 'IContentListItem_SysContentFolder_Fragment': IContentListItem_SysContentFolder_Fragment } }
@@ -7798,9 +7230,6 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
   ) | (
     { __typename?: 'VideoMedia' }
     & { ' $fragmentRefs'?: { 'IContentListItem_VideoMedia_Fragment': IContentListItem_VideoMedia_Fragment;'VideoMediaComponentDataFragment': VideoMediaComponentDataFragment } }
-  ) | (
-    { __typename?: 'WebsiteFooter' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_WebsiteFooter_Fragment': IContentListItem_WebsiteFooter_Fragment } }
   ) | (
     { __typename?: '_Component' }
     & { ' $fragmentRefs'?: { 'IContentListItem__Component_Fragment': IContentListItem__Component_Fragment } }
@@ -7828,9 +7257,6 @@ export type LayoutSettingsBlockDataFragment = { __typename?: 'LayoutSettingsBloc
   ) | (
     { __typename?: '_Video' }
     & { ' $fragmentRefs'?: { 'IContentListItem__Video_Fragment': IContentListItem__Video_Fragment } }
-  ) | (
-    { __typename?: 'elementTesting' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_elementTesting_Fragment': IContentListItem_elementTesting_Fragment } }
   ) | null> | null, legalLinks?: Array<(
     { __typename?: 'Link' }
     & { ' $fragmentRefs'?: { 'LinkItemDataFragment': LinkItemDataFragment } }
@@ -7840,23 +7266,17 @@ export type MegaMenuGroupBlockDataFragment = { __typename?: 'MegaMenuGroupBlock'
     { __typename?: 'ContentUrl' }
     & { ' $fragmentRefs'?: { 'LinkDataFragment': LinkDataFragment } }
   ) | null, MegaMenuContentArea?: Array<(
-    { __typename?: 'ArticleGroupPage' }
-    & { ' $fragmentRefs'?: { 'IContentData_ArticleGroupPage_Fragment': IContentData_ArticleGroupPage_Fragment } }
-  ) | (
     { __typename?: 'ArticleListElement' }
     & { ' $fragmentRefs'?: { 'IContentData_ArticleListElement_Fragment': IContentData_ArticleListElement_Fragment } }
-  ) | (
-    { __typename?: 'ArticlePage' }
-    & { ' $fragmentRefs'?: { 'IContentData_ArticlePage_Fragment': IContentData_ArticlePage_Fragment } }
-  ) | (
-    { __typename?: 'BannerBlock' }
-    & { ' $fragmentRefs'?: { 'IContentData_BannerBlock_Fragment': IContentData_BannerBlock_Fragment } }
   ) | (
     { __typename?: 'BlankExperience' }
     & { ' $fragmentRefs'?: { 'IContentData_BlankExperience_Fragment': IContentData_BlankExperience_Fragment } }
   ) | (
     { __typename?: 'BlankSection' }
     & { ' $fragmentRefs'?: { 'IContentData_BlankSection_Fragment': IContentData_BlankSection_Fragment } }
+  ) | (
+    { __typename?: 'BlogListingBlock' }
+    & { ' $fragmentRefs'?: { 'IContentData_BlogListingBlock_Fragment': IContentData_BlogListingBlock_Fragment } }
   ) | (
     { __typename?: 'BlogPostPage' }
     & { ' $fragmentRefs'?: { 'IContentData_BlogPostPage_Fragment': IContentData_BlogPostPage_Fragment;'BlogPostPageMenuBlockFragment': BlogPostPageMenuBlockFragment } }
@@ -7876,32 +7296,26 @@ export type MegaMenuGroupBlockDataFragment = { __typename?: 'MegaMenuGroupBlock'
     { __typename?: 'CarouselBlock' }
     & { ' $fragmentRefs'?: { 'IContentData_CarouselBlock_Fragment': IContentData_CarouselBlock_Fragment } }
   ) | (
+    { __typename?: 'ContentRecsBlock' }
+    & { ' $fragmentRefs'?: { 'IContentData_ContentRecsBlock_Fragment': IContentData_ContentRecsBlock_Fragment } }
+  ) | (
     { __typename?: 'ContentRecsElement' }
     & { ' $fragmentRefs'?: { 'IContentData_ContentRecsElement_Fragment': IContentData_ContentRecsElement_Fragment } }
   ) | (
-    { __typename?: 'DefaultImage' }
-    & { ' $fragmentRefs'?: { 'IContentData_DefaultImage_Fragment': IContentData_DefaultImage_Fragment } }
-  ) | (
-    { __typename?: 'DefaultVideo' }
-    & { ' $fragmentRefs'?: { 'IContentData_DefaultVideo_Fragment': IContentData_DefaultVideo_Fragment } }
-  ) | (
-    { __typename?: 'Dictionary' }
-    & { ' $fragmentRefs'?: { 'IContentData_Dictionary_Fragment': IContentData_Dictionary_Fragment } }
-  ) | (
-    { __typename?: 'DictionaryItem' }
-    & { ' $fragmentRefs'?: { 'IContentData_DictionaryItem_Fragment': IContentData_DictionaryItem_Fragment } }
-  ) | (
     { __typename?: 'GenericMedia' }
     & { ' $fragmentRefs'?: { 'IContentData_GenericMedia_Fragment': IContentData_GenericMedia_Fragment } }
-  ) | (
-    { __typename?: 'HeaderBlock' }
-    & { ' $fragmentRefs'?: { 'IContentData_HeaderBlock_Fragment': IContentData_HeaderBlock_Fragment } }
   ) | (
     { __typename?: 'HeadingElement' }
     & { ' $fragmentRefs'?: { 'IContentData_HeadingElement_Fragment': IContentData_HeadingElement_Fragment } }
   ) | (
     { __typename?: 'HeroBlock' }
     & { ' $fragmentRefs'?: { 'IContentData_HeroBlock_Fragment': IContentData_HeroBlock_Fragment } }
+  ) | (
+    { __typename?: 'HomePageHeroBlock' }
+    & { ' $fragmentRefs'?: { 'IContentData_HomePageHeroBlock_Fragment': IContentData_HomePageHeroBlock_Fragment } }
+  ) | (
+    { __typename?: 'HtmlBlock' }
+    & { ' $fragmentRefs'?: { 'IContentData_HtmlBlock_Fragment': IContentData_HtmlBlock_Fragment } }
   ) | (
     { __typename?: 'Image' }
     & { ' $fragmentRefs'?: { 'IContentData_Image_Fragment': IContentData_Image_Fragment } }
@@ -7915,6 +7329,9 @@ export type MegaMenuGroupBlockDataFragment = { __typename?: 'MegaMenuGroupBlock'
     { __typename?: 'LandingPage' }
     & { ' $fragmentRefs'?: { 'IContentData_LandingPage_Fragment': IContentData_LandingPage_Fragment } }
   ) | (
+    { __typename?: 'LayoutContainerBlock' }
+    & { ' $fragmentRefs'?: { 'IContentData_LayoutContainerBlock_Fragment': IContentData_LayoutContainerBlock_Fragment } }
+  ) | (
     { __typename?: 'LayoutSettingsBlock' }
     & { ' $fragmentRefs'?: { 'IContentData_LayoutSettingsBlock_Fragment': IContentData_LayoutSettingsBlock_Fragment } }
   ) | (
@@ -7924,14 +7341,8 @@ export type MegaMenuGroupBlockDataFragment = { __typename?: 'MegaMenuGroupBlock'
     { __typename?: 'MenuNavigationBlock' }
     & { ' $fragmentRefs'?: { 'IContentData_MenuNavigationBlock_Fragment': IContentData_MenuNavigationBlock_Fragment;'MenuNavigationBlockDataFragment': MenuNavigationBlockDataFragment } }
   ) | (
-    { __typename?: 'NavigationMenuBlock' }
-    & { ' $fragmentRefs'?: { 'IContentData_NavigationMenuBlock_Fragment': IContentData_NavigationMenuBlock_Fragment } }
-  ) | (
     { __typename?: 'OdpEmbedBlock' }
     & { ' $fragmentRefs'?: { 'IContentData_OdpEmbedBlock_Fragment': IContentData_OdpEmbedBlock_Fragment } }
-  ) | (
-    { __typename?: 'OfficeLocation' }
-    & { ' $fragmentRefs'?: { 'IContentData_OfficeLocation_Fragment': IContentData_OfficeLocation_Fragment } }
   ) | (
     { __typename?: 'PageSeoSettings' }
     & { ' $fragmentRefs'?: { 'IContentData_PageSeoSettings_Fragment': IContentData_PageSeoSettings_Fragment } }
@@ -7944,6 +7355,12 @@ export type MegaMenuGroupBlockDataFragment = { __typename?: 'MegaMenuGroupBlock'
   ) | (
     { __typename?: 'RichTextElement' }
     & { ' $fragmentRefs'?: { 'IContentData_RichTextElement_Fragment': IContentData_RichTextElement_Fragment } }
+  ) | (
+    { __typename?: 'StandardPage' }
+    & { ' $fragmentRefs'?: { 'IContentData_StandardPage_Fragment': IContentData_StandardPage_Fragment } }
+  ) | (
+    { __typename?: 'StartPage' }
+    & { ' $fragmentRefs'?: { 'IContentData_StartPage_Fragment': IContentData_StartPage_Fragment } }
   ) | (
     { __typename?: 'SysContentFolder' }
     & { ' $fragmentRefs'?: { 'IContentData_SysContentFolder_Fragment': IContentData_SysContentFolder_Fragment } }
@@ -7962,9 +7379,6 @@ export type MegaMenuGroupBlockDataFragment = { __typename?: 'MegaMenuGroupBlock'
   ) | (
     { __typename?: 'VideoMedia' }
     & { ' $fragmentRefs'?: { 'IContentData_VideoMedia_Fragment': IContentData_VideoMedia_Fragment } }
-  ) | (
-    { __typename?: 'WebsiteFooter' }
-    & { ' $fragmentRefs'?: { 'IContentData_WebsiteFooter_Fragment': IContentData_WebsiteFooter_Fragment } }
   ) | (
     { __typename?: '_Component' }
     & { ' $fragmentRefs'?: { 'IContentData__Component_Fragment': IContentData__Component_Fragment } }
@@ -7992,9 +7406,6 @@ export type MegaMenuGroupBlockDataFragment = { __typename?: 'MegaMenuGroupBlock'
   ) | (
     { __typename?: '_Video' }
     & { ' $fragmentRefs'?: { 'IContentData__Video_Fragment': IContentData__Video_Fragment } }
-  ) | (
-    { __typename?: 'elementTesting' }
-    & { ' $fragmentRefs'?: { 'IContentData_elementTesting_Fragment': IContentData_elementTesting_Fragment } }
   ) | null> | null } & { ' $fragmentName'?: 'MegaMenuGroupBlockDataFragment' };
 
 export type MenuNavigationBlockDataFragment = { __typename?: 'MenuNavigationBlock', MenuNavigationHeading?: string | null, _metadata?: { __typename?: 'ContentMetadata', displayName?: string | null } | { __typename?: 'InstanceMetadata', displayName?: string | null } | { __typename?: 'ItemMetadata', displayName?: string | null } | { __typename?: 'MediaMetadata', displayName?: string | null } | null, NavigationLinks?: Array<(
@@ -8092,13 +7503,7 @@ export type getChildBlogPostsQueryVariables = Exact<{
 }>;
 
 
-export type getChildBlogPostsQuery = { __typename?: 'Query', result?: { __typename?: '_PageOutput', items?: Array<{ __typename?: 'ArticleGroupPage', container?: { __typename?: 'ContentMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, displayName?: string | null } | null, items?: { __typename?: 'QueryRef', posts?: { __typename?: 'BlogPostPageOutput', total?: number | null, items?: Array<(
-            { __typename?: 'BlogPostPage', heading?: string | null, subheading?: string | null, author?: string | null, topic?: Array<string | null> | null, metadata?: { __typename?: 'ContentMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'InstanceMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'ItemMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'MediaMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null, image?: { __typename?: 'ContentReference', src?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null }
-            & { ' $fragmentRefs'?: { 'IContentData_BlogPostPage_Fragment': IContentData_BlogPostPage_Fragment } }
-          ) | null> | null, facets?: { __typename?: 'BlogPostPageFacet', author?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, topic?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, metadata?: { __typename?: 'IContentMetadataFacet', published?: Array<{ __typename?: 'DateFacet', name?: string | null, count?: number | null } | null> | null } | null } | null } | null } | null } | { __typename?: 'ArticlePage', container?: { __typename?: 'ContentMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, displayName?: string | null } | null, items?: { __typename?: 'QueryRef', posts?: { __typename?: 'BlogPostPageOutput', total?: number | null, items?: Array<(
-            { __typename?: 'BlogPostPage', heading?: string | null, subheading?: string | null, author?: string | null, topic?: Array<string | null> | null, metadata?: { __typename?: 'ContentMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'InstanceMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'ItemMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'MediaMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null, image?: { __typename?: 'ContentReference', src?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null }
-            & { ' $fragmentRefs'?: { 'IContentData_BlogPostPage_Fragment': IContentData_BlogPostPage_Fragment } }
-          ) | null> | null, facets?: { __typename?: 'BlogPostPageFacet', author?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, topic?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, metadata?: { __typename?: 'IContentMetadataFacet', published?: Array<{ __typename?: 'DateFacet', name?: string | null, count?: number | null } | null> | null } | null } | null } | null } | null } | { __typename?: 'BlankExperience', container?: { __typename?: 'ContentMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, displayName?: string | null } | null, items?: { __typename?: 'QueryRef', posts?: { __typename?: 'BlogPostPageOutput', total?: number | null, items?: Array<(
+export type getChildBlogPostsQuery = { __typename?: 'Query', result?: { __typename?: '_PageOutput', items?: Array<{ __typename?: 'BlankExperience', container?: { __typename?: 'ContentMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, displayName?: string | null } | null, items?: { __typename?: 'QueryRef', posts?: { __typename?: 'BlogPostPageOutput', total?: number | null, items?: Array<(
             { __typename?: 'BlogPostPage', heading?: string | null, subheading?: string | null, author?: string | null, topic?: Array<string | null> | null, metadata?: { __typename?: 'ContentMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'InstanceMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'ItemMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'MediaMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null, image?: { __typename?: 'ContentReference', src?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null }
             & { ' $fragmentRefs'?: { 'IContentData_BlogPostPage_Fragment': IContentData_BlogPostPage_Fragment } }
           ) | null> | null, facets?: { __typename?: 'BlogPostPageFacet', author?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, topic?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, metadata?: { __typename?: 'IContentMetadataFacet', published?: Array<{ __typename?: 'DateFacet', name?: string | null, count?: number | null } | null> | null } | null } | null } | null } | null } | { __typename?: 'BlogPostPage', container?: { __typename?: 'ContentMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, displayName?: string | null } | null, items?: { __typename?: 'QueryRef', posts?: { __typename?: 'BlogPostPageOutput', total?: number | null, items?: Array<(
@@ -8108,6 +7513,12 @@ export type getChildBlogPostsQuery = { __typename?: 'Query', result?: { __typena
             { __typename?: 'BlogPostPage', heading?: string | null, subheading?: string | null, author?: string | null, topic?: Array<string | null> | null, metadata?: { __typename?: 'ContentMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'InstanceMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'ItemMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'MediaMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null, image?: { __typename?: 'ContentReference', src?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null }
             & { ' $fragmentRefs'?: { 'IContentData_BlogPostPage_Fragment': IContentData_BlogPostPage_Fragment } }
           ) | null> | null, facets?: { __typename?: 'BlogPostPageFacet', author?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, topic?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, metadata?: { __typename?: 'IContentMetadataFacet', published?: Array<{ __typename?: 'DateFacet', name?: string | null, count?: number | null } | null> | null } | null } | null } | null } | null } | { __typename?: 'LandingPage', container?: { __typename?: 'ContentMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, displayName?: string | null } | null, items?: { __typename?: 'QueryRef', posts?: { __typename?: 'BlogPostPageOutput', total?: number | null, items?: Array<(
+            { __typename?: 'BlogPostPage', heading?: string | null, subheading?: string | null, author?: string | null, topic?: Array<string | null> | null, metadata?: { __typename?: 'ContentMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'InstanceMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'ItemMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'MediaMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null, image?: { __typename?: 'ContentReference', src?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null }
+            & { ' $fragmentRefs'?: { 'IContentData_BlogPostPage_Fragment': IContentData_BlogPostPage_Fragment } }
+          ) | null> | null, facets?: { __typename?: 'BlogPostPageFacet', author?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, topic?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, metadata?: { __typename?: 'IContentMetadataFacet', published?: Array<{ __typename?: 'DateFacet', name?: string | null, count?: number | null } | null> | null } | null } | null } | null } | null } | { __typename?: 'StandardPage', container?: { __typename?: 'ContentMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, displayName?: string | null } | null, items?: { __typename?: 'QueryRef', posts?: { __typename?: 'BlogPostPageOutput', total?: number | null, items?: Array<(
+            { __typename?: 'BlogPostPage', heading?: string | null, subheading?: string | null, author?: string | null, topic?: Array<string | null> | null, metadata?: { __typename?: 'ContentMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'InstanceMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'ItemMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'MediaMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null, image?: { __typename?: 'ContentReference', src?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null }
+            & { ' $fragmentRefs'?: { 'IContentData_BlogPostPage_Fragment': IContentData_BlogPostPage_Fragment } }
+          ) | null> | null, facets?: { __typename?: 'BlogPostPageFacet', author?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, topic?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, metadata?: { __typename?: 'IContentMetadataFacet', published?: Array<{ __typename?: 'DateFacet', name?: string | null, count?: number | null } | null> | null } | null } | null } | null } | null } | { __typename?: 'StartPage', container?: { __typename?: 'ContentMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, displayName?: string | null } | null, items?: { __typename?: 'QueryRef', posts?: { __typename?: 'BlogPostPageOutput', total?: number | null, items?: Array<(
             { __typename?: 'BlogPostPage', heading?: string | null, subheading?: string | null, author?: string | null, topic?: Array<string | null> | null, metadata?: { __typename?: 'ContentMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'InstanceMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'ItemMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | { __typename?: 'MediaMetadata', key?: string | null, published?: any | null, url?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null, image?: { __typename?: 'ContentReference', src?: { __typename?: 'ContentUrl', base?: string | null, default?: string | null } | null } | null }
             & { ' $fragmentRefs'?: { 'IContentData_BlogPostPage_Fragment': IContentData_BlogPostPage_Fragment } }
           ) | null> | null, facets?: { __typename?: 'BlogPostPageFacet', author?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, topic?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, metadata?: { __typename?: 'IContentMetadataFacet', published?: Array<{ __typename?: 'DateFacet', name?: string | null, count?: number | null } | null> | null } | null } | null } | null } | null } | { __typename?: '_Experience', container?: { __typename?: 'ContentMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, displayName?: string | null } | null, items?: { __typename?: 'QueryRef', posts?: { __typename?: 'BlogPostPageOutput', total?: number | null, items?: Array<(
@@ -8153,23 +7564,17 @@ export type BlogPostPageDataFragment = { __typename?: 'BlogPostPage', blogTitle?
     { __typename?: 'ContentReference' }
     & { ' $fragmentRefs'?: { 'ReferenceDataFragment': ReferenceDataFragment } }
   ) | null, blogBody?: { __typename?: 'SearchableRichText', json?: any | null } | null, continueReading?: Array<(
-    { __typename?: 'ArticleGroupPage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_ArticleGroupPage_Fragment': IContentListItem_ArticleGroupPage_Fragment } }
-  ) | (
     { __typename?: 'ArticleListElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_ArticleListElement_Fragment': IContentListItem_ArticleListElement_Fragment;'BlockData_ArticleListElement_Fragment': BlockData_ArticleListElement_Fragment;'ArticleListElementDataFragment': ArticleListElementDataFragment } }
-  ) | (
-    { __typename?: 'ArticlePage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_ArticlePage_Fragment': IContentListItem_ArticlePage_Fragment } }
-  ) | (
-    { __typename?: 'BannerBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_BannerBlock_Fragment': IContentListItem_BannerBlock_Fragment;'BlockData_BannerBlock_Fragment': BlockData_BannerBlock_Fragment } }
   ) | (
     { __typename?: 'BlankExperience' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlankExperience_Fragment': IContentListItem_BlankExperience_Fragment } }
   ) | (
     { __typename?: 'BlankSection' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlankSection_Fragment': IContentListItem_BlankSection_Fragment;'BlockData_BlankSection_Fragment': BlockData_BlankSection_Fragment;'BlankSectionDataFragment': BlankSectionDataFragment } }
+  ) | (
+    { __typename?: 'BlogListingBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_BlogListingBlock_Fragment': IContentListItem_BlogListingBlock_Fragment;'BlockData_BlogListingBlock_Fragment': BlockData_BlogListingBlock_Fragment } }
   ) | (
     { __typename?: 'BlogPostPage' }
     & { ' $fragmentRefs'?: { 'IContentListItem_BlogPostPage_Fragment': IContentListItem_BlogPostPage_Fragment } }
@@ -8189,32 +7594,26 @@ export type BlogPostPageDataFragment = { __typename?: 'BlogPostPage', blogTitle?
     { __typename?: 'CarouselBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_CarouselBlock_Fragment': IContentListItem_CarouselBlock_Fragment;'BlockData_CarouselBlock_Fragment': BlockData_CarouselBlock_Fragment;'CarouselBlockDataFragment': CarouselBlockDataFragment } }
   ) | (
+    { __typename?: 'ContentRecsBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_ContentRecsBlock_Fragment': IContentListItem_ContentRecsBlock_Fragment;'BlockData_ContentRecsBlock_Fragment': BlockData_ContentRecsBlock_Fragment } }
+  ) | (
     { __typename?: 'ContentRecsElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_ContentRecsElement_Fragment': IContentListItem_ContentRecsElement_Fragment;'BlockData_ContentRecsElement_Fragment': BlockData_ContentRecsElement_Fragment;'ContentRecsElementDataFragment': ContentRecsElementDataFragment } }
   ) | (
-    { __typename?: 'DefaultImage' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DefaultImage_Fragment': IContentListItem_DefaultImage_Fragment } }
-  ) | (
-    { __typename?: 'DefaultVideo' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DefaultVideo_Fragment': IContentListItem_DefaultVideo_Fragment } }
-  ) | (
-    { __typename?: 'Dictionary' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_Dictionary_Fragment': IContentListItem_Dictionary_Fragment;'BlockData_Dictionary_Fragment': BlockData_Dictionary_Fragment } }
-  ) | (
-    { __typename?: 'DictionaryItem' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_DictionaryItem_Fragment': IContentListItem_DictionaryItem_Fragment;'BlockData_DictionaryItem_Fragment': BlockData_DictionaryItem_Fragment } }
-  ) | (
     { __typename?: 'GenericMedia' }
     & { ' $fragmentRefs'?: { 'IContentListItem_GenericMedia_Fragment': IContentListItem_GenericMedia_Fragment } }
-  ) | (
-    { __typename?: 'HeaderBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_HeaderBlock_Fragment': IContentListItem_HeaderBlock_Fragment;'BlockData_HeaderBlock_Fragment': BlockData_HeaderBlock_Fragment } }
   ) | (
     { __typename?: 'HeadingElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_HeadingElement_Fragment': IContentListItem_HeadingElement_Fragment;'BlockData_HeadingElement_Fragment': BlockData_HeadingElement_Fragment;'HeadingElementDataFragment': HeadingElementDataFragment } }
   ) | (
     { __typename?: 'HeroBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_HeroBlock_Fragment': IContentListItem_HeroBlock_Fragment;'BlockData_HeroBlock_Fragment': BlockData_HeroBlock_Fragment;'HeroBlockDataFragment': HeroBlockDataFragment } }
+  ) | (
+    { __typename?: 'HomePageHeroBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_HomePageHeroBlock_Fragment': IContentListItem_HomePageHeroBlock_Fragment;'BlockData_HomePageHeroBlock_Fragment': BlockData_HomePageHeroBlock_Fragment } }
+  ) | (
+    { __typename?: 'HtmlBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_HtmlBlock_Fragment': IContentListItem_HtmlBlock_Fragment;'BlockData_HtmlBlock_Fragment': BlockData_HtmlBlock_Fragment } }
   ) | (
     { __typename?: 'Image' }
     & { ' $fragmentRefs'?: { 'IContentListItem_Image_Fragment': IContentListItem_Image_Fragment } }
@@ -8228,6 +7627,9 @@ export type BlogPostPageDataFragment = { __typename?: 'BlogPostPage', blogTitle?
     { __typename?: 'LandingPage' }
     & { ' $fragmentRefs'?: { 'IContentListItem_LandingPage_Fragment': IContentListItem_LandingPage_Fragment } }
   ) | (
+    { __typename?: 'LayoutContainerBlock' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_LayoutContainerBlock_Fragment': IContentListItem_LayoutContainerBlock_Fragment;'BlockData_LayoutContainerBlock_Fragment': BlockData_LayoutContainerBlock_Fragment } }
+  ) | (
     { __typename?: 'LayoutSettingsBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_LayoutSettingsBlock_Fragment': IContentListItem_LayoutSettingsBlock_Fragment;'BlockData_LayoutSettingsBlock_Fragment': BlockData_LayoutSettingsBlock_Fragment;'LayoutSettingsBlockDataFragment': LayoutSettingsBlockDataFragment } }
   ) | (
@@ -8237,14 +7639,8 @@ export type BlogPostPageDataFragment = { __typename?: 'BlogPostPage', blogTitle?
     { __typename?: 'MenuNavigationBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_MenuNavigationBlock_Fragment': IContentListItem_MenuNavigationBlock_Fragment;'BlockData_MenuNavigationBlock_Fragment': BlockData_MenuNavigationBlock_Fragment;'MenuNavigationBlockDataFragment': MenuNavigationBlockDataFragment } }
   ) | (
-    { __typename?: 'NavigationMenuBlock' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_NavigationMenuBlock_Fragment': IContentListItem_NavigationMenuBlock_Fragment;'BlockData_NavigationMenuBlock_Fragment': BlockData_NavigationMenuBlock_Fragment } }
-  ) | (
     { __typename?: 'OdpEmbedBlock' }
     & { ' $fragmentRefs'?: { 'IContentListItem_OdpEmbedBlock_Fragment': IContentListItem_OdpEmbedBlock_Fragment;'BlockData_OdpEmbedBlock_Fragment': BlockData_OdpEmbedBlock_Fragment;'OdpEmbedBlockDataFragment': OdpEmbedBlockDataFragment } }
-  ) | (
-    { __typename?: 'OfficeLocation' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_OfficeLocation_Fragment': IContentListItem_OfficeLocation_Fragment;'BlockData_OfficeLocation_Fragment': BlockData_OfficeLocation_Fragment } }
   ) | (
     { __typename?: 'PageSeoSettings' }
     & { ' $fragmentRefs'?: { 'IContentListItem_PageSeoSettings_Fragment': IContentListItem_PageSeoSettings_Fragment;'BlockData_PageSeoSettings_Fragment': BlockData_PageSeoSettings_Fragment;'PageSeoSettingsDataFragment': PageSeoSettingsDataFragment } }
@@ -8257,6 +7653,12 @@ export type BlogPostPageDataFragment = { __typename?: 'BlogPostPage', blogTitle?
   ) | (
     { __typename?: 'RichTextElement' }
     & { ' $fragmentRefs'?: { 'IContentListItem_RichTextElement_Fragment': IContentListItem_RichTextElement_Fragment;'BlockData_RichTextElement_Fragment': BlockData_RichTextElement_Fragment;'RichTextElementDataFragment': RichTextElementDataFragment } }
+  ) | (
+    { __typename?: 'StandardPage' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_StandardPage_Fragment': IContentListItem_StandardPage_Fragment } }
+  ) | (
+    { __typename?: 'StartPage' }
+    & { ' $fragmentRefs'?: { 'IContentListItem_StartPage_Fragment': IContentListItem_StartPage_Fragment } }
   ) | (
     { __typename?: 'SysContentFolder' }
     & { ' $fragmentRefs'?: { 'IContentListItem_SysContentFolder_Fragment': IContentListItem_SysContentFolder_Fragment } }
@@ -8275,9 +7677,6 @@ export type BlogPostPageDataFragment = { __typename?: 'BlogPostPage', blogTitle?
   ) | (
     { __typename?: 'VideoMedia' }
     & { ' $fragmentRefs'?: { 'IContentListItem_VideoMedia_Fragment': IContentListItem_VideoMedia_Fragment;'VideoMediaComponentDataFragment': VideoMediaComponentDataFragment } }
-  ) | (
-    { __typename?: 'WebsiteFooter' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_WebsiteFooter_Fragment': IContentListItem_WebsiteFooter_Fragment;'BlockData_WebsiteFooter_Fragment': BlockData_WebsiteFooter_Fragment } }
   ) | (
     { __typename?: '_Component' }
     & { ' $fragmentRefs'?: { 'IContentListItem__Component_Fragment': IContentListItem__Component_Fragment;'BlockData__Component_Fragment': BlockData__Component_Fragment } }
@@ -8305,9 +7704,6 @@ export type BlogPostPageDataFragment = { __typename?: 'BlogPostPage', blogTitle?
   ) | (
     { __typename?: '_Video' }
     & { ' $fragmentRefs'?: { 'IContentListItem__Video_Fragment': IContentListItem__Video_Fragment } }
-  ) | (
-    { __typename?: 'elementTesting' }
-    & { ' $fragmentRefs'?: { 'IContentListItem_elementTesting_Fragment': IContentListItem_elementTesting_Fragment;'BlockData_elementTesting_Fragment': BlockData_elementTesting_Fragment } }
   ) | null> | null } & { ' $fragmentName'?: 'BlogPostPageDataFragment' };
 
 export type BlogPostPageSearchResultFragment = { __typename?: 'BlogPostPage', title?: string | null, author?: string | null, image?: (
@@ -8327,15 +7723,15 @@ export type getLandingPageMetaDataQuery = { __typename?: 'Query', LandingPage?: 
           & { ' $fragmentRefs'?: { 'ReferenceDataFragment': ReferenceDataFragment } }
         ) | null } | null } | null> | null } | null };
 
-export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentArea?: Array<{ __typename?: 'ArticleGroupPage' } | (
+export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentArea?: Array<(
     { __typename?: 'ArticleListElement' }
     & { ' $fragmentRefs'?: { 'BlockData_ArticleListElement_Fragment': BlockData_ArticleListElement_Fragment;'ArticleListElementDataFragment': ArticleListElementDataFragment } }
-  ) | { __typename?: 'ArticlePage' } | (
-    { __typename?: 'BannerBlock' }
-    & { ' $fragmentRefs'?: { 'BlockData_BannerBlock_Fragment': BlockData_BannerBlock_Fragment } }
   ) | { __typename?: 'BlankExperience' } | (
     { __typename?: 'BlankSection' }
     & { ' $fragmentRefs'?: { 'BlockData_BlankSection_Fragment': BlockData_BlankSection_Fragment;'BlankSectionDataFragment': BlankSectionDataFragment } }
+  ) | (
+    { __typename?: 'BlogListingBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_BlogListingBlock_Fragment': BlockData_BlogListingBlock_Fragment } }
   ) | { __typename?: 'BlogPostPage' } | { __typename?: 'BlogSectionExperience' } | (
     { __typename?: 'ButtonBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_ButtonBlock_Fragment': BlockData_ButtonBlock_Fragment;'ButtonBlockDataFragment': ButtonBlockDataFragment } }
@@ -8349,27 +7745,30 @@ export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentAr
     { __typename?: 'CarouselBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_CarouselBlock_Fragment': BlockData_CarouselBlock_Fragment;'CarouselBlockDataFragment': CarouselBlockDataFragment } }
   ) | (
+    { __typename?: 'ContentRecsBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ContentRecsBlock_Fragment': BlockData_ContentRecsBlock_Fragment } }
+  ) | (
     { __typename?: 'ContentRecsElement' }
     & { ' $fragmentRefs'?: { 'BlockData_ContentRecsElement_Fragment': BlockData_ContentRecsElement_Fragment;'ContentRecsElementDataFragment': ContentRecsElementDataFragment } }
-  ) | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultVideo' } | (
-    { __typename?: 'Dictionary' }
-    & { ' $fragmentRefs'?: { 'BlockData_Dictionary_Fragment': BlockData_Dictionary_Fragment } }
-  ) | (
-    { __typename?: 'DictionaryItem' }
-    & { ' $fragmentRefs'?: { 'BlockData_DictionaryItem_Fragment': BlockData_DictionaryItem_Fragment } }
   ) | { __typename?: 'GenericMedia' } | (
-    { __typename?: 'HeaderBlock' }
-    & { ' $fragmentRefs'?: { 'BlockData_HeaderBlock_Fragment': BlockData_HeaderBlock_Fragment } }
-  ) | (
     { __typename?: 'HeadingElement' }
     & { ' $fragmentRefs'?: { 'BlockData_HeadingElement_Fragment': BlockData_HeadingElement_Fragment;'HeadingElementDataFragment': HeadingElementDataFragment } }
   ) | (
     { __typename?: 'HeroBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_HeroBlock_Fragment': BlockData_HeroBlock_Fragment;'HeroBlockDataFragment': HeroBlockDataFragment } }
+  ) | (
+    { __typename?: 'HomePageHeroBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_HomePageHeroBlock_Fragment': BlockData_HomePageHeroBlock_Fragment } }
+  ) | (
+    { __typename?: 'HtmlBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_HtmlBlock_Fragment': BlockData_HtmlBlock_Fragment } }
   ) | { __typename?: 'Image' } | (
     { __typename?: 'ImageElement' }
     & { ' $fragmentRefs'?: { 'BlockData_ImageElement_Fragment': BlockData_ImageElement_Fragment;'ImageElementDataFragment': ImageElementDataFragment } }
   ) | { __typename?: 'ImageMedia' } | { __typename?: 'LandingPage' } | (
+    { __typename?: 'LayoutContainerBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_LayoutContainerBlock_Fragment': BlockData_LayoutContainerBlock_Fragment } }
+  ) | (
     { __typename?: 'LayoutSettingsBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_LayoutSettingsBlock_Fragment': BlockData_LayoutSettingsBlock_Fragment;'LayoutSettingsBlockDataFragment': LayoutSettingsBlockDataFragment } }
   ) | (
@@ -8379,14 +7778,8 @@ export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentAr
     { __typename?: 'MenuNavigationBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_MenuNavigationBlock_Fragment': BlockData_MenuNavigationBlock_Fragment;'MenuNavigationBlockDataFragment': MenuNavigationBlockDataFragment } }
   ) | (
-    { __typename?: 'NavigationMenuBlock' }
-    & { ' $fragmentRefs'?: { 'BlockData_NavigationMenuBlock_Fragment': BlockData_NavigationMenuBlock_Fragment } }
-  ) | (
     { __typename?: 'OdpEmbedBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_OdpEmbedBlock_Fragment': BlockData_OdpEmbedBlock_Fragment;'OdpEmbedBlockDataFragment': OdpEmbedBlockDataFragment } }
-  ) | (
-    { __typename?: 'OfficeLocation' }
-    & { ' $fragmentRefs'?: { 'BlockData_OfficeLocation_Fragment': BlockData_OfficeLocation_Fragment } }
   ) | (
     { __typename?: 'PageSeoSettings' }
     & { ' $fragmentRefs'?: { 'BlockData_PageSeoSettings_Fragment': BlockData_PageSeoSettings_Fragment;'PageSeoSettingsDataFragment': PageSeoSettingsDataFragment } }
@@ -8399,7 +7792,7 @@ export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentAr
   ) | (
     { __typename?: 'RichTextElement' }
     & { ' $fragmentRefs'?: { 'BlockData_RichTextElement_Fragment': BlockData_RichTextElement_Fragment;'RichTextElementDataFragment': RichTextElementDataFragment } }
-  ) | { __typename?: 'SysContentFolder' } | (
+  ) | { __typename?: 'StandardPage' } | { __typename?: 'StartPage' } | { __typename?: 'SysContentFolder' } | (
     { __typename?: 'TestimonialElement' }
     & { ' $fragmentRefs'?: { 'BlockData_TestimonialElement_Fragment': BlockData_TestimonialElement_Fragment;'TestimonialElementDataFragment': TestimonialElementDataFragment } }
   ) | (
@@ -8409,26 +7802,20 @@ export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentAr
     { __typename?: 'VideoElement' }
     & { ' $fragmentRefs'?: { 'BlockData_VideoElement_Fragment': BlockData_VideoElement_Fragment;'VideoElementDataFragment': VideoElementDataFragment } }
   ) | { __typename?: 'VideoMedia' } | (
-    { __typename?: 'WebsiteFooter' }
-    & { ' $fragmentRefs'?: { 'BlockData_WebsiteFooter_Fragment': BlockData_WebsiteFooter_Fragment } }
-  ) | (
     { __typename?: '_Component' }
     & { ' $fragmentRefs'?: { 'BlockData__Component_Fragment': BlockData__Component_Fragment } }
   ) | { __typename?: '_Content' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | (
     { __typename?: '_Section' }
     & { ' $fragmentRefs'?: { 'BlockData__Section_Fragment': BlockData__Section_Fragment } }
-  ) | { __typename?: '_Video' } | (
-    { __typename?: 'elementTesting' }
-    & { ' $fragmentRefs'?: { 'BlockData_elementTesting_Fragment': BlockData_elementTesting_Fragment } }
-  ) | null> | null, MainContentArea?: Array<{ __typename?: 'ArticleGroupPage' } | (
+  ) | { __typename?: '_Video' } | null> | null, MainContentArea?: Array<(
     { __typename?: 'ArticleListElement' }
     & { ' $fragmentRefs'?: { 'BlockData_ArticleListElement_Fragment': BlockData_ArticleListElement_Fragment;'ArticleListElementDataFragment': ArticleListElementDataFragment } }
-  ) | { __typename?: 'ArticlePage' } | (
-    { __typename?: 'BannerBlock' }
-    & { ' $fragmentRefs'?: { 'BlockData_BannerBlock_Fragment': BlockData_BannerBlock_Fragment } }
   ) | { __typename?: 'BlankExperience' } | (
     { __typename?: 'BlankSection' }
     & { ' $fragmentRefs'?: { 'BlockData_BlankSection_Fragment': BlockData_BlankSection_Fragment;'BlankSectionDataFragment': BlankSectionDataFragment } }
+  ) | (
+    { __typename?: 'BlogListingBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_BlogListingBlock_Fragment': BlockData_BlogListingBlock_Fragment } }
   ) | { __typename?: 'BlogPostPage' } | { __typename?: 'BlogSectionExperience' } | (
     { __typename?: 'ButtonBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_ButtonBlock_Fragment': BlockData_ButtonBlock_Fragment;'ButtonBlockDataFragment': ButtonBlockDataFragment } }
@@ -8442,27 +7829,30 @@ export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentAr
     { __typename?: 'CarouselBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_CarouselBlock_Fragment': BlockData_CarouselBlock_Fragment;'CarouselBlockDataFragment': CarouselBlockDataFragment } }
   ) | (
+    { __typename?: 'ContentRecsBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ContentRecsBlock_Fragment': BlockData_ContentRecsBlock_Fragment } }
+  ) | (
     { __typename?: 'ContentRecsElement' }
     & { ' $fragmentRefs'?: { 'BlockData_ContentRecsElement_Fragment': BlockData_ContentRecsElement_Fragment;'ContentRecsElementDataFragment': ContentRecsElementDataFragment } }
-  ) | { __typename?: 'DefaultImage' } | { __typename?: 'DefaultVideo' } | (
-    { __typename?: 'Dictionary' }
-    & { ' $fragmentRefs'?: { 'BlockData_Dictionary_Fragment': BlockData_Dictionary_Fragment } }
-  ) | (
-    { __typename?: 'DictionaryItem' }
-    & { ' $fragmentRefs'?: { 'BlockData_DictionaryItem_Fragment': BlockData_DictionaryItem_Fragment } }
   ) | { __typename?: 'GenericMedia' } | (
-    { __typename?: 'HeaderBlock' }
-    & { ' $fragmentRefs'?: { 'BlockData_HeaderBlock_Fragment': BlockData_HeaderBlock_Fragment } }
-  ) | (
     { __typename?: 'HeadingElement' }
     & { ' $fragmentRefs'?: { 'BlockData_HeadingElement_Fragment': BlockData_HeadingElement_Fragment;'HeadingElementDataFragment': HeadingElementDataFragment } }
   ) | (
     { __typename?: 'HeroBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_HeroBlock_Fragment': BlockData_HeroBlock_Fragment;'HeroBlockDataFragment': HeroBlockDataFragment } }
+  ) | (
+    { __typename?: 'HomePageHeroBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_HomePageHeroBlock_Fragment': BlockData_HomePageHeroBlock_Fragment } }
+  ) | (
+    { __typename?: 'HtmlBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_HtmlBlock_Fragment': BlockData_HtmlBlock_Fragment } }
   ) | { __typename?: 'Image' } | (
     { __typename?: 'ImageElement' }
     & { ' $fragmentRefs'?: { 'BlockData_ImageElement_Fragment': BlockData_ImageElement_Fragment;'ImageElementDataFragment': ImageElementDataFragment } }
   ) | { __typename?: 'ImageMedia' } | { __typename?: 'LandingPage' } | (
+    { __typename?: 'LayoutContainerBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_LayoutContainerBlock_Fragment': BlockData_LayoutContainerBlock_Fragment } }
+  ) | (
     { __typename?: 'LayoutSettingsBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_LayoutSettingsBlock_Fragment': BlockData_LayoutSettingsBlock_Fragment;'LayoutSettingsBlockDataFragment': LayoutSettingsBlockDataFragment } }
   ) | (
@@ -8472,14 +7862,8 @@ export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentAr
     { __typename?: 'MenuNavigationBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_MenuNavigationBlock_Fragment': BlockData_MenuNavigationBlock_Fragment;'MenuNavigationBlockDataFragment': MenuNavigationBlockDataFragment } }
   ) | (
-    { __typename?: 'NavigationMenuBlock' }
-    & { ' $fragmentRefs'?: { 'BlockData_NavigationMenuBlock_Fragment': BlockData_NavigationMenuBlock_Fragment } }
-  ) | (
     { __typename?: 'OdpEmbedBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_OdpEmbedBlock_Fragment': BlockData_OdpEmbedBlock_Fragment;'OdpEmbedBlockDataFragment': OdpEmbedBlockDataFragment } }
-  ) | (
-    { __typename?: 'OfficeLocation' }
-    & { ' $fragmentRefs'?: { 'BlockData_OfficeLocation_Fragment': BlockData_OfficeLocation_Fragment } }
   ) | (
     { __typename?: 'PageSeoSettings' }
     & { ' $fragmentRefs'?: { 'BlockData_PageSeoSettings_Fragment': BlockData_PageSeoSettings_Fragment;'PageSeoSettingsDataFragment': PageSeoSettingsDataFragment } }
@@ -8492,7 +7876,7 @@ export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentAr
   ) | (
     { __typename?: 'RichTextElement' }
     & { ' $fragmentRefs'?: { 'BlockData_RichTextElement_Fragment': BlockData_RichTextElement_Fragment;'RichTextElementDataFragment': RichTextElementDataFragment } }
-  ) | { __typename?: 'SysContentFolder' } | (
+  ) | { __typename?: 'StandardPage' } | { __typename?: 'StartPage' } | { __typename?: 'SysContentFolder' } | (
     { __typename?: 'TestimonialElement' }
     & { ' $fragmentRefs'?: { 'BlockData_TestimonialElement_Fragment': BlockData_TestimonialElement_Fragment;'TestimonialElementDataFragment': TestimonialElementDataFragment } }
   ) | (
@@ -8502,18 +7886,12 @@ export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentAr
     { __typename?: 'VideoElement' }
     & { ' $fragmentRefs'?: { 'BlockData_VideoElement_Fragment': BlockData_VideoElement_Fragment;'VideoElementDataFragment': VideoElementDataFragment } }
   ) | { __typename?: 'VideoMedia' } | (
-    { __typename?: 'WebsiteFooter' }
-    & { ' $fragmentRefs'?: { 'BlockData_WebsiteFooter_Fragment': BlockData_WebsiteFooter_Fragment } }
-  ) | (
     { __typename?: '_Component' }
     & { ' $fragmentRefs'?: { 'BlockData__Component_Fragment': BlockData__Component_Fragment } }
   ) | { __typename?: '_Content' } | { __typename?: '_Experience' } | { __typename?: '_Folder' } | { __typename?: '_Image' } | { __typename?: '_Media' } | { __typename?: '_Page' } | (
     { __typename?: '_Section' }
     & { ' $fragmentRefs'?: { 'BlockData__Section_Fragment': BlockData__Section_Fragment } }
-  ) | { __typename?: '_Video' } | (
-    { __typename?: 'elementTesting' }
-    & { ' $fragmentRefs'?: { 'BlockData_elementTesting_Fragment': BlockData_elementTesting_Fragment } }
-  ) | null> | null } & { ' $fragmentName'?: 'LandingPageDataFragment' };
+  ) | { __typename?: '_Video' } | null> | null } & { ' $fragmentName'?: 'LandingPageDataFragment' };
 
 export type BlankSectionDataFragment = { __typename?: 'BlankSection', _metadata?: { __typename?: 'ContentMetadata', key?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null } | { __typename?: 'ItemMetadata', key?: string | null } | { __typename?: 'MediaMetadata', key?: string | null } | null } & { ' $fragmentName'?: 'BlankSectionDataFragment' };
 
@@ -8524,23 +7902,17 @@ export type getFooterDataQueryVariables = Exact<{
 
 
 export type getFooterDataQuery = { __typename?: 'Query', appLayout?: { __typename?: 'LayoutSettingsBlockOutput', items?: Array<{ __typename?: 'LayoutSettingsBlock', copyright?: string | null, contactInfoHeading?: string | null, _metadata?: { __typename?: 'ContentMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, displayName?: string | null } | null, footerMenus?: Array<(
-        { __typename?: 'ArticleGroupPage' }
-        & { ' $fragmentRefs'?: { 'IContentData_ArticleGroupPage_Fragment': IContentData_ArticleGroupPage_Fragment } }
-      ) | (
         { __typename?: 'ArticleListElement' }
         & { ' $fragmentRefs'?: { 'IContentData_ArticleListElement_Fragment': IContentData_ArticleListElement_Fragment } }
-      ) | (
-        { __typename?: 'ArticlePage' }
-        & { ' $fragmentRefs'?: { 'IContentData_ArticlePage_Fragment': IContentData_ArticlePage_Fragment } }
-      ) | (
-        { __typename?: 'BannerBlock' }
-        & { ' $fragmentRefs'?: { 'IContentData_BannerBlock_Fragment': IContentData_BannerBlock_Fragment } }
       ) | (
         { __typename?: 'BlankExperience' }
         & { ' $fragmentRefs'?: { 'IContentData_BlankExperience_Fragment': IContentData_BlankExperience_Fragment } }
       ) | (
         { __typename?: 'BlankSection' }
         & { ' $fragmentRefs'?: { 'IContentData_BlankSection_Fragment': IContentData_BlankSection_Fragment } }
+      ) | (
+        { __typename?: 'BlogListingBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_BlogListingBlock_Fragment': IContentData_BlogListingBlock_Fragment } }
       ) | (
         { __typename?: 'BlogPostPage' }
         & { ' $fragmentRefs'?: { 'IContentData_BlogPostPage_Fragment': IContentData_BlogPostPage_Fragment } }
@@ -8560,32 +7932,26 @@ export type getFooterDataQuery = { __typename?: 'Query', appLayout?: { __typenam
         { __typename?: 'CarouselBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_CarouselBlock_Fragment': IContentData_CarouselBlock_Fragment } }
       ) | (
+        { __typename?: 'ContentRecsBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_ContentRecsBlock_Fragment': IContentData_ContentRecsBlock_Fragment } }
+      ) | (
         { __typename?: 'ContentRecsElement' }
         & { ' $fragmentRefs'?: { 'IContentData_ContentRecsElement_Fragment': IContentData_ContentRecsElement_Fragment } }
       ) | (
-        { __typename?: 'DefaultImage' }
-        & { ' $fragmentRefs'?: { 'IContentData_DefaultImage_Fragment': IContentData_DefaultImage_Fragment } }
-      ) | (
-        { __typename?: 'DefaultVideo' }
-        & { ' $fragmentRefs'?: { 'IContentData_DefaultVideo_Fragment': IContentData_DefaultVideo_Fragment } }
-      ) | (
-        { __typename?: 'Dictionary' }
-        & { ' $fragmentRefs'?: { 'IContentData_Dictionary_Fragment': IContentData_Dictionary_Fragment } }
-      ) | (
-        { __typename?: 'DictionaryItem' }
-        & { ' $fragmentRefs'?: { 'IContentData_DictionaryItem_Fragment': IContentData_DictionaryItem_Fragment } }
-      ) | (
         { __typename?: 'GenericMedia' }
         & { ' $fragmentRefs'?: { 'IContentData_GenericMedia_Fragment': IContentData_GenericMedia_Fragment } }
-      ) | (
-        { __typename?: 'HeaderBlock' }
-        & { ' $fragmentRefs'?: { 'IContentData_HeaderBlock_Fragment': IContentData_HeaderBlock_Fragment } }
       ) | (
         { __typename?: 'HeadingElement' }
         & { ' $fragmentRefs'?: { 'IContentData_HeadingElement_Fragment': IContentData_HeadingElement_Fragment } }
       ) | (
         { __typename?: 'HeroBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_HeroBlock_Fragment': IContentData_HeroBlock_Fragment } }
+      ) | (
+        { __typename?: 'HomePageHeroBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_HomePageHeroBlock_Fragment': IContentData_HomePageHeroBlock_Fragment } }
+      ) | (
+        { __typename?: 'HtmlBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_HtmlBlock_Fragment': IContentData_HtmlBlock_Fragment } }
       ) | (
         { __typename?: 'Image' }
         & { ' $fragmentRefs'?: { 'IContentData_Image_Fragment': IContentData_Image_Fragment } }
@@ -8599,6 +7965,9 @@ export type getFooterDataQuery = { __typename?: 'Query', appLayout?: { __typenam
         { __typename?: 'LandingPage' }
         & { ' $fragmentRefs'?: { 'IContentData_LandingPage_Fragment': IContentData_LandingPage_Fragment } }
       ) | (
+        { __typename?: 'LayoutContainerBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_LayoutContainerBlock_Fragment': IContentData_LayoutContainerBlock_Fragment } }
+      ) | (
         { __typename?: 'LayoutSettingsBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_LayoutSettingsBlock_Fragment': IContentData_LayoutSettingsBlock_Fragment } }
       ) | (
@@ -8608,14 +7977,8 @@ export type getFooterDataQuery = { __typename?: 'Query', appLayout?: { __typenam
         { __typename?: 'MenuNavigationBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_MenuNavigationBlock_Fragment': IContentData_MenuNavigationBlock_Fragment;'MenuNavigationBlockDataFragment': MenuNavigationBlockDataFragment } }
       ) | (
-        { __typename?: 'NavigationMenuBlock' }
-        & { ' $fragmentRefs'?: { 'IContentData_NavigationMenuBlock_Fragment': IContentData_NavigationMenuBlock_Fragment } }
-      ) | (
         { __typename?: 'OdpEmbedBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_OdpEmbedBlock_Fragment': IContentData_OdpEmbedBlock_Fragment } }
-      ) | (
-        { __typename?: 'OfficeLocation' }
-        & { ' $fragmentRefs'?: { 'IContentData_OfficeLocation_Fragment': IContentData_OfficeLocation_Fragment } }
       ) | (
         { __typename?: 'PageSeoSettings' }
         & { ' $fragmentRefs'?: { 'IContentData_PageSeoSettings_Fragment': IContentData_PageSeoSettings_Fragment } }
@@ -8628,6 +7991,12 @@ export type getFooterDataQuery = { __typename?: 'Query', appLayout?: { __typenam
       ) | (
         { __typename?: 'RichTextElement' }
         & { ' $fragmentRefs'?: { 'IContentData_RichTextElement_Fragment': IContentData_RichTextElement_Fragment } }
+      ) | (
+        { __typename?: 'StandardPage' }
+        & { ' $fragmentRefs'?: { 'IContentData_StandardPage_Fragment': IContentData_StandardPage_Fragment } }
+      ) | (
+        { __typename?: 'StartPage' }
+        & { ' $fragmentRefs'?: { 'IContentData_StartPage_Fragment': IContentData_StartPage_Fragment } }
       ) | (
         { __typename?: 'SysContentFolder' }
         & { ' $fragmentRefs'?: { 'IContentData_SysContentFolder_Fragment': IContentData_SysContentFolder_Fragment } }
@@ -8646,9 +8015,6 @@ export type getFooterDataQuery = { __typename?: 'Query', appLayout?: { __typenam
       ) | (
         { __typename?: 'VideoMedia' }
         & { ' $fragmentRefs'?: { 'IContentData_VideoMedia_Fragment': IContentData_VideoMedia_Fragment } }
-      ) | (
-        { __typename?: 'WebsiteFooter' }
-        & { ' $fragmentRefs'?: { 'IContentData_WebsiteFooter_Fragment': IContentData_WebsiteFooter_Fragment } }
       ) | (
         { __typename?: '_Component' }
         & { ' $fragmentRefs'?: { 'IContentData__Component_Fragment': IContentData__Component_Fragment } }
@@ -8676,9 +8042,6 @@ export type getFooterDataQuery = { __typename?: 'Query', appLayout?: { __typenam
       ) | (
         { __typename?: '_Video' }
         & { ' $fragmentRefs'?: { 'IContentData__Video_Fragment': IContentData__Video_Fragment } }
-      ) | (
-        { __typename?: 'elementTesting' }
-        & { ' $fragmentRefs'?: { 'IContentData_elementTesting_Fragment': IContentData_elementTesting_Fragment } }
       ) | null> | null, legalLinks?: Array<(
         { __typename?: 'Link' }
         & { ' $fragmentRefs'?: { 'LinkItemDataFragment': LinkItemDataFragment } }
@@ -8691,23 +8054,17 @@ export type getHeaderDataQueryVariables = Exact<{
 
 
 export type getHeaderDataQuery = { __typename?: 'Query', appLayout?: { __typename?: 'LayoutSettingsBlockOutput', items?: Array<{ __typename?: 'LayoutSettingsBlock', appIdentifiers?: string | null, _metadata?: { __typename?: 'ContentMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'InstanceMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'ItemMetadata', key?: string | null, displayName?: string | null } | { __typename?: 'MediaMetadata', key?: string | null, displayName?: string | null } | null, mainMenu?: Array<(
-        { __typename?: 'ArticleGroupPage' }
-        & { ' $fragmentRefs'?: { 'IContentData_ArticleGroupPage_Fragment': IContentData_ArticleGroupPage_Fragment } }
-      ) | (
         { __typename?: 'ArticleListElement' }
         & { ' $fragmentRefs'?: { 'IContentData_ArticleListElement_Fragment': IContentData_ArticleListElement_Fragment } }
-      ) | (
-        { __typename?: 'ArticlePage' }
-        & { ' $fragmentRefs'?: { 'IContentData_ArticlePage_Fragment': IContentData_ArticlePage_Fragment } }
-      ) | (
-        { __typename?: 'BannerBlock' }
-        & { ' $fragmentRefs'?: { 'IContentData_BannerBlock_Fragment': IContentData_BannerBlock_Fragment } }
       ) | (
         { __typename?: 'BlankExperience' }
         & { ' $fragmentRefs'?: { 'IContentData_BlankExperience_Fragment': IContentData_BlankExperience_Fragment } }
       ) | (
         { __typename?: 'BlankSection' }
         & { ' $fragmentRefs'?: { 'IContentData_BlankSection_Fragment': IContentData_BlankSection_Fragment } }
+      ) | (
+        { __typename?: 'BlogListingBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_BlogListingBlock_Fragment': IContentData_BlogListingBlock_Fragment } }
       ) | (
         { __typename?: 'BlogPostPage' }
         & { ' $fragmentRefs'?: { 'IContentData_BlogPostPage_Fragment': IContentData_BlogPostPage_Fragment } }
@@ -8727,32 +8084,26 @@ export type getHeaderDataQuery = { __typename?: 'Query', appLayout?: { __typenam
         { __typename?: 'CarouselBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_CarouselBlock_Fragment': IContentData_CarouselBlock_Fragment } }
       ) | (
+        { __typename?: 'ContentRecsBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_ContentRecsBlock_Fragment': IContentData_ContentRecsBlock_Fragment } }
+      ) | (
         { __typename?: 'ContentRecsElement' }
         & { ' $fragmentRefs'?: { 'IContentData_ContentRecsElement_Fragment': IContentData_ContentRecsElement_Fragment } }
       ) | (
-        { __typename?: 'DefaultImage' }
-        & { ' $fragmentRefs'?: { 'IContentData_DefaultImage_Fragment': IContentData_DefaultImage_Fragment } }
-      ) | (
-        { __typename?: 'DefaultVideo' }
-        & { ' $fragmentRefs'?: { 'IContentData_DefaultVideo_Fragment': IContentData_DefaultVideo_Fragment } }
-      ) | (
-        { __typename?: 'Dictionary' }
-        & { ' $fragmentRefs'?: { 'IContentData_Dictionary_Fragment': IContentData_Dictionary_Fragment } }
-      ) | (
-        { __typename?: 'DictionaryItem' }
-        & { ' $fragmentRefs'?: { 'IContentData_DictionaryItem_Fragment': IContentData_DictionaryItem_Fragment } }
-      ) | (
         { __typename?: 'GenericMedia' }
         & { ' $fragmentRefs'?: { 'IContentData_GenericMedia_Fragment': IContentData_GenericMedia_Fragment } }
-      ) | (
-        { __typename?: 'HeaderBlock' }
-        & { ' $fragmentRefs'?: { 'IContentData_HeaderBlock_Fragment': IContentData_HeaderBlock_Fragment } }
       ) | (
         { __typename?: 'HeadingElement' }
         & { ' $fragmentRefs'?: { 'IContentData_HeadingElement_Fragment': IContentData_HeadingElement_Fragment } }
       ) | (
         { __typename?: 'HeroBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_HeroBlock_Fragment': IContentData_HeroBlock_Fragment } }
+      ) | (
+        { __typename?: 'HomePageHeroBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_HomePageHeroBlock_Fragment': IContentData_HomePageHeroBlock_Fragment } }
+      ) | (
+        { __typename?: 'HtmlBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_HtmlBlock_Fragment': IContentData_HtmlBlock_Fragment } }
       ) | (
         { __typename?: 'Image' }
         & { ' $fragmentRefs'?: { 'IContentData_Image_Fragment': IContentData_Image_Fragment } }
@@ -8766,6 +8117,9 @@ export type getHeaderDataQuery = { __typename?: 'Query', appLayout?: { __typenam
         { __typename?: 'LandingPage' }
         & { ' $fragmentRefs'?: { 'IContentData_LandingPage_Fragment': IContentData_LandingPage_Fragment } }
       ) | (
+        { __typename?: 'LayoutContainerBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_LayoutContainerBlock_Fragment': IContentData_LayoutContainerBlock_Fragment } }
+      ) | (
         { __typename?: 'LayoutSettingsBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_LayoutSettingsBlock_Fragment': IContentData_LayoutSettingsBlock_Fragment } }
       ) | (
@@ -8775,14 +8129,8 @@ export type getHeaderDataQuery = { __typename?: 'Query', appLayout?: { __typenam
         { __typename?: 'MenuNavigationBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_MenuNavigationBlock_Fragment': IContentData_MenuNavigationBlock_Fragment } }
       ) | (
-        { __typename?: 'NavigationMenuBlock' }
-        & { ' $fragmentRefs'?: { 'IContentData_NavigationMenuBlock_Fragment': IContentData_NavigationMenuBlock_Fragment } }
-      ) | (
         { __typename?: 'OdpEmbedBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_OdpEmbedBlock_Fragment': IContentData_OdpEmbedBlock_Fragment } }
-      ) | (
-        { __typename?: 'OfficeLocation' }
-        & { ' $fragmentRefs'?: { 'IContentData_OfficeLocation_Fragment': IContentData_OfficeLocation_Fragment } }
       ) | (
         { __typename?: 'PageSeoSettings' }
         & { ' $fragmentRefs'?: { 'IContentData_PageSeoSettings_Fragment': IContentData_PageSeoSettings_Fragment } }
@@ -8795,6 +8143,12 @@ export type getHeaderDataQuery = { __typename?: 'Query', appLayout?: { __typenam
       ) | (
         { __typename?: 'RichTextElement' }
         & { ' $fragmentRefs'?: { 'IContentData_RichTextElement_Fragment': IContentData_RichTextElement_Fragment } }
+      ) | (
+        { __typename?: 'StandardPage' }
+        & { ' $fragmentRefs'?: { 'IContentData_StandardPage_Fragment': IContentData_StandardPage_Fragment } }
+      ) | (
+        { __typename?: 'StartPage' }
+        & { ' $fragmentRefs'?: { 'IContentData_StartPage_Fragment': IContentData_StartPage_Fragment } }
       ) | (
         { __typename?: 'SysContentFolder' }
         & { ' $fragmentRefs'?: { 'IContentData_SysContentFolder_Fragment': IContentData_SysContentFolder_Fragment } }
@@ -8813,9 +8167,6 @@ export type getHeaderDataQuery = { __typename?: 'Query', appLayout?: { __typenam
       ) | (
         { __typename?: 'VideoMedia' }
         & { ' $fragmentRefs'?: { 'IContentData_VideoMedia_Fragment': IContentData_VideoMedia_Fragment } }
-      ) | (
-        { __typename?: 'WebsiteFooter' }
-        & { ' $fragmentRefs'?: { 'IContentData_WebsiteFooter_Fragment': IContentData_WebsiteFooter_Fragment } }
       ) | (
         { __typename?: '_Component' }
         & { ' $fragmentRefs'?: { 'IContentData__Component_Fragment': IContentData__Component_Fragment } }
@@ -8843,27 +8194,18 @@ export type getHeaderDataQuery = { __typename?: 'Query', appLayout?: { __typenam
       ) | (
         { __typename?: '_Video' }
         & { ' $fragmentRefs'?: { 'IContentData__Video_Fragment': IContentData__Video_Fragment } }
-      ) | (
-        { __typename?: 'elementTesting' }
-        & { ' $fragmentRefs'?: { 'IContentData_elementTesting_Fragment': IContentData_elementTesting_Fragment } }
       ) | null> | null, serviceButtons?: Array<(
-        { __typename?: 'ArticleGroupPage' }
-        & { ' $fragmentRefs'?: { 'IContentData_ArticleGroupPage_Fragment': IContentData_ArticleGroupPage_Fragment } }
-      ) | (
         { __typename?: 'ArticleListElement' }
         & { ' $fragmentRefs'?: { 'IContentData_ArticleListElement_Fragment': IContentData_ArticleListElement_Fragment } }
-      ) | (
-        { __typename?: 'ArticlePage' }
-        & { ' $fragmentRefs'?: { 'IContentData_ArticlePage_Fragment': IContentData_ArticlePage_Fragment } }
-      ) | (
-        { __typename?: 'BannerBlock' }
-        & { ' $fragmentRefs'?: { 'IContentData_BannerBlock_Fragment': IContentData_BannerBlock_Fragment } }
       ) | (
         { __typename?: 'BlankExperience' }
         & { ' $fragmentRefs'?: { 'IContentData_BlankExperience_Fragment': IContentData_BlankExperience_Fragment } }
       ) | (
         { __typename?: 'BlankSection' }
         & { ' $fragmentRefs'?: { 'IContentData_BlankSection_Fragment': IContentData_BlankSection_Fragment } }
+      ) | (
+        { __typename?: 'BlogListingBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_BlogListingBlock_Fragment': IContentData_BlogListingBlock_Fragment } }
       ) | (
         { __typename?: 'BlogPostPage' }
         & { ' $fragmentRefs'?: { 'IContentData_BlogPostPage_Fragment': IContentData_BlogPostPage_Fragment } }
@@ -8883,32 +8225,26 @@ export type getHeaderDataQuery = { __typename?: 'Query', appLayout?: { __typenam
         { __typename?: 'CarouselBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_CarouselBlock_Fragment': IContentData_CarouselBlock_Fragment } }
       ) | (
+        { __typename?: 'ContentRecsBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_ContentRecsBlock_Fragment': IContentData_ContentRecsBlock_Fragment } }
+      ) | (
         { __typename?: 'ContentRecsElement' }
         & { ' $fragmentRefs'?: { 'IContentData_ContentRecsElement_Fragment': IContentData_ContentRecsElement_Fragment } }
       ) | (
-        { __typename?: 'DefaultImage' }
-        & { ' $fragmentRefs'?: { 'IContentData_DefaultImage_Fragment': IContentData_DefaultImage_Fragment } }
-      ) | (
-        { __typename?: 'DefaultVideo' }
-        & { ' $fragmentRefs'?: { 'IContentData_DefaultVideo_Fragment': IContentData_DefaultVideo_Fragment } }
-      ) | (
-        { __typename?: 'Dictionary' }
-        & { ' $fragmentRefs'?: { 'IContentData_Dictionary_Fragment': IContentData_Dictionary_Fragment } }
-      ) | (
-        { __typename?: 'DictionaryItem' }
-        & { ' $fragmentRefs'?: { 'IContentData_DictionaryItem_Fragment': IContentData_DictionaryItem_Fragment } }
-      ) | (
         { __typename?: 'GenericMedia' }
         & { ' $fragmentRefs'?: { 'IContentData_GenericMedia_Fragment': IContentData_GenericMedia_Fragment } }
-      ) | (
-        { __typename?: 'HeaderBlock' }
-        & { ' $fragmentRefs'?: { 'IContentData_HeaderBlock_Fragment': IContentData_HeaderBlock_Fragment } }
       ) | (
         { __typename?: 'HeadingElement' }
         & { ' $fragmentRefs'?: { 'IContentData_HeadingElement_Fragment': IContentData_HeadingElement_Fragment } }
       ) | (
         { __typename?: 'HeroBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_HeroBlock_Fragment': IContentData_HeroBlock_Fragment } }
+      ) | (
+        { __typename?: 'HomePageHeroBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_HomePageHeroBlock_Fragment': IContentData_HomePageHeroBlock_Fragment } }
+      ) | (
+        { __typename?: 'HtmlBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_HtmlBlock_Fragment': IContentData_HtmlBlock_Fragment } }
       ) | (
         { __typename?: 'Image' }
         & { ' $fragmentRefs'?: { 'IContentData_Image_Fragment': IContentData_Image_Fragment } }
@@ -8922,6 +8258,9 @@ export type getHeaderDataQuery = { __typename?: 'Query', appLayout?: { __typenam
         { __typename?: 'LandingPage' }
         & { ' $fragmentRefs'?: { 'IContentData_LandingPage_Fragment': IContentData_LandingPage_Fragment } }
       ) | (
+        { __typename?: 'LayoutContainerBlock' }
+        & { ' $fragmentRefs'?: { 'IContentData_LayoutContainerBlock_Fragment': IContentData_LayoutContainerBlock_Fragment } }
+      ) | (
         { __typename?: 'LayoutSettingsBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_LayoutSettingsBlock_Fragment': IContentData_LayoutSettingsBlock_Fragment } }
       ) | (
@@ -8931,14 +8270,8 @@ export type getHeaderDataQuery = { __typename?: 'Query', appLayout?: { __typenam
         { __typename?: 'MenuNavigationBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_MenuNavigationBlock_Fragment': IContentData_MenuNavigationBlock_Fragment } }
       ) | (
-        { __typename?: 'NavigationMenuBlock' }
-        & { ' $fragmentRefs'?: { 'IContentData_NavigationMenuBlock_Fragment': IContentData_NavigationMenuBlock_Fragment } }
-      ) | (
         { __typename?: 'OdpEmbedBlock' }
         & { ' $fragmentRefs'?: { 'IContentData_OdpEmbedBlock_Fragment': IContentData_OdpEmbedBlock_Fragment } }
-      ) | (
-        { __typename?: 'OfficeLocation' }
-        & { ' $fragmentRefs'?: { 'IContentData_OfficeLocation_Fragment': IContentData_OfficeLocation_Fragment } }
       ) | (
         { __typename?: 'PageSeoSettings' }
         & { ' $fragmentRefs'?: { 'IContentData_PageSeoSettings_Fragment': IContentData_PageSeoSettings_Fragment } }
@@ -8951,6 +8284,12 @@ export type getHeaderDataQuery = { __typename?: 'Query', appLayout?: { __typenam
       ) | (
         { __typename?: 'RichTextElement' }
         & { ' $fragmentRefs'?: { 'IContentData_RichTextElement_Fragment': IContentData_RichTextElement_Fragment } }
+      ) | (
+        { __typename?: 'StandardPage' }
+        & { ' $fragmentRefs'?: { 'IContentData_StandardPage_Fragment': IContentData_StandardPage_Fragment } }
+      ) | (
+        { __typename?: 'StartPage' }
+        & { ' $fragmentRefs'?: { 'IContentData_StartPage_Fragment': IContentData_StartPage_Fragment } }
       ) | (
         { __typename?: 'SysContentFolder' }
         & { ' $fragmentRefs'?: { 'IContentData_SysContentFolder_Fragment': IContentData_SysContentFolder_Fragment } }
@@ -8969,9 +8308,6 @@ export type getHeaderDataQuery = { __typename?: 'Query', appLayout?: { __typenam
       ) | (
         { __typename?: 'VideoMedia' }
         & { ' $fragmentRefs'?: { 'IContentData_VideoMedia_Fragment': IContentData_VideoMedia_Fragment } }
-      ) | (
-        { __typename?: 'WebsiteFooter' }
-        & { ' $fragmentRefs'?: { 'IContentData_WebsiteFooter_Fragment': IContentData_WebsiteFooter_Fragment } }
       ) | (
         { __typename?: '_Component' }
         & { ' $fragmentRefs'?: { 'IContentData__Component_Fragment': IContentData__Component_Fragment } }
@@ -8999,9 +8335,6 @@ export type getHeaderDataQuery = { __typename?: 'Query', appLayout?: { __typenam
       ) | (
         { __typename?: '_Video' }
         & { ' $fragmentRefs'?: { 'IContentData__Video_Fragment': IContentData__Video_Fragment } }
-      ) | (
-        { __typename?: 'elementTesting' }
-        & { ' $fragmentRefs'?: { 'IContentData_elementTesting_Fragment': IContentData_elementTesting_Fragment } }
       ) | null> | null } | null> | null } | null };
 
 export type getLocalesQueryVariables = Exact<{ [key: string]: never; }>;
@@ -9038,12 +8371,6 @@ export type searchContentQueryVariables = Exact<{
 
 
 export type searchContentQuery = { __typename?: 'Query', Content?: { __typename?: '_PageOutput', total?: number | null, items?: Array<(
-      { __typename?: 'ArticleGroupPage', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
-      & { ' $fragmentRefs'?: { 'SearchData_ArticleGroupPage_Fragment': SearchData_ArticleGroupPage_Fragment } }
-    ) | (
-      { __typename?: 'ArticlePage', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
-      & { ' $fragmentRefs'?: { 'SearchData_ArticlePage_Fragment': SearchData_ArticlePage_Fragment } }
-    ) | (
       { __typename?: 'BlankExperience', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
       & { ' $fragmentRefs'?: { 'SearchData_BlankExperience_Fragment': SearchData_BlankExperience_Fragment } }
     ) | (
@@ -9056,6 +8383,12 @@ export type searchContentQuery = { __typename?: 'Query', Content?: { __typename?
       { __typename?: 'LandingPage', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
       & { ' $fragmentRefs'?: { 'SearchData_LandingPage_Fragment': SearchData_LandingPage_Fragment } }
     ) | (
+      { __typename?: 'StandardPage', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
+      & { ' $fragmentRefs'?: { 'SearchData_StandardPage_Fragment': SearchData_StandardPage_Fragment } }
+    ) | (
+      { __typename?: 'StartPage', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
+      & { ' $fragmentRefs'?: { 'SearchData_StartPage_Fragment': SearchData_StartPage_Fragment } }
+    ) | (
       { __typename?: '_Experience', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
       & { ' $fragmentRefs'?: { 'SearchData__Experience_Fragment': SearchData__Experience_Fragment } }
     ) | (
@@ -9063,25 +8396,10 @@ export type searchContentQuery = { __typename?: 'Query', Content?: { __typename?
       & { ' $fragmentRefs'?: { 'SearchData__Page_Fragment': SearchData__Page_Fragment } }
     ) | null> | null, facets?: { __typename?: '_PageFacet', _metadata?: { __typename?: 'IContentMetadataFacet', types?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, locale?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null } | null } | null } | null };
 
-type SearchData_ArticleGroupPage_Fragment = (
-  { __typename?: 'ArticleGroupPage' }
-  & { ' $fragmentRefs'?: { 'IContentData_ArticleGroupPage_Fragment': IContentData_ArticleGroupPage_Fragment } }
-) & { ' $fragmentName'?: 'SearchData_ArticleGroupPage_Fragment' };
-
 type SearchData_ArticleListElement_Fragment = (
   { __typename?: 'ArticleListElement' }
   & { ' $fragmentRefs'?: { 'IContentData_ArticleListElement_Fragment': IContentData_ArticleListElement_Fragment } }
 ) & { ' $fragmentName'?: 'SearchData_ArticleListElement_Fragment' };
-
-type SearchData_ArticlePage_Fragment = (
-  { __typename?: 'ArticlePage' }
-  & { ' $fragmentRefs'?: { 'IContentData_ArticlePage_Fragment': IContentData_ArticlePage_Fragment } }
-) & { ' $fragmentName'?: 'SearchData_ArticlePage_Fragment' };
-
-type SearchData_BannerBlock_Fragment = (
-  { __typename?: 'BannerBlock' }
-  & { ' $fragmentRefs'?: { 'IContentData_BannerBlock_Fragment': IContentData_BannerBlock_Fragment } }
-) & { ' $fragmentName'?: 'SearchData_BannerBlock_Fragment' };
 
 type SearchData_BlankExperience_Fragment = (
   { __typename?: 'BlankExperience' }
@@ -9092,6 +8410,11 @@ type SearchData_BlankSection_Fragment = (
   { __typename?: 'BlankSection' }
   & { ' $fragmentRefs'?: { 'IContentData_BlankSection_Fragment': IContentData_BlankSection_Fragment } }
 ) & { ' $fragmentName'?: 'SearchData_BlankSection_Fragment' };
+
+type SearchData_BlogListingBlock_Fragment = (
+  { __typename?: 'BlogListingBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_BlogListingBlock_Fragment': IContentData_BlogListingBlock_Fragment } }
+) & { ' $fragmentName'?: 'SearchData_BlogListingBlock_Fragment' };
 
 type SearchData_BlogPostPage_Fragment = (
   { __typename?: 'BlogPostPage' }
@@ -9123,40 +8446,20 @@ type SearchData_CarouselBlock_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_CarouselBlock_Fragment': IContentData_CarouselBlock_Fragment } }
 ) & { ' $fragmentName'?: 'SearchData_CarouselBlock_Fragment' };
 
+type SearchData_ContentRecsBlock_Fragment = (
+  { __typename?: 'ContentRecsBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_ContentRecsBlock_Fragment': IContentData_ContentRecsBlock_Fragment } }
+) & { ' $fragmentName'?: 'SearchData_ContentRecsBlock_Fragment' };
+
 type SearchData_ContentRecsElement_Fragment = (
   { __typename?: 'ContentRecsElement' }
   & { ' $fragmentRefs'?: { 'IContentData_ContentRecsElement_Fragment': IContentData_ContentRecsElement_Fragment } }
 ) & { ' $fragmentName'?: 'SearchData_ContentRecsElement_Fragment' };
 
-type SearchData_DefaultImage_Fragment = (
-  { __typename?: 'DefaultImage' }
-  & { ' $fragmentRefs'?: { 'IContentData_DefaultImage_Fragment': IContentData_DefaultImage_Fragment } }
-) & { ' $fragmentName'?: 'SearchData_DefaultImage_Fragment' };
-
-type SearchData_DefaultVideo_Fragment = (
-  { __typename?: 'DefaultVideo' }
-  & { ' $fragmentRefs'?: { 'IContentData_DefaultVideo_Fragment': IContentData_DefaultVideo_Fragment } }
-) & { ' $fragmentName'?: 'SearchData_DefaultVideo_Fragment' };
-
-type SearchData_Dictionary_Fragment = (
-  { __typename?: 'Dictionary' }
-  & { ' $fragmentRefs'?: { 'IContentData_Dictionary_Fragment': IContentData_Dictionary_Fragment } }
-) & { ' $fragmentName'?: 'SearchData_Dictionary_Fragment' };
-
-type SearchData_DictionaryItem_Fragment = (
-  { __typename?: 'DictionaryItem' }
-  & { ' $fragmentRefs'?: { 'IContentData_DictionaryItem_Fragment': IContentData_DictionaryItem_Fragment } }
-) & { ' $fragmentName'?: 'SearchData_DictionaryItem_Fragment' };
-
 type SearchData_GenericMedia_Fragment = (
   { __typename?: 'GenericMedia' }
   & { ' $fragmentRefs'?: { 'IContentData_GenericMedia_Fragment': IContentData_GenericMedia_Fragment } }
 ) & { ' $fragmentName'?: 'SearchData_GenericMedia_Fragment' };
-
-type SearchData_HeaderBlock_Fragment = (
-  { __typename?: 'HeaderBlock' }
-  & { ' $fragmentRefs'?: { 'IContentData_HeaderBlock_Fragment': IContentData_HeaderBlock_Fragment } }
-) & { ' $fragmentName'?: 'SearchData_HeaderBlock_Fragment' };
 
 type SearchData_HeadingElement_Fragment = (
   { __typename?: 'HeadingElement' }
@@ -9167,6 +8470,16 @@ type SearchData_HeroBlock_Fragment = (
   { __typename?: 'HeroBlock' }
   & { ' $fragmentRefs'?: { 'IContentData_HeroBlock_Fragment': IContentData_HeroBlock_Fragment } }
 ) & { ' $fragmentName'?: 'SearchData_HeroBlock_Fragment' };
+
+type SearchData_HomePageHeroBlock_Fragment = (
+  { __typename?: 'HomePageHeroBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_HomePageHeroBlock_Fragment': IContentData_HomePageHeroBlock_Fragment } }
+) & { ' $fragmentName'?: 'SearchData_HomePageHeroBlock_Fragment' };
+
+type SearchData_HtmlBlock_Fragment = (
+  { __typename?: 'HtmlBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_HtmlBlock_Fragment': IContentData_HtmlBlock_Fragment } }
+) & { ' $fragmentName'?: 'SearchData_HtmlBlock_Fragment' };
 
 type SearchData_Image_Fragment = (
   { __typename?: 'Image' }
@@ -9188,6 +8501,11 @@ type SearchData_LandingPage_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_LandingPage_Fragment': IContentData_LandingPage_Fragment } }
 ) & { ' $fragmentName'?: 'SearchData_LandingPage_Fragment' };
 
+type SearchData_LayoutContainerBlock_Fragment = (
+  { __typename?: 'LayoutContainerBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_LayoutContainerBlock_Fragment': IContentData_LayoutContainerBlock_Fragment } }
+) & { ' $fragmentName'?: 'SearchData_LayoutContainerBlock_Fragment' };
+
 type SearchData_LayoutSettingsBlock_Fragment = (
   { __typename?: 'LayoutSettingsBlock' }
   & { ' $fragmentRefs'?: { 'IContentData_LayoutSettingsBlock_Fragment': IContentData_LayoutSettingsBlock_Fragment } }
@@ -9203,20 +8521,10 @@ type SearchData_MenuNavigationBlock_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_MenuNavigationBlock_Fragment': IContentData_MenuNavigationBlock_Fragment } }
 ) & { ' $fragmentName'?: 'SearchData_MenuNavigationBlock_Fragment' };
 
-type SearchData_NavigationMenuBlock_Fragment = (
-  { __typename?: 'NavigationMenuBlock' }
-  & { ' $fragmentRefs'?: { 'IContentData_NavigationMenuBlock_Fragment': IContentData_NavigationMenuBlock_Fragment } }
-) & { ' $fragmentName'?: 'SearchData_NavigationMenuBlock_Fragment' };
-
 type SearchData_OdpEmbedBlock_Fragment = (
   { __typename?: 'OdpEmbedBlock' }
   & { ' $fragmentRefs'?: { 'IContentData_OdpEmbedBlock_Fragment': IContentData_OdpEmbedBlock_Fragment } }
 ) & { ' $fragmentName'?: 'SearchData_OdpEmbedBlock_Fragment' };
-
-type SearchData_OfficeLocation_Fragment = (
-  { __typename?: 'OfficeLocation' }
-  & { ' $fragmentRefs'?: { 'IContentData_OfficeLocation_Fragment': IContentData_OfficeLocation_Fragment } }
-) & { ' $fragmentName'?: 'SearchData_OfficeLocation_Fragment' };
 
 type SearchData_PageSeoSettings_Fragment = (
   { __typename?: 'PageSeoSettings' }
@@ -9237,6 +8545,16 @@ type SearchData_RichTextElement_Fragment = (
   { __typename?: 'RichTextElement' }
   & { ' $fragmentRefs'?: { 'IContentData_RichTextElement_Fragment': IContentData_RichTextElement_Fragment } }
 ) & { ' $fragmentName'?: 'SearchData_RichTextElement_Fragment' };
+
+type SearchData_StandardPage_Fragment = (
+  { __typename?: 'StandardPage' }
+  & { ' $fragmentRefs'?: { 'IContentData_StandardPage_Fragment': IContentData_StandardPage_Fragment } }
+) & { ' $fragmentName'?: 'SearchData_StandardPage_Fragment' };
+
+type SearchData_StartPage_Fragment = (
+  { __typename?: 'StartPage' }
+  & { ' $fragmentRefs'?: { 'IContentData_StartPage_Fragment': IContentData_StartPage_Fragment } }
+) & { ' $fragmentName'?: 'SearchData_StartPage_Fragment' };
 
 type SearchData_SysContentFolder_Fragment = (
   { __typename?: 'SysContentFolder' }
@@ -9267,11 +8585,6 @@ type SearchData_VideoMedia_Fragment = (
   { __typename?: 'VideoMedia' }
   & { ' $fragmentRefs'?: { 'IContentData_VideoMedia_Fragment': IContentData_VideoMedia_Fragment } }
 ) & { ' $fragmentName'?: 'SearchData_VideoMedia_Fragment' };
-
-type SearchData_WebsiteFooter_Fragment = (
-  { __typename?: 'WebsiteFooter' }
-  & { ' $fragmentRefs'?: { 'IContentData_WebsiteFooter_Fragment': IContentData_WebsiteFooter_Fragment } }
-) & { ' $fragmentName'?: 'SearchData_WebsiteFooter_Fragment' };
 
 type SearchData__Component_Fragment = (
   { __typename?: '_Component' }
@@ -9318,12 +8631,7 @@ type SearchData__Video_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData__Video_Fragment': IContentData__Video_Fragment } }
 ) & { ' $fragmentName'?: 'SearchData__Video_Fragment' };
 
-type SearchData_elementTesting_Fragment = (
-  { __typename?: 'elementTesting' }
-  & { ' $fragmentRefs'?: { 'IContentData_elementTesting_Fragment': IContentData_elementTesting_Fragment } }
-) & { ' $fragmentName'?: 'SearchData_elementTesting_Fragment' };
-
-export type SearchDataFragment = SearchData_ArticleGroupPage_Fragment | SearchData_ArticleListElement_Fragment | SearchData_ArticlePage_Fragment | SearchData_BannerBlock_Fragment | SearchData_BlankExperience_Fragment | SearchData_BlankSection_Fragment | SearchData_BlogPostPage_Fragment | SearchData_BlogSectionExperience_Fragment | SearchData_ButtonBlock_Fragment | SearchData_CTAElement_Fragment | SearchData_CardBlock_Fragment | SearchData_CarouselBlock_Fragment | SearchData_ContentRecsElement_Fragment | SearchData_DefaultImage_Fragment | SearchData_DefaultVideo_Fragment | SearchData_Dictionary_Fragment | SearchData_DictionaryItem_Fragment | SearchData_GenericMedia_Fragment | SearchData_HeaderBlock_Fragment | SearchData_HeadingElement_Fragment | SearchData_HeroBlock_Fragment | SearchData_Image_Fragment | SearchData_ImageElement_Fragment | SearchData_ImageMedia_Fragment | SearchData_LandingPage_Fragment | SearchData_LayoutSettingsBlock_Fragment | SearchData_MegaMenuGroupBlock_Fragment | SearchData_MenuNavigationBlock_Fragment | SearchData_NavigationMenuBlock_Fragment | SearchData_OdpEmbedBlock_Fragment | SearchData_OfficeLocation_Fragment | SearchData_PageSeoSettings_Fragment | SearchData_ParagraphElement_Fragment | SearchData_QuoteBlock_Fragment | SearchData_RichTextElement_Fragment | SearchData_SysContentFolder_Fragment | SearchData_TestimonialElement_Fragment | SearchData_TextBlock_Fragment | SearchData_Video_Fragment | SearchData_VideoElement_Fragment | SearchData_VideoMedia_Fragment | SearchData_WebsiteFooter_Fragment | SearchData__Component_Fragment | SearchData__Content_Fragment | SearchData__Experience_Fragment | SearchData__Folder_Fragment | SearchData__Image_Fragment | SearchData__Media_Fragment | SearchData__Page_Fragment | SearchData__Section_Fragment | SearchData__Video_Fragment | SearchData_elementTesting_Fragment;
+export type SearchDataFragment = SearchData_ArticleListElement_Fragment | SearchData_BlankExperience_Fragment | SearchData_BlankSection_Fragment | SearchData_BlogListingBlock_Fragment | SearchData_BlogPostPage_Fragment | SearchData_BlogSectionExperience_Fragment | SearchData_ButtonBlock_Fragment | SearchData_CTAElement_Fragment | SearchData_CardBlock_Fragment | SearchData_CarouselBlock_Fragment | SearchData_ContentRecsBlock_Fragment | SearchData_ContentRecsElement_Fragment | SearchData_GenericMedia_Fragment | SearchData_HeadingElement_Fragment | SearchData_HeroBlock_Fragment | SearchData_HomePageHeroBlock_Fragment | SearchData_HtmlBlock_Fragment | SearchData_Image_Fragment | SearchData_ImageElement_Fragment | SearchData_ImageMedia_Fragment | SearchData_LandingPage_Fragment | SearchData_LayoutContainerBlock_Fragment | SearchData_LayoutSettingsBlock_Fragment | SearchData_MegaMenuGroupBlock_Fragment | SearchData_MenuNavigationBlock_Fragment | SearchData_OdpEmbedBlock_Fragment | SearchData_PageSeoSettings_Fragment | SearchData_ParagraphElement_Fragment | SearchData_QuoteBlock_Fragment | SearchData_RichTextElement_Fragment | SearchData_StandardPage_Fragment | SearchData_StartPage_Fragment | SearchData_SysContentFolder_Fragment | SearchData_TestimonialElement_Fragment | SearchData_TextBlock_Fragment | SearchData_Video_Fragment | SearchData_VideoElement_Fragment | SearchData_VideoMedia_Fragment | SearchData__Component_Fragment | SearchData__Content_Fragment | SearchData__Experience_Fragment | SearchData__Folder_Fragment | SearchData__Image_Fragment | SearchData__Media_Fragment | SearchData__Page_Fragment | SearchData__Section_Fragment | SearchData__Video_Fragment;
 
 export type personalizedSearchContentQueryVariables = Exact<{
   term: Scalars['String']['input'];
@@ -9338,12 +8646,6 @@ export type personalizedSearchContentQueryVariables = Exact<{
 
 
 export type personalizedSearchContentQuery = { __typename?: 'Query', Content?: { __typename?: '_PageOutput', total?: number | null, items?: Array<(
-      { __typename?: 'ArticleGroupPage', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
-      & { ' $fragmentRefs'?: { 'SearchData_ArticleGroupPage_Fragment': SearchData_ArticleGroupPage_Fragment } }
-    ) | (
-      { __typename?: 'ArticlePage', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
-      & { ' $fragmentRefs'?: { 'SearchData_ArticlePage_Fragment': SearchData_ArticlePage_Fragment } }
-    ) | (
       { __typename?: 'BlankExperience', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
       & { ' $fragmentRefs'?: { 'SearchData_BlankExperience_Fragment': SearchData_BlankExperience_Fragment } }
     ) | (
@@ -9356,26 +8658,18 @@ export type personalizedSearchContentQuery = { __typename?: 'Query', Content?: {
       { __typename?: 'LandingPage', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
       & { ' $fragmentRefs'?: { 'SearchData_LandingPage_Fragment': SearchData_LandingPage_Fragment } }
     ) | (
+      { __typename?: 'StandardPage', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
+      & { ' $fragmentRefs'?: { 'SearchData_StandardPage_Fragment': SearchData_StandardPage_Fragment } }
+    ) | (
+      { __typename?: 'StartPage', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
+      & { ' $fragmentRefs'?: { 'SearchData_StartPage_Fragment': SearchData_StartPage_Fragment } }
+    ) | (
       { __typename?: '_Experience', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
       & { ' $fragmentRefs'?: { 'SearchData__Experience_Fragment': SearchData__Experience_Fragment } }
     ) | (
       { __typename?: '_Page', _score?: number | null, preview?: Array<string | null> | null, _metadata?: { __typename?: 'ContentMetadata', published?: any | null } | { __typename?: 'InstanceMetadata', published?: any | null } | { __typename?: 'ItemMetadata', published?: any | null } | { __typename?: 'MediaMetadata', published?: any | null } | null }
       & { ' $fragmentRefs'?: { 'SearchData__Page_Fragment': SearchData__Page_Fragment } }
     ) | null> | null, facets?: { __typename?: '_PageFacet', _metadata?: { __typename?: 'IContentMetadataFacet', types?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null, locale?: Array<{ __typename?: 'StringFacet', name?: string | null, count?: number | null } | null> | null } | null } | null } | null };
-
-type IContentData_ArticleGroupPage_Fragment = { __typename?: 'ArticleGroupPage', _type: 'ArticleGroupPage', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_ArticleGroupPage_Fragment' };
 
 type IContentData_ArticleListElement_Fragment = { __typename?: 'ArticleListElement', _type: 'ArticleListElement', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -9390,34 +8684,6 @@ type IContentData_ArticleListElement_Fragment = { __typename?: 'ArticleListEleme
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_ArticleListElement_Fragment' };
-
-type IContentData_ArticlePage_Fragment = { __typename?: 'ArticlePage', _type: 'ArticlePage', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_ArticlePage_Fragment' };
-
-type IContentData_BannerBlock_Fragment = { __typename?: 'BannerBlock', _type: 'BannerBlock', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_BannerBlock_Fragment' };
 
 type IContentData_BlankExperience_Fragment = { __typename?: 'BlankExperience', _type: 'BlankExperience', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -9446,6 +8712,20 @@ type IContentData_BlankSection_Fragment = { __typename?: 'BlankSection', _type: 
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_BlankSection_Fragment' };
+
+type IContentData_BlogListingBlock_Fragment = { __typename?: 'BlogListingBlock', _type: 'BlogListingBlock', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IContentData_BlogListingBlock_Fragment' };
 
 type IContentData_BlogPostPage_Fragment = { __typename?: 'BlogPostPage', _type: 'BlogPostPage', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -9531,6 +8811,20 @@ type IContentData_CarouselBlock_Fragment = { __typename?: 'CarouselBlock', _type
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_CarouselBlock_Fragment' };
 
+type IContentData_ContentRecsBlock_Fragment = { __typename?: 'ContentRecsBlock', _type: 'ContentRecsBlock', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IContentData_ContentRecsBlock_Fragment' };
+
 type IContentData_ContentRecsElement_Fragment = { __typename?: 'ContentRecsElement', _type: 'ContentRecsElement', _metadata?: (
     { __typename?: 'ContentMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
@@ -9545,62 +8839,6 @@ type IContentData_ContentRecsElement_Fragment = { __typename?: 'ContentRecsEleme
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_ContentRecsElement_Fragment' };
 
-type IContentData_DefaultImage_Fragment = { __typename?: 'DefaultImage', _type: 'DefaultImage', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_DefaultImage_Fragment' };
-
-type IContentData_DefaultVideo_Fragment = { __typename?: 'DefaultVideo', _type: 'DefaultVideo', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_DefaultVideo_Fragment' };
-
-type IContentData_Dictionary_Fragment = { __typename?: 'Dictionary', _type: 'Dictionary', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_Dictionary_Fragment' };
-
-type IContentData_DictionaryItem_Fragment = { __typename?: 'DictionaryItem', _type: 'DictionaryItem', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_DictionaryItem_Fragment' };
-
 type IContentData_GenericMedia_Fragment = { __typename?: 'GenericMedia', _type: 'GenericMedia', _metadata?: (
     { __typename?: 'ContentMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
@@ -9614,20 +8852,6 @@ type IContentData_GenericMedia_Fragment = { __typename?: 'GenericMedia', _type: 
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_GenericMedia_Fragment' };
-
-type IContentData_HeaderBlock_Fragment = { __typename?: 'HeaderBlock', _type: 'HeaderBlock', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_HeaderBlock_Fragment' };
 
 type IContentData_HeadingElement_Fragment = { __typename?: 'HeadingElement', _type: 'HeadingElement', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -9656,6 +8880,34 @@ type IContentData_HeroBlock_Fragment = { __typename?: 'HeroBlock', _type: 'HeroB
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_HeroBlock_Fragment' };
+
+type IContentData_HomePageHeroBlock_Fragment = { __typename?: 'HomePageHeroBlock', _type: 'HomePageHeroBlock', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IContentData_HomePageHeroBlock_Fragment' };
+
+type IContentData_HtmlBlock_Fragment = { __typename?: 'HtmlBlock', _type: 'HtmlBlock', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IContentData_HtmlBlock_Fragment' };
 
 type IContentData_Image_Fragment = { __typename?: 'Image', _type: 'Image', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -9713,6 +8965,20 @@ type IContentData_LandingPage_Fragment = { __typename?: 'LandingPage', _type: 'L
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_LandingPage_Fragment' };
 
+type IContentData_LayoutContainerBlock_Fragment = { __typename?: 'LayoutContainerBlock', _type: 'LayoutContainerBlock', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IContentData_LayoutContainerBlock_Fragment' };
+
 type IContentData_LayoutSettingsBlock_Fragment = { __typename?: 'LayoutSettingsBlock', _type: 'LayoutSettingsBlock', _metadata?: (
     { __typename?: 'ContentMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
@@ -9755,20 +9021,6 @@ type IContentData_MenuNavigationBlock_Fragment = { __typename?: 'MenuNavigationB
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_MenuNavigationBlock_Fragment' };
 
-type IContentData_NavigationMenuBlock_Fragment = { __typename?: 'NavigationMenuBlock', _type: 'NavigationMenuBlock', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_NavigationMenuBlock_Fragment' };
-
 type IContentData_OdpEmbedBlock_Fragment = { __typename?: 'OdpEmbedBlock', _type: 'OdpEmbedBlock', _metadata?: (
     { __typename?: 'ContentMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
@@ -9782,20 +9034,6 @@ type IContentData_OdpEmbedBlock_Fragment = { __typename?: 'OdpEmbedBlock', _type
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_OdpEmbedBlock_Fragment' };
-
-type IContentData_OfficeLocation_Fragment = { __typename?: 'OfficeLocation', _type: 'OfficeLocation', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_OfficeLocation_Fragment' };
 
 type IContentData_PageSeoSettings_Fragment = { __typename?: 'PageSeoSettings', _type: 'PageSeoSettings', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -9852,6 +9090,34 @@ type IContentData_RichTextElement_Fragment = { __typename?: 'RichTextElement', _
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_RichTextElement_Fragment' };
+
+type IContentData_StandardPage_Fragment = { __typename?: 'StandardPage', _type: 'StandardPage', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IContentData_StandardPage_Fragment' };
+
+type IContentData_StartPage_Fragment = { __typename?: 'StartPage', _type: 'StartPage', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IContentData_StartPage_Fragment' };
 
 type IContentData_SysContentFolder_Fragment = { __typename?: 'SysContentFolder', _type: 'SysContentFolder', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -9936,20 +9202,6 @@ type IContentData_VideoMedia_Fragment = { __typename?: 'VideoMedia', _type: 'Vid
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_VideoMedia_Fragment' };
-
-type IContentData_WebsiteFooter_Fragment = { __typename?: 'WebsiteFooter', _type: 'WebsiteFooter', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_WebsiteFooter_Fragment' };
 
 type IContentData__Component_Fragment = { __typename?: '_Component', _type: '_Component', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -10077,31 +9329,17 @@ type IContentData__Video_Fragment = { __typename?: '_Video', _type: '_Video', _m
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData__Video_Fragment' };
 
-type IContentData_elementTesting_Fragment = { __typename?: 'elementTesting', _type: 'elementTesting', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_elementTesting_Fragment' };
-
-export type IContentDataFragment = IContentData_ArticleGroupPage_Fragment | IContentData_ArticleListElement_Fragment | IContentData_ArticlePage_Fragment | IContentData_BannerBlock_Fragment | IContentData_BlankExperience_Fragment | IContentData_BlankSection_Fragment | IContentData_BlogPostPage_Fragment | IContentData_BlogSectionExperience_Fragment | IContentData_ButtonBlock_Fragment | IContentData_CTAElement_Fragment | IContentData_CardBlock_Fragment | IContentData_CarouselBlock_Fragment | IContentData_ContentRecsElement_Fragment | IContentData_DefaultImage_Fragment | IContentData_DefaultVideo_Fragment | IContentData_Dictionary_Fragment | IContentData_DictionaryItem_Fragment | IContentData_GenericMedia_Fragment | IContentData_HeaderBlock_Fragment | IContentData_HeadingElement_Fragment | IContentData_HeroBlock_Fragment | IContentData_Image_Fragment | IContentData_ImageElement_Fragment | IContentData_ImageMedia_Fragment | IContentData_LandingPage_Fragment | IContentData_LayoutSettingsBlock_Fragment | IContentData_MegaMenuGroupBlock_Fragment | IContentData_MenuNavigationBlock_Fragment | IContentData_NavigationMenuBlock_Fragment | IContentData_OdpEmbedBlock_Fragment | IContentData_OfficeLocation_Fragment | IContentData_PageSeoSettings_Fragment | IContentData_ParagraphElement_Fragment | IContentData_QuoteBlock_Fragment | IContentData_RichTextElement_Fragment | IContentData_SysContentFolder_Fragment | IContentData_TestimonialElement_Fragment | IContentData_TextBlock_Fragment | IContentData_Video_Fragment | IContentData_VideoElement_Fragment | IContentData_VideoMedia_Fragment | IContentData_WebsiteFooter_Fragment | IContentData__Component_Fragment | IContentData__Content_Fragment | IContentData__Experience_Fragment | IContentData__Folder_Fragment | IContentData__Image_Fragment | IContentData__Media_Fragment | IContentData__Page_Fragment | IContentData__Section_Fragment | IContentData__Video_Fragment | IContentData_elementTesting_Fragment;
+export type IContentDataFragment = IContentData_ArticleListElement_Fragment | IContentData_BlankExperience_Fragment | IContentData_BlankSection_Fragment | IContentData_BlogListingBlock_Fragment | IContentData_BlogPostPage_Fragment | IContentData_BlogSectionExperience_Fragment | IContentData_ButtonBlock_Fragment | IContentData_CTAElement_Fragment | IContentData_CardBlock_Fragment | IContentData_CarouselBlock_Fragment | IContentData_ContentRecsBlock_Fragment | IContentData_ContentRecsElement_Fragment | IContentData_GenericMedia_Fragment | IContentData_HeadingElement_Fragment | IContentData_HeroBlock_Fragment | IContentData_HomePageHeroBlock_Fragment | IContentData_HtmlBlock_Fragment | IContentData_Image_Fragment | IContentData_ImageElement_Fragment | IContentData_ImageMedia_Fragment | IContentData_LandingPage_Fragment | IContentData_LayoutContainerBlock_Fragment | IContentData_LayoutSettingsBlock_Fragment | IContentData_MegaMenuGroupBlock_Fragment | IContentData_MenuNavigationBlock_Fragment | IContentData_OdpEmbedBlock_Fragment | IContentData_PageSeoSettings_Fragment | IContentData_ParagraphElement_Fragment | IContentData_QuoteBlock_Fragment | IContentData_RichTextElement_Fragment | IContentData_StandardPage_Fragment | IContentData_StartPage_Fragment | IContentData_SysContentFolder_Fragment | IContentData_TestimonialElement_Fragment | IContentData_TextBlock_Fragment | IContentData_Video_Fragment | IContentData_VideoElement_Fragment | IContentData_VideoMedia_Fragment | IContentData__Component_Fragment | IContentData__Content_Fragment | IContentData__Experience_Fragment | IContentData__Folder_Fragment | IContentData__Image_Fragment | IContentData__Media_Fragment | IContentData__Page_Fragment | IContentData__Section_Fragment | IContentData__Video_Fragment;
 
 type CompositionData_CompositionComponentNode_Fragment = { __typename?: 'CompositionComponentNode', type?: string | null, key?: string | null, name?: string | null, layoutType?: string | null, template?: string | null, component?: (
     { __typename?: 'ArticleListElement' }
     & { ' $fragmentRefs'?: { 'BlockData_ArticleListElement_Fragment': BlockData_ArticleListElement_Fragment;'ElementData_ArticleListElement_Fragment': ElementData_ArticleListElement_Fragment;'ArticleListElementDataFragment': ArticleListElementDataFragment } }
   ) | (
-    { __typename?: 'BannerBlock' }
-    & { ' $fragmentRefs'?: { 'BlockData_BannerBlock_Fragment': BlockData_BannerBlock_Fragment;'ElementData_BannerBlock_Fragment': ElementData_BannerBlock_Fragment } }
-  ) | (
     { __typename?: 'BlankSection' }
     & { ' $fragmentRefs'?: { 'BlockData_BlankSection_Fragment': BlockData_BlankSection_Fragment;'ElementData_BlankSection_Fragment': ElementData_BlankSection_Fragment;'BlankSectionDataFragment': BlankSectionDataFragment } }
+  ) | (
+    { __typename?: 'BlogListingBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_BlogListingBlock_Fragment': BlockData_BlogListingBlock_Fragment;'ElementData_BlogListingBlock_Fragment': ElementData_BlogListingBlock_Fragment } }
   ) | (
     { __typename?: 'ButtonBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_ButtonBlock_Fragment': BlockData_ButtonBlock_Fragment;'ElementData_ButtonBlock_Fragment': ElementData_ButtonBlock_Fragment;'ButtonBlockDataFragment': ButtonBlockDataFragment } }
@@ -10115,17 +9353,11 @@ type CompositionData_CompositionComponentNode_Fragment = { __typename?: 'Composi
     { __typename?: 'CarouselBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_CarouselBlock_Fragment': BlockData_CarouselBlock_Fragment;'ElementData_CarouselBlock_Fragment': ElementData_CarouselBlock_Fragment;'CarouselBlockDataFragment': CarouselBlockDataFragment } }
   ) | (
+    { __typename?: 'ContentRecsBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_ContentRecsBlock_Fragment': BlockData_ContentRecsBlock_Fragment;'ElementData_ContentRecsBlock_Fragment': ElementData_ContentRecsBlock_Fragment } }
+  ) | (
     { __typename?: 'ContentRecsElement' }
     & { ' $fragmentRefs'?: { 'BlockData_ContentRecsElement_Fragment': BlockData_ContentRecsElement_Fragment;'ElementData_ContentRecsElement_Fragment': ElementData_ContentRecsElement_Fragment;'ContentRecsElementDataFragment': ContentRecsElementDataFragment } }
-  ) | (
-    { __typename?: 'Dictionary' }
-    & { ' $fragmentRefs'?: { 'BlockData_Dictionary_Fragment': BlockData_Dictionary_Fragment;'ElementData_Dictionary_Fragment': ElementData_Dictionary_Fragment } }
-  ) | (
-    { __typename?: 'DictionaryItem' }
-    & { ' $fragmentRefs'?: { 'BlockData_DictionaryItem_Fragment': BlockData_DictionaryItem_Fragment;'ElementData_DictionaryItem_Fragment': ElementData_DictionaryItem_Fragment } }
-  ) | (
-    { __typename?: 'HeaderBlock' }
-    & { ' $fragmentRefs'?: { 'BlockData_HeaderBlock_Fragment': BlockData_HeaderBlock_Fragment;'ElementData_HeaderBlock_Fragment': ElementData_HeaderBlock_Fragment } }
   ) | (
     { __typename?: 'HeadingElement' }
     & { ' $fragmentRefs'?: { 'BlockData_HeadingElement_Fragment': BlockData_HeadingElement_Fragment;'ElementData_HeadingElement_Fragment': ElementData_HeadingElement_Fragment;'HeadingElementDataFragment': HeadingElementDataFragment } }
@@ -10133,8 +9365,17 @@ type CompositionData_CompositionComponentNode_Fragment = { __typename?: 'Composi
     { __typename?: 'HeroBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_HeroBlock_Fragment': BlockData_HeroBlock_Fragment;'ElementData_HeroBlock_Fragment': ElementData_HeroBlock_Fragment;'HeroBlockDataFragment': HeroBlockDataFragment } }
   ) | (
+    { __typename?: 'HomePageHeroBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_HomePageHeroBlock_Fragment': BlockData_HomePageHeroBlock_Fragment;'ElementData_HomePageHeroBlock_Fragment': ElementData_HomePageHeroBlock_Fragment } }
+  ) | (
+    { __typename?: 'HtmlBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_HtmlBlock_Fragment': BlockData_HtmlBlock_Fragment;'ElementData_HtmlBlock_Fragment': ElementData_HtmlBlock_Fragment } }
+  ) | (
     { __typename?: 'ImageElement' }
     & { ' $fragmentRefs'?: { 'BlockData_ImageElement_Fragment': BlockData_ImageElement_Fragment;'ElementData_ImageElement_Fragment': ElementData_ImageElement_Fragment;'ImageElementDataFragment': ImageElementDataFragment } }
+  ) | (
+    { __typename?: 'LayoutContainerBlock' }
+    & { ' $fragmentRefs'?: { 'BlockData_LayoutContainerBlock_Fragment': BlockData_LayoutContainerBlock_Fragment;'ElementData_LayoutContainerBlock_Fragment': ElementData_LayoutContainerBlock_Fragment } }
   ) | (
     { __typename?: 'LayoutSettingsBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_LayoutSettingsBlock_Fragment': BlockData_LayoutSettingsBlock_Fragment;'ElementData_LayoutSettingsBlock_Fragment': ElementData_LayoutSettingsBlock_Fragment;'LayoutSettingsBlockDataFragment': LayoutSettingsBlockDataFragment } }
@@ -10145,14 +9386,8 @@ type CompositionData_CompositionComponentNode_Fragment = { __typename?: 'Composi
     { __typename?: 'MenuNavigationBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_MenuNavigationBlock_Fragment': BlockData_MenuNavigationBlock_Fragment;'ElementData_MenuNavigationBlock_Fragment': ElementData_MenuNavigationBlock_Fragment;'MenuNavigationBlockDataFragment': MenuNavigationBlockDataFragment } }
   ) | (
-    { __typename?: 'NavigationMenuBlock' }
-    & { ' $fragmentRefs'?: { 'BlockData_NavigationMenuBlock_Fragment': BlockData_NavigationMenuBlock_Fragment;'ElementData_NavigationMenuBlock_Fragment': ElementData_NavigationMenuBlock_Fragment } }
-  ) | (
     { __typename?: 'OdpEmbedBlock' }
     & { ' $fragmentRefs'?: { 'BlockData_OdpEmbedBlock_Fragment': BlockData_OdpEmbedBlock_Fragment;'ElementData_OdpEmbedBlock_Fragment': ElementData_OdpEmbedBlock_Fragment;'OdpEmbedBlockDataFragment': OdpEmbedBlockDataFragment } }
-  ) | (
-    { __typename?: 'OfficeLocation' }
-    & { ' $fragmentRefs'?: { 'BlockData_OfficeLocation_Fragment': BlockData_OfficeLocation_Fragment;'ElementData_OfficeLocation_Fragment': ElementData_OfficeLocation_Fragment } }
   ) | (
     { __typename?: 'PageSeoSettings' }
     & { ' $fragmentRefs'?: { 'BlockData_PageSeoSettings_Fragment': BlockData_PageSeoSettings_Fragment;'ElementData_PageSeoSettings_Fragment': ElementData_PageSeoSettings_Fragment;'PageSeoSettingsDataFragment': PageSeoSettingsDataFragment } }
@@ -10175,17 +9410,11 @@ type CompositionData_CompositionComponentNode_Fragment = { __typename?: 'Composi
     { __typename?: 'VideoElement' }
     & { ' $fragmentRefs'?: { 'BlockData_VideoElement_Fragment': BlockData_VideoElement_Fragment;'ElementData_VideoElement_Fragment': ElementData_VideoElement_Fragment;'VideoElementDataFragment': VideoElementDataFragment } }
   ) | (
-    { __typename?: 'WebsiteFooter' }
-    & { ' $fragmentRefs'?: { 'BlockData_WebsiteFooter_Fragment': BlockData_WebsiteFooter_Fragment;'ElementData_WebsiteFooter_Fragment': ElementData_WebsiteFooter_Fragment } }
-  ) | (
     { __typename?: '_Component' }
     & { ' $fragmentRefs'?: { 'BlockData__Component_Fragment': BlockData__Component_Fragment;'ElementData__Component_Fragment': ElementData__Component_Fragment } }
   ) | (
     { __typename?: '_Section' }
     & { ' $fragmentRefs'?: { 'BlockData__Section_Fragment': BlockData__Section_Fragment;'ElementData__Section_Fragment': ElementData__Section_Fragment } }
-  ) | (
-    { __typename?: 'elementTesting' }
-    & { ' $fragmentRefs'?: { 'BlockData_elementTesting_Fragment': BlockData_elementTesting_Fragment;'ElementData_elementTesting_Fragment': ElementData_elementTesting_Fragment } }
   ) | null, settings?: Array<{ __typename?: 'CompositionDisplaySetting', key?: string | null, value?: string | null } | null> | null } & { ' $fragmentName'?: 'CompositionData_CompositionComponentNode_Fragment' };
 
 type CompositionData_CompositionNode_Fragment = { __typename?: 'CompositionNode', type?: string | null, key?: string | null, name?: string | null, layoutType?: string | null, template?: string | null, settings?: Array<{ __typename?: 'CompositionDisplaySetting', key?: string | null, value?: string | null } | null> | null } & { ' $fragmentName'?: 'CompositionData_CompositionNode_Fragment' };
@@ -10208,20 +9437,6 @@ type IElementData_ArticleListElement_Fragment = { __typename?: 'ArticleListEleme
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IElementData_ArticleListElement_Fragment' };
 
-type IElementData_BannerBlock_Fragment = { __typename?: 'BannerBlock', _type: 'BannerBlock', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IElementData_BannerBlock_Fragment' };
-
 type IElementData_BlankSection_Fragment = { __typename?: 'BlankSection', _type: 'BlankSection', _metadata?: (
     { __typename?: 'ContentMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
@@ -10235,6 +9450,20 @@ type IElementData_BlankSection_Fragment = { __typename?: 'BlankSection', _type: 
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IElementData_BlankSection_Fragment' };
+
+type IElementData_BlogListingBlock_Fragment = { __typename?: 'BlogListingBlock', _type: 'BlogListingBlock', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IElementData_BlogListingBlock_Fragment' };
 
 type IElementData_ButtonBlock_Fragment = { __typename?: 'ButtonBlock', _type: 'ButtonBlock', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -10292,6 +9521,20 @@ type IElementData_CarouselBlock_Fragment = { __typename?: 'CarouselBlock', _type
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IElementData_CarouselBlock_Fragment' };
 
+type IElementData_ContentRecsBlock_Fragment = { __typename?: 'ContentRecsBlock', _type: 'ContentRecsBlock', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IElementData_ContentRecsBlock_Fragment' };
+
 type IElementData_ContentRecsElement_Fragment = { __typename?: 'ContentRecsElement', _type: 'ContentRecsElement', _metadata?: (
     { __typename?: 'ContentMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
@@ -10305,48 +9548,6 @@ type IElementData_ContentRecsElement_Fragment = { __typename?: 'ContentRecsEleme
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IElementData_ContentRecsElement_Fragment' };
-
-type IElementData_Dictionary_Fragment = { __typename?: 'Dictionary', _type: 'Dictionary', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IElementData_Dictionary_Fragment' };
-
-type IElementData_DictionaryItem_Fragment = { __typename?: 'DictionaryItem', _type: 'DictionaryItem', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IElementData_DictionaryItem_Fragment' };
-
-type IElementData_HeaderBlock_Fragment = { __typename?: 'HeaderBlock', _type: 'HeaderBlock', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IElementData_HeaderBlock_Fragment' };
 
 type IElementData_HeadingElement_Fragment = { __typename?: 'HeadingElement', _type: 'HeadingElement', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -10376,6 +9577,34 @@ type IElementData_HeroBlock_Fragment = { __typename?: 'HeroBlock', _type: 'HeroB
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IElementData_HeroBlock_Fragment' };
 
+type IElementData_HomePageHeroBlock_Fragment = { __typename?: 'HomePageHeroBlock', _type: 'HomePageHeroBlock', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IElementData_HomePageHeroBlock_Fragment' };
+
+type IElementData_HtmlBlock_Fragment = { __typename?: 'HtmlBlock', _type: 'HtmlBlock', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IElementData_HtmlBlock_Fragment' };
+
 type IElementData_ImageElement_Fragment = { __typename?: 'ImageElement', _type: 'ImageElement', _metadata?: (
     { __typename?: 'ContentMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
@@ -10389,6 +9618,20 @@ type IElementData_ImageElement_Fragment = { __typename?: 'ImageElement', _type: 
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IElementData_ImageElement_Fragment' };
+
+type IElementData_LayoutContainerBlock_Fragment = { __typename?: 'LayoutContainerBlock', _type: 'LayoutContainerBlock', _metadata?: (
+    { __typename?: 'ContentMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
+  ) | (
+    { __typename?: 'InstanceMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
+  ) | (
+    { __typename?: 'ItemMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
+  ) | (
+    { __typename?: 'MediaMetadata' }
+    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
+  ) | null } & { ' $fragmentName'?: 'IElementData_LayoutContainerBlock_Fragment' };
 
 type IElementData_LayoutSettingsBlock_Fragment = { __typename?: 'LayoutSettingsBlock', _type: 'LayoutSettingsBlock', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -10432,20 +9675,6 @@ type IElementData_MenuNavigationBlock_Fragment = { __typename?: 'MenuNavigationB
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IElementData_MenuNavigationBlock_Fragment' };
 
-type IElementData_NavigationMenuBlock_Fragment = { __typename?: 'NavigationMenuBlock', _type: 'NavigationMenuBlock', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IElementData_NavigationMenuBlock_Fragment' };
-
 type IElementData_OdpEmbedBlock_Fragment = { __typename?: 'OdpEmbedBlock', _type: 'OdpEmbedBlock', _metadata?: (
     { __typename?: 'ContentMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
@@ -10459,20 +9688,6 @@ type IElementData_OdpEmbedBlock_Fragment = { __typename?: 'OdpEmbedBlock', _type
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IElementData_OdpEmbedBlock_Fragment' };
-
-type IElementData_OfficeLocation_Fragment = { __typename?: 'OfficeLocation', _type: 'OfficeLocation', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IElementData_OfficeLocation_Fragment' };
 
 type IElementData_PageSeoSettings_Fragment = { __typename?: 'PageSeoSettings', _type: 'PageSeoSettings', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -10572,20 +9787,6 @@ type IElementData_VideoElement_Fragment = { __typename?: 'VideoElement', _type: 
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IElementData_VideoElement_Fragment' };
 
-type IElementData_WebsiteFooter_Fragment = { __typename?: 'WebsiteFooter', _type: 'WebsiteFooter', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IElementData_WebsiteFooter_Fragment' };
-
 type IElementData__Component_Fragment = { __typename?: '_Component', _type: '_Component', _metadata?: (
     { __typename?: 'ContentMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
@@ -10614,36 +9815,22 @@ type IElementData__Section_Fragment = { __typename?: '_Section', _type: '_Sectio
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IElementData__Section_Fragment' };
 
-type IElementData_elementTesting_Fragment = { __typename?: 'elementTesting', _type: 'elementTesting', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IElementData_elementTesting_Fragment' };
-
-export type IElementDataFragment = IElementData_ArticleListElement_Fragment | IElementData_BannerBlock_Fragment | IElementData_BlankSection_Fragment | IElementData_ButtonBlock_Fragment | IElementData_CTAElement_Fragment | IElementData_CardBlock_Fragment | IElementData_CarouselBlock_Fragment | IElementData_ContentRecsElement_Fragment | IElementData_Dictionary_Fragment | IElementData_DictionaryItem_Fragment | IElementData_HeaderBlock_Fragment | IElementData_HeadingElement_Fragment | IElementData_HeroBlock_Fragment | IElementData_ImageElement_Fragment | IElementData_LayoutSettingsBlock_Fragment | IElementData_MegaMenuGroupBlock_Fragment | IElementData_MenuNavigationBlock_Fragment | IElementData_NavigationMenuBlock_Fragment | IElementData_OdpEmbedBlock_Fragment | IElementData_OfficeLocation_Fragment | IElementData_PageSeoSettings_Fragment | IElementData_ParagraphElement_Fragment | IElementData_QuoteBlock_Fragment | IElementData_RichTextElement_Fragment | IElementData_TestimonialElement_Fragment | IElementData_TextBlock_Fragment | IElementData_VideoElement_Fragment | IElementData_WebsiteFooter_Fragment | IElementData__Component_Fragment | IElementData__Section_Fragment | IElementData_elementTesting_Fragment;
+export type IElementDataFragment = IElementData_ArticleListElement_Fragment | IElementData_BlankSection_Fragment | IElementData_BlogListingBlock_Fragment | IElementData_ButtonBlock_Fragment | IElementData_CTAElement_Fragment | IElementData_CardBlock_Fragment | IElementData_CarouselBlock_Fragment | IElementData_ContentRecsBlock_Fragment | IElementData_ContentRecsElement_Fragment | IElementData_HeadingElement_Fragment | IElementData_HeroBlock_Fragment | IElementData_HomePageHeroBlock_Fragment | IElementData_HtmlBlock_Fragment | IElementData_ImageElement_Fragment | IElementData_LayoutContainerBlock_Fragment | IElementData_LayoutSettingsBlock_Fragment | IElementData_MegaMenuGroupBlock_Fragment | IElementData_MenuNavigationBlock_Fragment | IElementData_OdpEmbedBlock_Fragment | IElementData_PageSeoSettings_Fragment | IElementData_ParagraphElement_Fragment | IElementData_QuoteBlock_Fragment | IElementData_RichTextElement_Fragment | IElementData_TestimonialElement_Fragment | IElementData_TextBlock_Fragment | IElementData_VideoElement_Fragment | IElementData__Component_Fragment | IElementData__Section_Fragment;
 
 type ElementData_ArticleListElement_Fragment = (
   { __typename?: 'ArticleListElement' }
   & { ' $fragmentRefs'?: { 'IElementData_ArticleListElement_Fragment': IElementData_ArticleListElement_Fragment } }
 ) & { ' $fragmentName'?: 'ElementData_ArticleListElement_Fragment' };
 
-type ElementData_BannerBlock_Fragment = (
-  { __typename?: 'BannerBlock' }
-  & { ' $fragmentRefs'?: { 'IElementData_BannerBlock_Fragment': IElementData_BannerBlock_Fragment } }
-) & { ' $fragmentName'?: 'ElementData_BannerBlock_Fragment' };
-
 type ElementData_BlankSection_Fragment = (
   { __typename?: 'BlankSection' }
   & { ' $fragmentRefs'?: { 'IElementData_BlankSection_Fragment': IElementData_BlankSection_Fragment } }
 ) & { ' $fragmentName'?: 'ElementData_BlankSection_Fragment' };
+
+type ElementData_BlogListingBlock_Fragment = (
+  { __typename?: 'BlogListingBlock' }
+  & { ' $fragmentRefs'?: { 'IElementData_BlogListingBlock_Fragment': IElementData_BlogListingBlock_Fragment } }
+) & { ' $fragmentName'?: 'ElementData_BlogListingBlock_Fragment' };
 
 type ElementData_ButtonBlock_Fragment = (
   { __typename?: 'ButtonBlock' }
@@ -10665,25 +9852,15 @@ type ElementData_CarouselBlock_Fragment = (
   & { ' $fragmentRefs'?: { 'IElementData_CarouselBlock_Fragment': IElementData_CarouselBlock_Fragment } }
 ) & { ' $fragmentName'?: 'ElementData_CarouselBlock_Fragment' };
 
+type ElementData_ContentRecsBlock_Fragment = (
+  { __typename?: 'ContentRecsBlock' }
+  & { ' $fragmentRefs'?: { 'IElementData_ContentRecsBlock_Fragment': IElementData_ContentRecsBlock_Fragment } }
+) & { ' $fragmentName'?: 'ElementData_ContentRecsBlock_Fragment' };
+
 type ElementData_ContentRecsElement_Fragment = (
   { __typename?: 'ContentRecsElement' }
   & { ' $fragmentRefs'?: { 'IElementData_ContentRecsElement_Fragment': IElementData_ContentRecsElement_Fragment } }
 ) & { ' $fragmentName'?: 'ElementData_ContentRecsElement_Fragment' };
-
-type ElementData_Dictionary_Fragment = (
-  { __typename?: 'Dictionary' }
-  & { ' $fragmentRefs'?: { 'IElementData_Dictionary_Fragment': IElementData_Dictionary_Fragment } }
-) & { ' $fragmentName'?: 'ElementData_Dictionary_Fragment' };
-
-type ElementData_DictionaryItem_Fragment = (
-  { __typename?: 'DictionaryItem' }
-  & { ' $fragmentRefs'?: { 'IElementData_DictionaryItem_Fragment': IElementData_DictionaryItem_Fragment } }
-) & { ' $fragmentName'?: 'ElementData_DictionaryItem_Fragment' };
-
-type ElementData_HeaderBlock_Fragment = (
-  { __typename?: 'HeaderBlock' }
-  & { ' $fragmentRefs'?: { 'IElementData_HeaderBlock_Fragment': IElementData_HeaderBlock_Fragment } }
-) & { ' $fragmentName'?: 'ElementData_HeaderBlock_Fragment' };
 
 type ElementData_HeadingElement_Fragment = (
   { __typename?: 'HeadingElement' }
@@ -10695,10 +9872,25 @@ type ElementData_HeroBlock_Fragment = (
   & { ' $fragmentRefs'?: { 'IElementData_HeroBlock_Fragment': IElementData_HeroBlock_Fragment } }
 ) & { ' $fragmentName'?: 'ElementData_HeroBlock_Fragment' };
 
+type ElementData_HomePageHeroBlock_Fragment = (
+  { __typename?: 'HomePageHeroBlock' }
+  & { ' $fragmentRefs'?: { 'IElementData_HomePageHeroBlock_Fragment': IElementData_HomePageHeroBlock_Fragment } }
+) & { ' $fragmentName'?: 'ElementData_HomePageHeroBlock_Fragment' };
+
+type ElementData_HtmlBlock_Fragment = (
+  { __typename?: 'HtmlBlock' }
+  & { ' $fragmentRefs'?: { 'IElementData_HtmlBlock_Fragment': IElementData_HtmlBlock_Fragment } }
+) & { ' $fragmentName'?: 'ElementData_HtmlBlock_Fragment' };
+
 type ElementData_ImageElement_Fragment = (
   { __typename?: 'ImageElement' }
   & { ' $fragmentRefs'?: { 'IElementData_ImageElement_Fragment': IElementData_ImageElement_Fragment } }
 ) & { ' $fragmentName'?: 'ElementData_ImageElement_Fragment' };
+
+type ElementData_LayoutContainerBlock_Fragment = (
+  { __typename?: 'LayoutContainerBlock' }
+  & { ' $fragmentRefs'?: { 'IElementData_LayoutContainerBlock_Fragment': IElementData_LayoutContainerBlock_Fragment } }
+) & { ' $fragmentName'?: 'ElementData_LayoutContainerBlock_Fragment' };
 
 type ElementData_LayoutSettingsBlock_Fragment = (
   { __typename?: 'LayoutSettingsBlock' }
@@ -10715,20 +9907,10 @@ type ElementData_MenuNavigationBlock_Fragment = (
   & { ' $fragmentRefs'?: { 'IElementData_MenuNavigationBlock_Fragment': IElementData_MenuNavigationBlock_Fragment } }
 ) & { ' $fragmentName'?: 'ElementData_MenuNavigationBlock_Fragment' };
 
-type ElementData_NavigationMenuBlock_Fragment = (
-  { __typename?: 'NavigationMenuBlock' }
-  & { ' $fragmentRefs'?: { 'IElementData_NavigationMenuBlock_Fragment': IElementData_NavigationMenuBlock_Fragment } }
-) & { ' $fragmentName'?: 'ElementData_NavigationMenuBlock_Fragment' };
-
 type ElementData_OdpEmbedBlock_Fragment = (
   { __typename?: 'OdpEmbedBlock' }
   & { ' $fragmentRefs'?: { 'IElementData_OdpEmbedBlock_Fragment': IElementData_OdpEmbedBlock_Fragment } }
 ) & { ' $fragmentName'?: 'ElementData_OdpEmbedBlock_Fragment' };
-
-type ElementData_OfficeLocation_Fragment = (
-  { __typename?: 'OfficeLocation' }
-  & { ' $fragmentRefs'?: { 'IElementData_OfficeLocation_Fragment': IElementData_OfficeLocation_Fragment } }
-) & { ' $fragmentName'?: 'ElementData_OfficeLocation_Fragment' };
 
 type ElementData_PageSeoSettings_Fragment = (
   { __typename?: 'PageSeoSettings' }
@@ -10765,11 +9947,6 @@ type ElementData_VideoElement_Fragment = (
   & { ' $fragmentRefs'?: { 'IElementData_VideoElement_Fragment': IElementData_VideoElement_Fragment } }
 ) & { ' $fragmentName'?: 'ElementData_VideoElement_Fragment' };
 
-type ElementData_WebsiteFooter_Fragment = (
-  { __typename?: 'WebsiteFooter' }
-  & { ' $fragmentRefs'?: { 'IElementData_WebsiteFooter_Fragment': IElementData_WebsiteFooter_Fragment } }
-) & { ' $fragmentName'?: 'ElementData_WebsiteFooter_Fragment' };
-
 type ElementData__Component_Fragment = (
   { __typename?: '_Component' }
   & { ' $fragmentRefs'?: { 'IElementData__Component_Fragment': IElementData__Component_Fragment } }
@@ -10780,27 +9957,22 @@ type ElementData__Section_Fragment = (
   & { ' $fragmentRefs'?: { 'IElementData__Section_Fragment': IElementData__Section_Fragment } }
 ) & { ' $fragmentName'?: 'ElementData__Section_Fragment' };
 
-type ElementData_elementTesting_Fragment = (
-  { __typename?: 'elementTesting' }
-  & { ' $fragmentRefs'?: { 'IElementData_elementTesting_Fragment': IElementData_elementTesting_Fragment } }
-) & { ' $fragmentName'?: 'ElementData_elementTesting_Fragment' };
-
-export type ElementDataFragment = ElementData_ArticleListElement_Fragment | ElementData_BannerBlock_Fragment | ElementData_BlankSection_Fragment | ElementData_ButtonBlock_Fragment | ElementData_CTAElement_Fragment | ElementData_CardBlock_Fragment | ElementData_CarouselBlock_Fragment | ElementData_ContentRecsElement_Fragment | ElementData_Dictionary_Fragment | ElementData_DictionaryItem_Fragment | ElementData_HeaderBlock_Fragment | ElementData_HeadingElement_Fragment | ElementData_HeroBlock_Fragment | ElementData_ImageElement_Fragment | ElementData_LayoutSettingsBlock_Fragment | ElementData_MegaMenuGroupBlock_Fragment | ElementData_MenuNavigationBlock_Fragment | ElementData_NavigationMenuBlock_Fragment | ElementData_OdpEmbedBlock_Fragment | ElementData_OfficeLocation_Fragment | ElementData_PageSeoSettings_Fragment | ElementData_ParagraphElement_Fragment | ElementData_QuoteBlock_Fragment | ElementData_RichTextElement_Fragment | ElementData_TestimonialElement_Fragment | ElementData_TextBlock_Fragment | ElementData_VideoElement_Fragment | ElementData_WebsiteFooter_Fragment | ElementData__Component_Fragment | ElementData__Section_Fragment | ElementData_elementTesting_Fragment;
+export type ElementDataFragment = ElementData_ArticleListElement_Fragment | ElementData_BlankSection_Fragment | ElementData_BlogListingBlock_Fragment | ElementData_ButtonBlock_Fragment | ElementData_CTAElement_Fragment | ElementData_CardBlock_Fragment | ElementData_CarouselBlock_Fragment | ElementData_ContentRecsBlock_Fragment | ElementData_ContentRecsElement_Fragment | ElementData_HeadingElement_Fragment | ElementData_HeroBlock_Fragment | ElementData_HomePageHeroBlock_Fragment | ElementData_HtmlBlock_Fragment | ElementData_ImageElement_Fragment | ElementData_LayoutContainerBlock_Fragment | ElementData_LayoutSettingsBlock_Fragment | ElementData_MegaMenuGroupBlock_Fragment | ElementData_MenuNavigationBlock_Fragment | ElementData_OdpEmbedBlock_Fragment | ElementData_PageSeoSettings_Fragment | ElementData_ParagraphElement_Fragment | ElementData_QuoteBlock_Fragment | ElementData_RichTextElement_Fragment | ElementData_TestimonialElement_Fragment | ElementData_TextBlock_Fragment | ElementData_VideoElement_Fragment | ElementData__Component_Fragment | ElementData__Section_Fragment;
 
 type BlockData_ArticleListElement_Fragment = (
   { __typename?: 'ArticleListElement' }
   & { ' $fragmentRefs'?: { 'IContentData_ArticleListElement_Fragment': IContentData_ArticleListElement_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData_ArticleListElement_Fragment' };
 
-type BlockData_BannerBlock_Fragment = (
-  { __typename?: 'BannerBlock' }
-  & { ' $fragmentRefs'?: { 'IContentData_BannerBlock_Fragment': IContentData_BannerBlock_Fragment } }
-) & { ' $fragmentName'?: 'BlockData_BannerBlock_Fragment' };
-
 type BlockData_BlankSection_Fragment = (
   { __typename?: 'BlankSection' }
   & { ' $fragmentRefs'?: { 'IContentData_BlankSection_Fragment': IContentData_BlankSection_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData_BlankSection_Fragment' };
+
+type BlockData_BlogListingBlock_Fragment = (
+  { __typename?: 'BlogListingBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_BlogListingBlock_Fragment': IContentData_BlogListingBlock_Fragment } }
+) & { ' $fragmentName'?: 'BlockData_BlogListingBlock_Fragment' };
 
 type BlockData_ButtonBlock_Fragment = (
   { __typename?: 'ButtonBlock' }
@@ -10822,25 +9994,15 @@ type BlockData_CarouselBlock_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_CarouselBlock_Fragment': IContentData_CarouselBlock_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData_CarouselBlock_Fragment' };
 
+type BlockData_ContentRecsBlock_Fragment = (
+  { __typename?: 'ContentRecsBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_ContentRecsBlock_Fragment': IContentData_ContentRecsBlock_Fragment } }
+) & { ' $fragmentName'?: 'BlockData_ContentRecsBlock_Fragment' };
+
 type BlockData_ContentRecsElement_Fragment = (
   { __typename?: 'ContentRecsElement' }
   & { ' $fragmentRefs'?: { 'IContentData_ContentRecsElement_Fragment': IContentData_ContentRecsElement_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData_ContentRecsElement_Fragment' };
-
-type BlockData_Dictionary_Fragment = (
-  { __typename?: 'Dictionary' }
-  & { ' $fragmentRefs'?: { 'IContentData_Dictionary_Fragment': IContentData_Dictionary_Fragment } }
-) & { ' $fragmentName'?: 'BlockData_Dictionary_Fragment' };
-
-type BlockData_DictionaryItem_Fragment = (
-  { __typename?: 'DictionaryItem' }
-  & { ' $fragmentRefs'?: { 'IContentData_DictionaryItem_Fragment': IContentData_DictionaryItem_Fragment } }
-) & { ' $fragmentName'?: 'BlockData_DictionaryItem_Fragment' };
-
-type BlockData_HeaderBlock_Fragment = (
-  { __typename?: 'HeaderBlock' }
-  & { ' $fragmentRefs'?: { 'IContentData_HeaderBlock_Fragment': IContentData_HeaderBlock_Fragment } }
-) & { ' $fragmentName'?: 'BlockData_HeaderBlock_Fragment' };
 
 type BlockData_HeadingElement_Fragment = (
   { __typename?: 'HeadingElement' }
@@ -10852,10 +10014,25 @@ type BlockData_HeroBlock_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_HeroBlock_Fragment': IContentData_HeroBlock_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData_HeroBlock_Fragment' };
 
+type BlockData_HomePageHeroBlock_Fragment = (
+  { __typename?: 'HomePageHeroBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_HomePageHeroBlock_Fragment': IContentData_HomePageHeroBlock_Fragment } }
+) & { ' $fragmentName'?: 'BlockData_HomePageHeroBlock_Fragment' };
+
+type BlockData_HtmlBlock_Fragment = (
+  { __typename?: 'HtmlBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_HtmlBlock_Fragment': IContentData_HtmlBlock_Fragment } }
+) & { ' $fragmentName'?: 'BlockData_HtmlBlock_Fragment' };
+
 type BlockData_ImageElement_Fragment = (
   { __typename?: 'ImageElement' }
   & { ' $fragmentRefs'?: { 'IContentData_ImageElement_Fragment': IContentData_ImageElement_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData_ImageElement_Fragment' };
+
+type BlockData_LayoutContainerBlock_Fragment = (
+  { __typename?: 'LayoutContainerBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_LayoutContainerBlock_Fragment': IContentData_LayoutContainerBlock_Fragment } }
+) & { ' $fragmentName'?: 'BlockData_LayoutContainerBlock_Fragment' };
 
 type BlockData_LayoutSettingsBlock_Fragment = (
   { __typename?: 'LayoutSettingsBlock' }
@@ -10872,20 +10049,10 @@ type BlockData_MenuNavigationBlock_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_MenuNavigationBlock_Fragment': IContentData_MenuNavigationBlock_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData_MenuNavigationBlock_Fragment' };
 
-type BlockData_NavigationMenuBlock_Fragment = (
-  { __typename?: 'NavigationMenuBlock' }
-  & { ' $fragmentRefs'?: { 'IContentData_NavigationMenuBlock_Fragment': IContentData_NavigationMenuBlock_Fragment } }
-) & { ' $fragmentName'?: 'BlockData_NavigationMenuBlock_Fragment' };
-
 type BlockData_OdpEmbedBlock_Fragment = (
   { __typename?: 'OdpEmbedBlock' }
   & { ' $fragmentRefs'?: { 'IContentData_OdpEmbedBlock_Fragment': IContentData_OdpEmbedBlock_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData_OdpEmbedBlock_Fragment' };
-
-type BlockData_OfficeLocation_Fragment = (
-  { __typename?: 'OfficeLocation' }
-  & { ' $fragmentRefs'?: { 'IContentData_OfficeLocation_Fragment': IContentData_OfficeLocation_Fragment } }
-) & { ' $fragmentName'?: 'BlockData_OfficeLocation_Fragment' };
 
 type BlockData_PageSeoSettings_Fragment = (
   { __typename?: 'PageSeoSettings' }
@@ -10922,11 +10089,6 @@ type BlockData_VideoElement_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_VideoElement_Fragment': IContentData_VideoElement_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData_VideoElement_Fragment' };
 
-type BlockData_WebsiteFooter_Fragment = (
-  { __typename?: 'WebsiteFooter' }
-  & { ' $fragmentRefs'?: { 'IContentData_WebsiteFooter_Fragment': IContentData_WebsiteFooter_Fragment } }
-) & { ' $fragmentName'?: 'BlockData_WebsiteFooter_Fragment' };
-
 type BlockData__Component_Fragment = (
   { __typename?: '_Component' }
   & { ' $fragmentRefs'?: { 'IContentData__Component_Fragment': IContentData__Component_Fragment } }
@@ -10937,32 +10099,12 @@ type BlockData__Section_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData__Section_Fragment': IContentData__Section_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData__Section_Fragment' };
 
-type BlockData_elementTesting_Fragment = (
-  { __typename?: 'elementTesting' }
-  & { ' $fragmentRefs'?: { 'IContentData_elementTesting_Fragment': IContentData_elementTesting_Fragment } }
-) & { ' $fragmentName'?: 'BlockData_elementTesting_Fragment' };
-
-export type BlockDataFragment = BlockData_ArticleListElement_Fragment | BlockData_BannerBlock_Fragment | BlockData_BlankSection_Fragment | BlockData_ButtonBlock_Fragment | BlockData_CTAElement_Fragment | BlockData_CardBlock_Fragment | BlockData_CarouselBlock_Fragment | BlockData_ContentRecsElement_Fragment | BlockData_Dictionary_Fragment | BlockData_DictionaryItem_Fragment | BlockData_HeaderBlock_Fragment | BlockData_HeadingElement_Fragment | BlockData_HeroBlock_Fragment | BlockData_ImageElement_Fragment | BlockData_LayoutSettingsBlock_Fragment | BlockData_MegaMenuGroupBlock_Fragment | BlockData_MenuNavigationBlock_Fragment | BlockData_NavigationMenuBlock_Fragment | BlockData_OdpEmbedBlock_Fragment | BlockData_OfficeLocation_Fragment | BlockData_PageSeoSettings_Fragment | BlockData_ParagraphElement_Fragment | BlockData_QuoteBlock_Fragment | BlockData_RichTextElement_Fragment | BlockData_TestimonialElement_Fragment | BlockData_TextBlock_Fragment | BlockData_VideoElement_Fragment | BlockData_WebsiteFooter_Fragment | BlockData__Component_Fragment | BlockData__Section_Fragment | BlockData_elementTesting_Fragment;
-
-type PageData_ArticleGroupPage_Fragment = (
-  { __typename?: 'ArticleGroupPage' }
-  & { ' $fragmentRefs'?: { 'IContentData_ArticleGroupPage_Fragment': IContentData_ArticleGroupPage_Fragment } }
-) & { ' $fragmentName'?: 'PageData_ArticleGroupPage_Fragment' };
+export type BlockDataFragment = BlockData_ArticleListElement_Fragment | BlockData_BlankSection_Fragment | BlockData_BlogListingBlock_Fragment | BlockData_ButtonBlock_Fragment | BlockData_CTAElement_Fragment | BlockData_CardBlock_Fragment | BlockData_CarouselBlock_Fragment | BlockData_ContentRecsBlock_Fragment | BlockData_ContentRecsElement_Fragment | BlockData_HeadingElement_Fragment | BlockData_HeroBlock_Fragment | BlockData_HomePageHeroBlock_Fragment | BlockData_HtmlBlock_Fragment | BlockData_ImageElement_Fragment | BlockData_LayoutContainerBlock_Fragment | BlockData_LayoutSettingsBlock_Fragment | BlockData_MegaMenuGroupBlock_Fragment | BlockData_MenuNavigationBlock_Fragment | BlockData_OdpEmbedBlock_Fragment | BlockData_PageSeoSettings_Fragment | BlockData_ParagraphElement_Fragment | BlockData_QuoteBlock_Fragment | BlockData_RichTextElement_Fragment | BlockData_TestimonialElement_Fragment | BlockData_TextBlock_Fragment | BlockData_VideoElement_Fragment | BlockData__Component_Fragment | BlockData__Section_Fragment;
 
 type PageData_ArticleListElement_Fragment = (
   { __typename?: 'ArticleListElement' }
   & { ' $fragmentRefs'?: { 'IContentData_ArticleListElement_Fragment': IContentData_ArticleListElement_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_ArticleListElement_Fragment' };
-
-type PageData_ArticlePage_Fragment = (
-  { __typename?: 'ArticlePage' }
-  & { ' $fragmentRefs'?: { 'IContentData_ArticlePage_Fragment': IContentData_ArticlePage_Fragment } }
-) & { ' $fragmentName'?: 'PageData_ArticlePage_Fragment' };
-
-type PageData_BannerBlock_Fragment = (
-  { __typename?: 'BannerBlock' }
-  & { ' $fragmentRefs'?: { 'IContentData_BannerBlock_Fragment': IContentData_BannerBlock_Fragment } }
-) & { ' $fragmentName'?: 'PageData_BannerBlock_Fragment' };
 
 type PageData_BlankExperience_Fragment = (
   { __typename?: 'BlankExperience' }
@@ -10973,6 +10115,11 @@ type PageData_BlankSection_Fragment = (
   { __typename?: 'BlankSection' }
   & { ' $fragmentRefs'?: { 'IContentData_BlankSection_Fragment': IContentData_BlankSection_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_BlankSection_Fragment' };
+
+type PageData_BlogListingBlock_Fragment = (
+  { __typename?: 'BlogListingBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_BlogListingBlock_Fragment': IContentData_BlogListingBlock_Fragment } }
+) & { ' $fragmentName'?: 'PageData_BlogListingBlock_Fragment' };
 
 type PageData_BlogPostPage_Fragment = (
   { __typename?: 'BlogPostPage' }
@@ -11004,40 +10151,20 @@ type PageData_CarouselBlock_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_CarouselBlock_Fragment': IContentData_CarouselBlock_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_CarouselBlock_Fragment' };
 
+type PageData_ContentRecsBlock_Fragment = (
+  { __typename?: 'ContentRecsBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_ContentRecsBlock_Fragment': IContentData_ContentRecsBlock_Fragment } }
+) & { ' $fragmentName'?: 'PageData_ContentRecsBlock_Fragment' };
+
 type PageData_ContentRecsElement_Fragment = (
   { __typename?: 'ContentRecsElement' }
   & { ' $fragmentRefs'?: { 'IContentData_ContentRecsElement_Fragment': IContentData_ContentRecsElement_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_ContentRecsElement_Fragment' };
 
-type PageData_DefaultImage_Fragment = (
-  { __typename?: 'DefaultImage' }
-  & { ' $fragmentRefs'?: { 'IContentData_DefaultImage_Fragment': IContentData_DefaultImage_Fragment } }
-) & { ' $fragmentName'?: 'PageData_DefaultImage_Fragment' };
-
-type PageData_DefaultVideo_Fragment = (
-  { __typename?: 'DefaultVideo' }
-  & { ' $fragmentRefs'?: { 'IContentData_DefaultVideo_Fragment': IContentData_DefaultVideo_Fragment } }
-) & { ' $fragmentName'?: 'PageData_DefaultVideo_Fragment' };
-
-type PageData_Dictionary_Fragment = (
-  { __typename?: 'Dictionary' }
-  & { ' $fragmentRefs'?: { 'IContentData_Dictionary_Fragment': IContentData_Dictionary_Fragment } }
-) & { ' $fragmentName'?: 'PageData_Dictionary_Fragment' };
-
-type PageData_DictionaryItem_Fragment = (
-  { __typename?: 'DictionaryItem' }
-  & { ' $fragmentRefs'?: { 'IContentData_DictionaryItem_Fragment': IContentData_DictionaryItem_Fragment } }
-) & { ' $fragmentName'?: 'PageData_DictionaryItem_Fragment' };
-
 type PageData_GenericMedia_Fragment = (
   { __typename?: 'GenericMedia' }
   & { ' $fragmentRefs'?: { 'IContentData_GenericMedia_Fragment': IContentData_GenericMedia_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_GenericMedia_Fragment' };
-
-type PageData_HeaderBlock_Fragment = (
-  { __typename?: 'HeaderBlock' }
-  & { ' $fragmentRefs'?: { 'IContentData_HeaderBlock_Fragment': IContentData_HeaderBlock_Fragment } }
-) & { ' $fragmentName'?: 'PageData_HeaderBlock_Fragment' };
 
 type PageData_HeadingElement_Fragment = (
   { __typename?: 'HeadingElement' }
@@ -11048,6 +10175,16 @@ type PageData_HeroBlock_Fragment = (
   { __typename?: 'HeroBlock' }
   & { ' $fragmentRefs'?: { 'IContentData_HeroBlock_Fragment': IContentData_HeroBlock_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_HeroBlock_Fragment' };
+
+type PageData_HomePageHeroBlock_Fragment = (
+  { __typename?: 'HomePageHeroBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_HomePageHeroBlock_Fragment': IContentData_HomePageHeroBlock_Fragment } }
+) & { ' $fragmentName'?: 'PageData_HomePageHeroBlock_Fragment' };
+
+type PageData_HtmlBlock_Fragment = (
+  { __typename?: 'HtmlBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_HtmlBlock_Fragment': IContentData_HtmlBlock_Fragment } }
+) & { ' $fragmentName'?: 'PageData_HtmlBlock_Fragment' };
 
 type PageData_Image_Fragment = (
   { __typename?: 'Image' }
@@ -11069,6 +10206,11 @@ type PageData_LandingPage_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_LandingPage_Fragment': IContentData_LandingPage_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_LandingPage_Fragment' };
 
+type PageData_LayoutContainerBlock_Fragment = (
+  { __typename?: 'LayoutContainerBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_LayoutContainerBlock_Fragment': IContentData_LayoutContainerBlock_Fragment } }
+) & { ' $fragmentName'?: 'PageData_LayoutContainerBlock_Fragment' };
+
 type PageData_LayoutSettingsBlock_Fragment = (
   { __typename?: 'LayoutSettingsBlock' }
   & { ' $fragmentRefs'?: { 'IContentData_LayoutSettingsBlock_Fragment': IContentData_LayoutSettingsBlock_Fragment } }
@@ -11084,20 +10226,10 @@ type PageData_MenuNavigationBlock_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_MenuNavigationBlock_Fragment': IContentData_MenuNavigationBlock_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_MenuNavigationBlock_Fragment' };
 
-type PageData_NavigationMenuBlock_Fragment = (
-  { __typename?: 'NavigationMenuBlock' }
-  & { ' $fragmentRefs'?: { 'IContentData_NavigationMenuBlock_Fragment': IContentData_NavigationMenuBlock_Fragment } }
-) & { ' $fragmentName'?: 'PageData_NavigationMenuBlock_Fragment' };
-
 type PageData_OdpEmbedBlock_Fragment = (
   { __typename?: 'OdpEmbedBlock' }
   & { ' $fragmentRefs'?: { 'IContentData_OdpEmbedBlock_Fragment': IContentData_OdpEmbedBlock_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_OdpEmbedBlock_Fragment' };
-
-type PageData_OfficeLocation_Fragment = (
-  { __typename?: 'OfficeLocation' }
-  & { ' $fragmentRefs'?: { 'IContentData_OfficeLocation_Fragment': IContentData_OfficeLocation_Fragment } }
-) & { ' $fragmentName'?: 'PageData_OfficeLocation_Fragment' };
 
 type PageData_PageSeoSettings_Fragment = (
   { __typename?: 'PageSeoSettings' }
@@ -11118,6 +10250,16 @@ type PageData_RichTextElement_Fragment = (
   { __typename?: 'RichTextElement' }
   & { ' $fragmentRefs'?: { 'IContentData_RichTextElement_Fragment': IContentData_RichTextElement_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_RichTextElement_Fragment' };
+
+type PageData_StandardPage_Fragment = (
+  { __typename?: 'StandardPage' }
+  & { ' $fragmentRefs'?: { 'IContentData_StandardPage_Fragment': IContentData_StandardPage_Fragment } }
+) & { ' $fragmentName'?: 'PageData_StandardPage_Fragment' };
+
+type PageData_StartPage_Fragment = (
+  { __typename?: 'StartPage' }
+  & { ' $fragmentRefs'?: { 'IContentData_StartPage_Fragment': IContentData_StartPage_Fragment } }
+) & { ' $fragmentName'?: 'PageData_StartPage_Fragment' };
 
 type PageData_SysContentFolder_Fragment = (
   { __typename?: 'SysContentFolder' }
@@ -11148,11 +10290,6 @@ type PageData_VideoMedia_Fragment = (
   { __typename?: 'VideoMedia' }
   & { ' $fragmentRefs'?: { 'IContentData_VideoMedia_Fragment': IContentData_VideoMedia_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_VideoMedia_Fragment' };
-
-type PageData_WebsiteFooter_Fragment = (
-  { __typename?: 'WebsiteFooter' }
-  & { ' $fragmentRefs'?: { 'IContentData_WebsiteFooter_Fragment': IContentData_WebsiteFooter_Fragment } }
-) & { ' $fragmentName'?: 'PageData_WebsiteFooter_Fragment' };
 
 type PageData__Component_Fragment = (
   { __typename?: '_Component' }
@@ -11199,12 +10336,7 @@ type PageData__Video_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData__Video_Fragment': IContentData__Video_Fragment } }
 ) & { ' $fragmentName'?: 'PageData__Video_Fragment' };
 
-type PageData_elementTesting_Fragment = (
-  { __typename?: 'elementTesting' }
-  & { ' $fragmentRefs'?: { 'IContentData_elementTesting_Fragment': IContentData_elementTesting_Fragment } }
-) & { ' $fragmentName'?: 'PageData_elementTesting_Fragment' };
-
-export type PageDataFragment = PageData_ArticleGroupPage_Fragment | PageData_ArticleListElement_Fragment | PageData_ArticlePage_Fragment | PageData_BannerBlock_Fragment | PageData_BlankExperience_Fragment | PageData_BlankSection_Fragment | PageData_BlogPostPage_Fragment | PageData_BlogSectionExperience_Fragment | PageData_ButtonBlock_Fragment | PageData_CTAElement_Fragment | PageData_CardBlock_Fragment | PageData_CarouselBlock_Fragment | PageData_ContentRecsElement_Fragment | PageData_DefaultImage_Fragment | PageData_DefaultVideo_Fragment | PageData_Dictionary_Fragment | PageData_DictionaryItem_Fragment | PageData_GenericMedia_Fragment | PageData_HeaderBlock_Fragment | PageData_HeadingElement_Fragment | PageData_HeroBlock_Fragment | PageData_Image_Fragment | PageData_ImageElement_Fragment | PageData_ImageMedia_Fragment | PageData_LandingPage_Fragment | PageData_LayoutSettingsBlock_Fragment | PageData_MegaMenuGroupBlock_Fragment | PageData_MenuNavigationBlock_Fragment | PageData_NavigationMenuBlock_Fragment | PageData_OdpEmbedBlock_Fragment | PageData_OfficeLocation_Fragment | PageData_PageSeoSettings_Fragment | PageData_ParagraphElement_Fragment | PageData_QuoteBlock_Fragment | PageData_RichTextElement_Fragment | PageData_SysContentFolder_Fragment | PageData_TestimonialElement_Fragment | PageData_TextBlock_Fragment | PageData_Video_Fragment | PageData_VideoElement_Fragment | PageData_VideoMedia_Fragment | PageData_WebsiteFooter_Fragment | PageData__Component_Fragment | PageData__Content_Fragment | PageData__Experience_Fragment | PageData__Folder_Fragment | PageData__Image_Fragment | PageData__Media_Fragment | PageData__Page_Fragment | PageData__Section_Fragment | PageData__Video_Fragment | PageData_elementTesting_Fragment;
+export type PageDataFragment = PageData_ArticleListElement_Fragment | PageData_BlankExperience_Fragment | PageData_BlankSection_Fragment | PageData_BlogListingBlock_Fragment | PageData_BlogPostPage_Fragment | PageData_BlogSectionExperience_Fragment | PageData_ButtonBlock_Fragment | PageData_CTAElement_Fragment | PageData_CardBlock_Fragment | PageData_CarouselBlock_Fragment | PageData_ContentRecsBlock_Fragment | PageData_ContentRecsElement_Fragment | PageData_GenericMedia_Fragment | PageData_HeadingElement_Fragment | PageData_HeroBlock_Fragment | PageData_HomePageHeroBlock_Fragment | PageData_HtmlBlock_Fragment | PageData_Image_Fragment | PageData_ImageElement_Fragment | PageData_ImageMedia_Fragment | PageData_LandingPage_Fragment | PageData_LayoutContainerBlock_Fragment | PageData_LayoutSettingsBlock_Fragment | PageData_MegaMenuGroupBlock_Fragment | PageData_MenuNavigationBlock_Fragment | PageData_OdpEmbedBlock_Fragment | PageData_PageSeoSettings_Fragment | PageData_ParagraphElement_Fragment | PageData_QuoteBlock_Fragment | PageData_RichTextElement_Fragment | PageData_StandardPage_Fragment | PageData_StartPage_Fragment | PageData_SysContentFolder_Fragment | PageData_TestimonialElement_Fragment | PageData_TextBlock_Fragment | PageData_Video_Fragment | PageData_VideoElement_Fragment | PageData_VideoMedia_Fragment | PageData__Component_Fragment | PageData__Content_Fragment | PageData__Experience_Fragment | PageData__Folder_Fragment | PageData__Image_Fragment | PageData__Media_Fragment | PageData__Page_Fragment | PageData__Section_Fragment | PageData__Video_Fragment;
 
 export type LinkDataFragment = { __typename?: 'ContentUrl', base?: string | null, hierarchical?: string | null, default?: string | null } & { ' $fragmentName'?: 'LinkDataFragment' };
 
@@ -11235,25 +10367,10 @@ type IContentInfo_MediaMetadata_Fragment = { __typename?: 'MediaMetadata', key?:
 
 export type IContentInfoFragment = IContentInfo_ContentMetadata_Fragment | IContentInfo_InstanceMetadata_Fragment | IContentInfo_ItemMetadata_Fragment | IContentInfo_MediaMetadata_Fragment;
 
-type IContentListItem_ArticleGroupPage_Fragment = (
-  { __typename?: 'ArticleGroupPage' }
-  & { ' $fragmentRefs'?: { 'IContentData_ArticleGroupPage_Fragment': IContentData_ArticleGroupPage_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_ArticleGroupPage_Fragment' };
-
 type IContentListItem_ArticleListElement_Fragment = (
   { __typename?: 'ArticleListElement' }
   & { ' $fragmentRefs'?: { 'IContentData_ArticleListElement_Fragment': IContentData_ArticleListElement_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_ArticleListElement_Fragment' };
-
-type IContentListItem_ArticlePage_Fragment = (
-  { __typename?: 'ArticlePage' }
-  & { ' $fragmentRefs'?: { 'IContentData_ArticlePage_Fragment': IContentData_ArticlePage_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_ArticlePage_Fragment' };
-
-type IContentListItem_BannerBlock_Fragment = (
-  { __typename?: 'BannerBlock' }
-  & { ' $fragmentRefs'?: { 'IContentData_BannerBlock_Fragment': IContentData_BannerBlock_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_BannerBlock_Fragment' };
 
 type IContentListItem_BlankExperience_Fragment = (
   { __typename?: 'BlankExperience' }
@@ -11264,6 +10381,11 @@ type IContentListItem_BlankSection_Fragment = (
   { __typename?: 'BlankSection' }
   & { ' $fragmentRefs'?: { 'IContentData_BlankSection_Fragment': IContentData_BlankSection_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_BlankSection_Fragment' };
+
+type IContentListItem_BlogListingBlock_Fragment = (
+  { __typename?: 'BlogListingBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_BlogListingBlock_Fragment': IContentData_BlogListingBlock_Fragment } }
+) & { ' $fragmentName'?: 'IContentListItem_BlogListingBlock_Fragment' };
 
 type IContentListItem_BlogPostPage_Fragment = (
   { __typename?: 'BlogPostPage' }
@@ -11295,40 +10417,20 @@ type IContentListItem_CarouselBlock_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_CarouselBlock_Fragment': IContentData_CarouselBlock_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_CarouselBlock_Fragment' };
 
+type IContentListItem_ContentRecsBlock_Fragment = (
+  { __typename?: 'ContentRecsBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_ContentRecsBlock_Fragment': IContentData_ContentRecsBlock_Fragment } }
+) & { ' $fragmentName'?: 'IContentListItem_ContentRecsBlock_Fragment' };
+
 type IContentListItem_ContentRecsElement_Fragment = (
   { __typename?: 'ContentRecsElement' }
   & { ' $fragmentRefs'?: { 'IContentData_ContentRecsElement_Fragment': IContentData_ContentRecsElement_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_ContentRecsElement_Fragment' };
 
-type IContentListItem_DefaultImage_Fragment = (
-  { __typename?: 'DefaultImage' }
-  & { ' $fragmentRefs'?: { 'IContentData_DefaultImage_Fragment': IContentData_DefaultImage_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_DefaultImage_Fragment' };
-
-type IContentListItem_DefaultVideo_Fragment = (
-  { __typename?: 'DefaultVideo' }
-  & { ' $fragmentRefs'?: { 'IContentData_DefaultVideo_Fragment': IContentData_DefaultVideo_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_DefaultVideo_Fragment' };
-
-type IContentListItem_Dictionary_Fragment = (
-  { __typename?: 'Dictionary' }
-  & { ' $fragmentRefs'?: { 'IContentData_Dictionary_Fragment': IContentData_Dictionary_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_Dictionary_Fragment' };
-
-type IContentListItem_DictionaryItem_Fragment = (
-  { __typename?: 'DictionaryItem' }
-  & { ' $fragmentRefs'?: { 'IContentData_DictionaryItem_Fragment': IContentData_DictionaryItem_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_DictionaryItem_Fragment' };
-
 type IContentListItem_GenericMedia_Fragment = (
   { __typename?: 'GenericMedia' }
   & { ' $fragmentRefs'?: { 'IContentData_GenericMedia_Fragment': IContentData_GenericMedia_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_GenericMedia_Fragment' };
-
-type IContentListItem_HeaderBlock_Fragment = (
-  { __typename?: 'HeaderBlock' }
-  & { ' $fragmentRefs'?: { 'IContentData_HeaderBlock_Fragment': IContentData_HeaderBlock_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_HeaderBlock_Fragment' };
 
 type IContentListItem_HeadingElement_Fragment = (
   { __typename?: 'HeadingElement' }
@@ -11339,6 +10441,16 @@ type IContentListItem_HeroBlock_Fragment = (
   { __typename?: 'HeroBlock' }
   & { ' $fragmentRefs'?: { 'IContentData_HeroBlock_Fragment': IContentData_HeroBlock_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_HeroBlock_Fragment' };
+
+type IContentListItem_HomePageHeroBlock_Fragment = (
+  { __typename?: 'HomePageHeroBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_HomePageHeroBlock_Fragment': IContentData_HomePageHeroBlock_Fragment } }
+) & { ' $fragmentName'?: 'IContentListItem_HomePageHeroBlock_Fragment' };
+
+type IContentListItem_HtmlBlock_Fragment = (
+  { __typename?: 'HtmlBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_HtmlBlock_Fragment': IContentData_HtmlBlock_Fragment } }
+) & { ' $fragmentName'?: 'IContentListItem_HtmlBlock_Fragment' };
 
 type IContentListItem_Image_Fragment = (
   { __typename?: 'Image' }
@@ -11360,6 +10472,11 @@ type IContentListItem_LandingPage_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_LandingPage_Fragment': IContentData_LandingPage_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_LandingPage_Fragment' };
 
+type IContentListItem_LayoutContainerBlock_Fragment = (
+  { __typename?: 'LayoutContainerBlock' }
+  & { ' $fragmentRefs'?: { 'IContentData_LayoutContainerBlock_Fragment': IContentData_LayoutContainerBlock_Fragment } }
+) & { ' $fragmentName'?: 'IContentListItem_LayoutContainerBlock_Fragment' };
+
 type IContentListItem_LayoutSettingsBlock_Fragment = (
   { __typename?: 'LayoutSettingsBlock' }
   & { ' $fragmentRefs'?: { 'IContentData_LayoutSettingsBlock_Fragment': IContentData_LayoutSettingsBlock_Fragment } }
@@ -11375,20 +10492,10 @@ type IContentListItem_MenuNavigationBlock_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_MenuNavigationBlock_Fragment': IContentData_MenuNavigationBlock_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_MenuNavigationBlock_Fragment' };
 
-type IContentListItem_NavigationMenuBlock_Fragment = (
-  { __typename?: 'NavigationMenuBlock' }
-  & { ' $fragmentRefs'?: { 'IContentData_NavigationMenuBlock_Fragment': IContentData_NavigationMenuBlock_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_NavigationMenuBlock_Fragment' };
-
 type IContentListItem_OdpEmbedBlock_Fragment = (
   { __typename?: 'OdpEmbedBlock' }
   & { ' $fragmentRefs'?: { 'IContentData_OdpEmbedBlock_Fragment': IContentData_OdpEmbedBlock_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_OdpEmbedBlock_Fragment' };
-
-type IContentListItem_OfficeLocation_Fragment = (
-  { __typename?: 'OfficeLocation' }
-  & { ' $fragmentRefs'?: { 'IContentData_OfficeLocation_Fragment': IContentData_OfficeLocation_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_OfficeLocation_Fragment' };
 
 type IContentListItem_PageSeoSettings_Fragment = (
   { __typename?: 'PageSeoSettings' }
@@ -11409,6 +10516,16 @@ type IContentListItem_RichTextElement_Fragment = (
   { __typename?: 'RichTextElement' }
   & { ' $fragmentRefs'?: { 'IContentData_RichTextElement_Fragment': IContentData_RichTextElement_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_RichTextElement_Fragment' };
+
+type IContentListItem_StandardPage_Fragment = (
+  { __typename?: 'StandardPage' }
+  & { ' $fragmentRefs'?: { 'IContentData_StandardPage_Fragment': IContentData_StandardPage_Fragment } }
+) & { ' $fragmentName'?: 'IContentListItem_StandardPage_Fragment' };
+
+type IContentListItem_StartPage_Fragment = (
+  { __typename?: 'StartPage' }
+  & { ' $fragmentRefs'?: { 'IContentData_StartPage_Fragment': IContentData_StartPage_Fragment } }
+) & { ' $fragmentName'?: 'IContentListItem_StartPage_Fragment' };
 
 type IContentListItem_SysContentFolder_Fragment = (
   { __typename?: 'SysContentFolder' }
@@ -11439,11 +10556,6 @@ type IContentListItem_VideoMedia_Fragment = (
   { __typename?: 'VideoMedia' }
   & { ' $fragmentRefs'?: { 'IContentData_VideoMedia_Fragment': IContentData_VideoMedia_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_VideoMedia_Fragment' };
-
-type IContentListItem_WebsiteFooter_Fragment = (
-  { __typename?: 'WebsiteFooter' }
-  & { ' $fragmentRefs'?: { 'IContentData_WebsiteFooter_Fragment': IContentData_WebsiteFooter_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_WebsiteFooter_Fragment' };
 
 type IContentListItem__Component_Fragment = (
   { __typename?: '_Component' }
@@ -11490,12 +10602,7 @@ type IContentListItem__Video_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData__Video_Fragment': IContentData__Video_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem__Video_Fragment' };
 
-type IContentListItem_elementTesting_Fragment = (
-  { __typename?: 'elementTesting' }
-  & { ' $fragmentRefs'?: { 'IContentData_elementTesting_Fragment': IContentData_elementTesting_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_elementTesting_Fragment' };
-
-export type IContentListItemFragment = IContentListItem_ArticleGroupPage_Fragment | IContentListItem_ArticleListElement_Fragment | IContentListItem_ArticlePage_Fragment | IContentListItem_BannerBlock_Fragment | IContentListItem_BlankExperience_Fragment | IContentListItem_BlankSection_Fragment | IContentListItem_BlogPostPage_Fragment | IContentListItem_BlogSectionExperience_Fragment | IContentListItem_ButtonBlock_Fragment | IContentListItem_CTAElement_Fragment | IContentListItem_CardBlock_Fragment | IContentListItem_CarouselBlock_Fragment | IContentListItem_ContentRecsElement_Fragment | IContentListItem_DefaultImage_Fragment | IContentListItem_DefaultVideo_Fragment | IContentListItem_Dictionary_Fragment | IContentListItem_DictionaryItem_Fragment | IContentListItem_GenericMedia_Fragment | IContentListItem_HeaderBlock_Fragment | IContentListItem_HeadingElement_Fragment | IContentListItem_HeroBlock_Fragment | IContentListItem_Image_Fragment | IContentListItem_ImageElement_Fragment | IContentListItem_ImageMedia_Fragment | IContentListItem_LandingPage_Fragment | IContentListItem_LayoutSettingsBlock_Fragment | IContentListItem_MegaMenuGroupBlock_Fragment | IContentListItem_MenuNavigationBlock_Fragment | IContentListItem_NavigationMenuBlock_Fragment | IContentListItem_OdpEmbedBlock_Fragment | IContentListItem_OfficeLocation_Fragment | IContentListItem_PageSeoSettings_Fragment | IContentListItem_ParagraphElement_Fragment | IContentListItem_QuoteBlock_Fragment | IContentListItem_RichTextElement_Fragment | IContentListItem_SysContentFolder_Fragment | IContentListItem_TestimonialElement_Fragment | IContentListItem_TextBlock_Fragment | IContentListItem_Video_Fragment | IContentListItem_VideoElement_Fragment | IContentListItem_VideoMedia_Fragment | IContentListItem_WebsiteFooter_Fragment | IContentListItem__Component_Fragment | IContentListItem__Content_Fragment | IContentListItem__Experience_Fragment | IContentListItem__Folder_Fragment | IContentListItem__Image_Fragment | IContentListItem__Media_Fragment | IContentListItem__Page_Fragment | IContentListItem__Section_Fragment | IContentListItem__Video_Fragment | IContentListItem_elementTesting_Fragment;
+export type IContentListItemFragment = IContentListItem_ArticleListElement_Fragment | IContentListItem_BlankExperience_Fragment | IContentListItem_BlankSection_Fragment | IContentListItem_BlogListingBlock_Fragment | IContentListItem_BlogPostPage_Fragment | IContentListItem_BlogSectionExperience_Fragment | IContentListItem_ButtonBlock_Fragment | IContentListItem_CTAElement_Fragment | IContentListItem_CardBlock_Fragment | IContentListItem_CarouselBlock_Fragment | IContentListItem_ContentRecsBlock_Fragment | IContentListItem_ContentRecsElement_Fragment | IContentListItem_GenericMedia_Fragment | IContentListItem_HeadingElement_Fragment | IContentListItem_HeroBlock_Fragment | IContentListItem_HomePageHeroBlock_Fragment | IContentListItem_HtmlBlock_Fragment | IContentListItem_Image_Fragment | IContentListItem_ImageElement_Fragment | IContentListItem_ImageMedia_Fragment | IContentListItem_LandingPage_Fragment | IContentListItem_LayoutContainerBlock_Fragment | IContentListItem_LayoutSettingsBlock_Fragment | IContentListItem_MegaMenuGroupBlock_Fragment | IContentListItem_MenuNavigationBlock_Fragment | IContentListItem_OdpEmbedBlock_Fragment | IContentListItem_PageSeoSettings_Fragment | IContentListItem_ParagraphElement_Fragment | IContentListItem_QuoteBlock_Fragment | IContentListItem_RichTextElement_Fragment | IContentListItem_StandardPage_Fragment | IContentListItem_StartPage_Fragment | IContentListItem_SysContentFolder_Fragment | IContentListItem_TestimonialElement_Fragment | IContentListItem_TextBlock_Fragment | IContentListItem_Video_Fragment | IContentListItem_VideoElement_Fragment | IContentListItem_VideoMedia_Fragment | IContentListItem__Component_Fragment | IContentListItem__Content_Fragment | IContentListItem__Experience_Fragment | IContentListItem__Folder_Fragment | IContentListItem__Image_Fragment | IContentListItem__Media_Fragment | IContentListItem__Page_Fragment | IContentListItem__Section_Fragment | IContentListItem__Video_Fragment;
 
 type ExperienceData_BlankExperience_Fragment = { __typename?: 'BlankExperience', composition?: (
     { __typename?: 'CompositionStructureNode' }
@@ -11529,23 +10636,17 @@ export type getContentByIdQueryVariables = Exact<{
 
 
 export type getContentByIdQuery = { __typename?: 'Query', content?: { __typename?: '_ContentOutput', total?: number | null, items?: Array<(
-      { __typename?: 'ArticleGroupPage' }
-      & { ' $fragmentRefs'?: { 'PageData_ArticleGroupPage_Fragment': PageData_ArticleGroupPage_Fragment } }
-    ) | (
       { __typename?: 'ArticleListElement' }
       & { ' $fragmentRefs'?: { 'BlockData_ArticleListElement_Fragment': BlockData_ArticleListElement_Fragment;'PageData_ArticleListElement_Fragment': PageData_ArticleListElement_Fragment;'ArticleListElementDataFragment': ArticleListElementDataFragment } }
-    ) | (
-      { __typename?: 'ArticlePage' }
-      & { ' $fragmentRefs'?: { 'PageData_ArticlePage_Fragment': PageData_ArticlePage_Fragment } }
-    ) | (
-      { __typename?: 'BannerBlock' }
-      & { ' $fragmentRefs'?: { 'BlockData_BannerBlock_Fragment': BlockData_BannerBlock_Fragment;'PageData_BannerBlock_Fragment': PageData_BannerBlock_Fragment } }
     ) | (
       { __typename?: 'BlankExperience' }
       & { ' $fragmentRefs'?: { 'PageData_BlankExperience_Fragment': PageData_BlankExperience_Fragment;'BlankExperienceDataFragment': BlankExperienceDataFragment } }
     ) | (
       { __typename?: 'BlankSection' }
       & { ' $fragmentRefs'?: { 'BlockData_BlankSection_Fragment': BlockData_BlankSection_Fragment;'PageData_BlankSection_Fragment': PageData_BlankSection_Fragment;'BlankSectionDataFragment': BlankSectionDataFragment } }
+    ) | (
+      { __typename?: 'BlogListingBlock' }
+      & { ' $fragmentRefs'?: { 'BlockData_BlogListingBlock_Fragment': BlockData_BlogListingBlock_Fragment;'PageData_BlogListingBlock_Fragment': PageData_BlogListingBlock_Fragment } }
     ) | (
       { __typename?: 'BlogPostPage' }
       & { ' $fragmentRefs'?: { 'PageData_BlogPostPage_Fragment': PageData_BlogPostPage_Fragment;'BlogPostPageDataFragment': BlogPostPageDataFragment } }
@@ -11565,32 +10666,26 @@ export type getContentByIdQuery = { __typename?: 'Query', content?: { __typename
       { __typename?: 'CarouselBlock' }
       & { ' $fragmentRefs'?: { 'BlockData_CarouselBlock_Fragment': BlockData_CarouselBlock_Fragment;'PageData_CarouselBlock_Fragment': PageData_CarouselBlock_Fragment;'CarouselBlockDataFragment': CarouselBlockDataFragment } }
     ) | (
+      { __typename?: 'ContentRecsBlock' }
+      & { ' $fragmentRefs'?: { 'BlockData_ContentRecsBlock_Fragment': BlockData_ContentRecsBlock_Fragment;'PageData_ContentRecsBlock_Fragment': PageData_ContentRecsBlock_Fragment } }
+    ) | (
       { __typename?: 'ContentRecsElement' }
       & { ' $fragmentRefs'?: { 'BlockData_ContentRecsElement_Fragment': BlockData_ContentRecsElement_Fragment;'PageData_ContentRecsElement_Fragment': PageData_ContentRecsElement_Fragment;'ContentRecsElementDataFragment': ContentRecsElementDataFragment } }
     ) | (
-      { __typename?: 'DefaultImage' }
-      & { ' $fragmentRefs'?: { 'PageData_DefaultImage_Fragment': PageData_DefaultImage_Fragment } }
-    ) | (
-      { __typename?: 'DefaultVideo' }
-      & { ' $fragmentRefs'?: { 'PageData_DefaultVideo_Fragment': PageData_DefaultVideo_Fragment } }
-    ) | (
-      { __typename?: 'Dictionary' }
-      & { ' $fragmentRefs'?: { 'BlockData_Dictionary_Fragment': BlockData_Dictionary_Fragment;'PageData_Dictionary_Fragment': PageData_Dictionary_Fragment } }
-    ) | (
-      { __typename?: 'DictionaryItem' }
-      & { ' $fragmentRefs'?: { 'BlockData_DictionaryItem_Fragment': BlockData_DictionaryItem_Fragment;'PageData_DictionaryItem_Fragment': PageData_DictionaryItem_Fragment } }
-    ) | (
       { __typename?: 'GenericMedia' }
       & { ' $fragmentRefs'?: { 'PageData_GenericMedia_Fragment': PageData_GenericMedia_Fragment } }
-    ) | (
-      { __typename?: 'HeaderBlock' }
-      & { ' $fragmentRefs'?: { 'BlockData_HeaderBlock_Fragment': BlockData_HeaderBlock_Fragment;'PageData_HeaderBlock_Fragment': PageData_HeaderBlock_Fragment } }
     ) | (
       { __typename?: 'HeadingElement' }
       & { ' $fragmentRefs'?: { 'BlockData_HeadingElement_Fragment': BlockData_HeadingElement_Fragment;'PageData_HeadingElement_Fragment': PageData_HeadingElement_Fragment;'HeadingElementDataFragment': HeadingElementDataFragment } }
     ) | (
       { __typename?: 'HeroBlock' }
       & { ' $fragmentRefs'?: { 'BlockData_HeroBlock_Fragment': BlockData_HeroBlock_Fragment;'PageData_HeroBlock_Fragment': PageData_HeroBlock_Fragment;'HeroBlockDataFragment': HeroBlockDataFragment } }
+    ) | (
+      { __typename?: 'HomePageHeroBlock' }
+      & { ' $fragmentRefs'?: { 'BlockData_HomePageHeroBlock_Fragment': BlockData_HomePageHeroBlock_Fragment;'PageData_HomePageHeroBlock_Fragment': PageData_HomePageHeroBlock_Fragment } }
+    ) | (
+      { __typename?: 'HtmlBlock' }
+      & { ' $fragmentRefs'?: { 'BlockData_HtmlBlock_Fragment': BlockData_HtmlBlock_Fragment;'PageData_HtmlBlock_Fragment': PageData_HtmlBlock_Fragment } }
     ) | (
       { __typename?: 'Image' }
       & { ' $fragmentRefs'?: { 'PageData_Image_Fragment': PageData_Image_Fragment } }
@@ -11604,6 +10699,9 @@ export type getContentByIdQuery = { __typename?: 'Query', content?: { __typename
       { __typename?: 'LandingPage' }
       & { ' $fragmentRefs'?: { 'PageData_LandingPage_Fragment': PageData_LandingPage_Fragment;'LandingPageDataFragment': LandingPageDataFragment } }
     ) | (
+      { __typename?: 'LayoutContainerBlock' }
+      & { ' $fragmentRefs'?: { 'BlockData_LayoutContainerBlock_Fragment': BlockData_LayoutContainerBlock_Fragment;'PageData_LayoutContainerBlock_Fragment': PageData_LayoutContainerBlock_Fragment } }
+    ) | (
       { __typename?: 'LayoutSettingsBlock' }
       & { ' $fragmentRefs'?: { 'BlockData_LayoutSettingsBlock_Fragment': BlockData_LayoutSettingsBlock_Fragment;'PageData_LayoutSettingsBlock_Fragment': PageData_LayoutSettingsBlock_Fragment;'LayoutSettingsBlockDataFragment': LayoutSettingsBlockDataFragment } }
     ) | (
@@ -11613,14 +10711,8 @@ export type getContentByIdQuery = { __typename?: 'Query', content?: { __typename
       { __typename?: 'MenuNavigationBlock' }
       & { ' $fragmentRefs'?: { 'BlockData_MenuNavigationBlock_Fragment': BlockData_MenuNavigationBlock_Fragment;'PageData_MenuNavigationBlock_Fragment': PageData_MenuNavigationBlock_Fragment;'MenuNavigationBlockDataFragment': MenuNavigationBlockDataFragment } }
     ) | (
-      { __typename?: 'NavigationMenuBlock' }
-      & { ' $fragmentRefs'?: { 'BlockData_NavigationMenuBlock_Fragment': BlockData_NavigationMenuBlock_Fragment;'PageData_NavigationMenuBlock_Fragment': PageData_NavigationMenuBlock_Fragment } }
-    ) | (
       { __typename?: 'OdpEmbedBlock' }
       & { ' $fragmentRefs'?: { 'BlockData_OdpEmbedBlock_Fragment': BlockData_OdpEmbedBlock_Fragment;'PageData_OdpEmbedBlock_Fragment': PageData_OdpEmbedBlock_Fragment;'OdpEmbedBlockDataFragment': OdpEmbedBlockDataFragment } }
-    ) | (
-      { __typename?: 'OfficeLocation' }
-      & { ' $fragmentRefs'?: { 'BlockData_OfficeLocation_Fragment': BlockData_OfficeLocation_Fragment;'PageData_OfficeLocation_Fragment': PageData_OfficeLocation_Fragment } }
     ) | (
       { __typename?: 'PageSeoSettings' }
       & { ' $fragmentRefs'?: { 'BlockData_PageSeoSettings_Fragment': BlockData_PageSeoSettings_Fragment;'PageData_PageSeoSettings_Fragment': PageData_PageSeoSettings_Fragment;'PageSeoSettingsDataFragment': PageSeoSettingsDataFragment } }
@@ -11633,6 +10725,12 @@ export type getContentByIdQuery = { __typename?: 'Query', content?: { __typename
     ) | (
       { __typename?: 'RichTextElement' }
       & { ' $fragmentRefs'?: { 'BlockData_RichTextElement_Fragment': BlockData_RichTextElement_Fragment;'PageData_RichTextElement_Fragment': PageData_RichTextElement_Fragment;'RichTextElementDataFragment': RichTextElementDataFragment } }
+    ) | (
+      { __typename?: 'StandardPage' }
+      & { ' $fragmentRefs'?: { 'PageData_StandardPage_Fragment': PageData_StandardPage_Fragment } }
+    ) | (
+      { __typename?: 'StartPage' }
+      & { ' $fragmentRefs'?: { 'PageData_StartPage_Fragment': PageData_StartPage_Fragment } }
     ) | (
       { __typename?: 'SysContentFolder' }
       & { ' $fragmentRefs'?: { 'PageData_SysContentFolder_Fragment': PageData_SysContentFolder_Fragment } }
@@ -11651,9 +10749,6 @@ export type getContentByIdQuery = { __typename?: 'Query', content?: { __typename
     ) | (
       { __typename?: 'VideoMedia' }
       & { ' $fragmentRefs'?: { 'PageData_VideoMedia_Fragment': PageData_VideoMedia_Fragment } }
-    ) | (
-      { __typename?: 'WebsiteFooter' }
-      & { ' $fragmentRefs'?: { 'BlockData_WebsiteFooter_Fragment': BlockData_WebsiteFooter_Fragment;'PageData_WebsiteFooter_Fragment': PageData_WebsiteFooter_Fragment } }
     ) | (
       { __typename?: '_Component' }
       & { ' $fragmentRefs'?: { 'BlockData__Component_Fragment': BlockData__Component_Fragment;'PageData__Component_Fragment': PageData__Component_Fragment } }
@@ -11681,9 +10776,6 @@ export type getContentByIdQuery = { __typename?: 'Query', content?: { __typename
     ) | (
       { __typename?: '_Video' }
       & { ' $fragmentRefs'?: { 'PageData__Video_Fragment': PageData__Video_Fragment } }
-    ) | (
-      { __typename?: 'elementTesting' }
-      & { ' $fragmentRefs'?: { 'BlockData_elementTesting_Fragment': BlockData_elementTesting_Fragment;'PageData_elementTesting_Fragment': PageData_elementTesting_Fragment } }
     ) | null> | null } | null };
 
 export type getContentByPathQueryVariables = Exact<{
@@ -11694,23 +10786,17 @@ export type getContentByPathQueryVariables = Exact<{
 
 
 export type getContentByPathQuery = { __typename?: 'Query', content?: { __typename?: '_ContentOutput', total?: number | null, items?: Array<(
-      { __typename?: 'ArticleGroupPage' }
-      & { ' $fragmentRefs'?: { 'IContentData_ArticleGroupPage_Fragment': IContentData_ArticleGroupPage_Fragment;'PageData_ArticleGroupPage_Fragment': PageData_ArticleGroupPage_Fragment } }
-    ) | (
       { __typename?: 'ArticleListElement' }
       & { ' $fragmentRefs'?: { 'IContentData_ArticleListElement_Fragment': IContentData_ArticleListElement_Fragment;'PageData_ArticleListElement_Fragment': PageData_ArticleListElement_Fragment } }
-    ) | (
-      { __typename?: 'ArticlePage' }
-      & { ' $fragmentRefs'?: { 'IContentData_ArticlePage_Fragment': IContentData_ArticlePage_Fragment;'PageData_ArticlePage_Fragment': PageData_ArticlePage_Fragment } }
-    ) | (
-      { __typename?: 'BannerBlock' }
-      & { ' $fragmentRefs'?: { 'IContentData_BannerBlock_Fragment': IContentData_BannerBlock_Fragment;'PageData_BannerBlock_Fragment': PageData_BannerBlock_Fragment } }
     ) | (
       { __typename?: 'BlankExperience' }
       & { ' $fragmentRefs'?: { 'IContentData_BlankExperience_Fragment': IContentData_BlankExperience_Fragment;'PageData_BlankExperience_Fragment': PageData_BlankExperience_Fragment;'BlankExperienceDataFragment': BlankExperienceDataFragment } }
     ) | (
       { __typename?: 'BlankSection' }
       & { ' $fragmentRefs'?: { 'IContentData_BlankSection_Fragment': IContentData_BlankSection_Fragment;'PageData_BlankSection_Fragment': PageData_BlankSection_Fragment } }
+    ) | (
+      { __typename?: 'BlogListingBlock' }
+      & { ' $fragmentRefs'?: { 'IContentData_BlogListingBlock_Fragment': IContentData_BlogListingBlock_Fragment;'PageData_BlogListingBlock_Fragment': PageData_BlogListingBlock_Fragment } }
     ) | (
       { __typename?: 'BlogPostPage' }
       & { ' $fragmentRefs'?: { 'IContentData_BlogPostPage_Fragment': IContentData_BlogPostPage_Fragment;'PageData_BlogPostPage_Fragment': PageData_BlogPostPage_Fragment;'BlogPostPageDataFragment': BlogPostPageDataFragment } }
@@ -11730,32 +10816,26 @@ export type getContentByPathQuery = { __typename?: 'Query', content?: { __typena
       { __typename?: 'CarouselBlock' }
       & { ' $fragmentRefs'?: { 'IContentData_CarouselBlock_Fragment': IContentData_CarouselBlock_Fragment;'PageData_CarouselBlock_Fragment': PageData_CarouselBlock_Fragment } }
     ) | (
+      { __typename?: 'ContentRecsBlock' }
+      & { ' $fragmentRefs'?: { 'IContentData_ContentRecsBlock_Fragment': IContentData_ContentRecsBlock_Fragment;'PageData_ContentRecsBlock_Fragment': PageData_ContentRecsBlock_Fragment } }
+    ) | (
       { __typename?: 'ContentRecsElement' }
       & { ' $fragmentRefs'?: { 'IContentData_ContentRecsElement_Fragment': IContentData_ContentRecsElement_Fragment;'PageData_ContentRecsElement_Fragment': PageData_ContentRecsElement_Fragment } }
     ) | (
-      { __typename?: 'DefaultImage' }
-      & { ' $fragmentRefs'?: { 'IContentData_DefaultImage_Fragment': IContentData_DefaultImage_Fragment;'PageData_DefaultImage_Fragment': PageData_DefaultImage_Fragment } }
-    ) | (
-      { __typename?: 'DefaultVideo' }
-      & { ' $fragmentRefs'?: { 'IContentData_DefaultVideo_Fragment': IContentData_DefaultVideo_Fragment;'PageData_DefaultVideo_Fragment': PageData_DefaultVideo_Fragment } }
-    ) | (
-      { __typename?: 'Dictionary' }
-      & { ' $fragmentRefs'?: { 'IContentData_Dictionary_Fragment': IContentData_Dictionary_Fragment;'PageData_Dictionary_Fragment': PageData_Dictionary_Fragment } }
-    ) | (
-      { __typename?: 'DictionaryItem' }
-      & { ' $fragmentRefs'?: { 'IContentData_DictionaryItem_Fragment': IContentData_DictionaryItem_Fragment;'PageData_DictionaryItem_Fragment': PageData_DictionaryItem_Fragment } }
-    ) | (
       { __typename?: 'GenericMedia' }
       & { ' $fragmentRefs'?: { 'IContentData_GenericMedia_Fragment': IContentData_GenericMedia_Fragment;'PageData_GenericMedia_Fragment': PageData_GenericMedia_Fragment } }
-    ) | (
-      { __typename?: 'HeaderBlock' }
-      & { ' $fragmentRefs'?: { 'IContentData_HeaderBlock_Fragment': IContentData_HeaderBlock_Fragment;'PageData_HeaderBlock_Fragment': PageData_HeaderBlock_Fragment } }
     ) | (
       { __typename?: 'HeadingElement' }
       & { ' $fragmentRefs'?: { 'IContentData_HeadingElement_Fragment': IContentData_HeadingElement_Fragment;'PageData_HeadingElement_Fragment': PageData_HeadingElement_Fragment } }
     ) | (
       { __typename?: 'HeroBlock' }
       & { ' $fragmentRefs'?: { 'IContentData_HeroBlock_Fragment': IContentData_HeroBlock_Fragment;'PageData_HeroBlock_Fragment': PageData_HeroBlock_Fragment } }
+    ) | (
+      { __typename?: 'HomePageHeroBlock' }
+      & { ' $fragmentRefs'?: { 'IContentData_HomePageHeroBlock_Fragment': IContentData_HomePageHeroBlock_Fragment;'PageData_HomePageHeroBlock_Fragment': PageData_HomePageHeroBlock_Fragment } }
+    ) | (
+      { __typename?: 'HtmlBlock' }
+      & { ' $fragmentRefs'?: { 'IContentData_HtmlBlock_Fragment': IContentData_HtmlBlock_Fragment;'PageData_HtmlBlock_Fragment': PageData_HtmlBlock_Fragment } }
     ) | (
       { __typename?: 'Image' }
       & { ' $fragmentRefs'?: { 'IContentData_Image_Fragment': IContentData_Image_Fragment;'PageData_Image_Fragment': PageData_Image_Fragment } }
@@ -11769,6 +10849,9 @@ export type getContentByPathQuery = { __typename?: 'Query', content?: { __typena
       { __typename?: 'LandingPage' }
       & { ' $fragmentRefs'?: { 'IContentData_LandingPage_Fragment': IContentData_LandingPage_Fragment;'PageData_LandingPage_Fragment': PageData_LandingPage_Fragment;'LandingPageDataFragment': LandingPageDataFragment } }
     ) | (
+      { __typename?: 'LayoutContainerBlock' }
+      & { ' $fragmentRefs'?: { 'IContentData_LayoutContainerBlock_Fragment': IContentData_LayoutContainerBlock_Fragment;'PageData_LayoutContainerBlock_Fragment': PageData_LayoutContainerBlock_Fragment } }
+    ) | (
       { __typename?: 'LayoutSettingsBlock' }
       & { ' $fragmentRefs'?: { 'IContentData_LayoutSettingsBlock_Fragment': IContentData_LayoutSettingsBlock_Fragment;'PageData_LayoutSettingsBlock_Fragment': PageData_LayoutSettingsBlock_Fragment } }
     ) | (
@@ -11778,14 +10861,8 @@ export type getContentByPathQuery = { __typename?: 'Query', content?: { __typena
       { __typename?: 'MenuNavigationBlock' }
       & { ' $fragmentRefs'?: { 'IContentData_MenuNavigationBlock_Fragment': IContentData_MenuNavigationBlock_Fragment;'PageData_MenuNavigationBlock_Fragment': PageData_MenuNavigationBlock_Fragment } }
     ) | (
-      { __typename?: 'NavigationMenuBlock' }
-      & { ' $fragmentRefs'?: { 'IContentData_NavigationMenuBlock_Fragment': IContentData_NavigationMenuBlock_Fragment;'PageData_NavigationMenuBlock_Fragment': PageData_NavigationMenuBlock_Fragment } }
-    ) | (
       { __typename?: 'OdpEmbedBlock' }
       & { ' $fragmentRefs'?: { 'IContentData_OdpEmbedBlock_Fragment': IContentData_OdpEmbedBlock_Fragment;'PageData_OdpEmbedBlock_Fragment': PageData_OdpEmbedBlock_Fragment } }
-    ) | (
-      { __typename?: 'OfficeLocation' }
-      & { ' $fragmentRefs'?: { 'IContentData_OfficeLocation_Fragment': IContentData_OfficeLocation_Fragment;'PageData_OfficeLocation_Fragment': PageData_OfficeLocation_Fragment } }
     ) | (
       { __typename?: 'PageSeoSettings' }
       & { ' $fragmentRefs'?: { 'IContentData_PageSeoSettings_Fragment': IContentData_PageSeoSettings_Fragment;'PageData_PageSeoSettings_Fragment': PageData_PageSeoSettings_Fragment } }
@@ -11798,6 +10875,12 @@ export type getContentByPathQuery = { __typename?: 'Query', content?: { __typena
     ) | (
       { __typename?: 'RichTextElement' }
       & { ' $fragmentRefs'?: { 'IContentData_RichTextElement_Fragment': IContentData_RichTextElement_Fragment;'PageData_RichTextElement_Fragment': PageData_RichTextElement_Fragment } }
+    ) | (
+      { __typename?: 'StandardPage' }
+      & { ' $fragmentRefs'?: { 'IContentData_StandardPage_Fragment': IContentData_StandardPage_Fragment;'PageData_StandardPage_Fragment': PageData_StandardPage_Fragment } }
+    ) | (
+      { __typename?: 'StartPage' }
+      & { ' $fragmentRefs'?: { 'IContentData_StartPage_Fragment': IContentData_StartPage_Fragment;'PageData_StartPage_Fragment': PageData_StartPage_Fragment } }
     ) | (
       { __typename?: 'SysContentFolder' }
       & { ' $fragmentRefs'?: { 'IContentData_SysContentFolder_Fragment': IContentData_SysContentFolder_Fragment;'PageData_SysContentFolder_Fragment': PageData_SysContentFolder_Fragment } }
@@ -11816,9 +10899,6 @@ export type getContentByPathQuery = { __typename?: 'Query', content?: { __typena
     ) | (
       { __typename?: 'VideoMedia' }
       & { ' $fragmentRefs'?: { 'IContentData_VideoMedia_Fragment': IContentData_VideoMedia_Fragment;'PageData_VideoMedia_Fragment': PageData_VideoMedia_Fragment } }
-    ) | (
-      { __typename?: 'WebsiteFooter' }
-      & { ' $fragmentRefs'?: { 'IContentData_WebsiteFooter_Fragment': IContentData_WebsiteFooter_Fragment;'PageData_WebsiteFooter_Fragment': PageData_WebsiteFooter_Fragment } }
     ) | (
       { __typename?: '_Component' }
       & { ' $fragmentRefs'?: { 'IContentData__Component_Fragment': IContentData__Component_Fragment;'PageData__Component_Fragment': PageData__Component_Fragment } }
@@ -11846,9 +10926,6 @@ export type getContentByPathQuery = { __typename?: 'Query', content?: { __typena
     ) | (
       { __typename?: '_Video' }
       & { ' $fragmentRefs'?: { 'IContentData__Video_Fragment': IContentData__Video_Fragment;'PageData__Video_Fragment': PageData__Video_Fragment } }
-    ) | (
-      { __typename?: 'elementTesting' }
-      & { ' $fragmentRefs'?: { 'IContentData_elementTesting_Fragment': IContentData_elementTesting_Fragment;'PageData_elementTesting_Fragment': PageData_elementTesting_Fragment } }
     ) | null> | null } | null };
 
 export type getContentTypeQueryVariables = Exact<{
@@ -11860,7 +10937,7 @@ export type getContentTypeQueryVariables = Exact<{
 }>;
 
 
-export type getContentTypeQuery = { __typename?: 'Query', content?: { __typename?: '_ContentOutput', total?: number | null, items?: Array<{ __typename?: 'ArticleGroupPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticleListElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticlePage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BannerBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankSection', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlogPostPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlogSectionExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ButtonBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTAElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CardBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CarouselBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContentRecsElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'DefaultImage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'DefaultVideo', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Dictionary', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'DictionaryItem', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'GenericMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeaderBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeadingElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeroBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LandingPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LayoutSettingsBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MegaMenuGroupBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MenuNavigationBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'NavigationMenuBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OdpEmbedBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OfficeLocation', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ParagraphElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'QuoteBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'RichTextElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'SysContentFolder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TestimonialElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TextBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'WebsiteFooter', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Content', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Experience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Folder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Media', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Page', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'elementTesting', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null> | null } | null };
+export type getContentTypeQuery = { __typename?: 'Query', content?: { __typename?: '_ContentOutput', total?: number | null, items?: Array<{ __typename?: 'ArticleListElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankSection', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlogListingBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlogPostPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlogSectionExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ButtonBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTAElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CardBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CarouselBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContentRecsBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContentRecsElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'GenericMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeadingElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeroBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HomePageHeroBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HtmlBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LandingPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LayoutContainerBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LayoutSettingsBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MegaMenuGroupBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MenuNavigationBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OdpEmbedBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ParagraphElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'QuoteBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'RichTextElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'StandardPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'StartPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'SysContentFolder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TestimonialElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TextBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Content', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Experience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Folder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Media', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Page', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null> | null } | null };
 
 export const LinkDataFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"LinkData"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ContentUrl"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"base"}},{"kind":"Field","name":{"kind":"Name","value":"hierarchical"}},{"kind":"Field","name":{"kind":"Name","value":"default"}}]}}]} as unknown as DocumentNode<LinkDataFragment, unknown>;
 export const ReferenceDataFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ReferenceData"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ContentReference"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"url"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"LinkData"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"LinkData"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ContentUrl"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"base"}},{"kind":"Field","name":{"kind":"Name","value":"hierarchical"}},{"kind":"Field","name":{"kind":"Name","value":"default"}}]}}]} as unknown as DocumentNode<ReferenceDataFragment, unknown>;
