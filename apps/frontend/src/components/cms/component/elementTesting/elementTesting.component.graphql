@@ -1,0 +1,4 @@
+fragment elementTestingData on elementTesting {
+  Title
+  readTime
+}

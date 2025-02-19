@@ -17,18 +17,27 @@ const documents = {
     "fragment ArticleListElementData on ArticleListElement {\n  articleListCount\n  topics\n}": types.ArticleListElementDataFragmentDoc,
     "query getArticleListElementItems($count: Int!, $locale: [Locales], $topics: [String], $excludeKeys: [String]) {\n  BlogPostPage(\n    orderBy: {_metadata: {published: DESC}}\n    limit: $count\n    locale: $locale\n    where: {_metadata: {status: {eq: \"Published\"}, key: {notIn: $excludeKeys}}, Topic: {in: $topics}}\n  ) {\n    items {\n      ...IContentData\n      articleMeta: _metadata {\n        key\n        published\n        lastModified\n      }\n      blogTitle: Heading\n      blogSubtitle: ArticleSubHeading\n      blogImage: BlogPostPromoImage {\n        ...ReferenceData\n      }\n      blogBody: BlogPostBody {\n        json\n      }\n      blogAuthor: ArticleAuthor\n    }\n  }\n}": types.getArticleListElementItemsDocument,
     "query getDefaultArticleList($locale: [Locales!]) {\n  ArticleListElement(\n    where: {_metadata: {displayName: {startsWith: \"[DEFAULT]\"}, status: {eq: \"Published\"}}}\n    locale: $locale\n    orderBy: {_metadata: {published: DESC}}\n    limit: 1\n  ) {\n    items {\n      ...IContentData\n      ...ArticleListElementData\n    }\n  }\n}": types.getDefaultArticleListDocument,
+    "fragment BannerBlockData on BannerBlock {\n  Title\n}": types.BannerBlockDataFragmentDoc,
     "fragment ButtonBlockData on ButtonBlock {\n  children: ButtonText\n  url: ButtonUrl {\n    ...LinkData\n  }\n  className: ButtonClass\n  buttonType: ButtonType\n  buttonVariant: ButtonVariant\n}": types.ButtonBlockDataFragmentDoc,
     "fragment ButtonBlockPropertyData on ButtonBlockProperty {\n  children: ButtonText\n  url: ButtonUrl {\n    ...LinkData\n  }\n  className: ButtonClass\n  buttonType: ButtonType\n  buttonVariant: ButtonVariant\n}": types.ButtonBlockPropertyDataFragmentDoc,
     "fragment CTAElementData on CTAElement {\n  cta_text: Text\n  cta_link: Link {\n    ...LinkData\n  }\n}": types.CTAElementDataFragmentDoc,
+    "fragment CardBlockData on CardBlock {\n  CardHeading\n  CardSubheading\n  CardDescription {\n    json\n    html\n  }\n  CardColor\n  CardButton {\n    ...ButtonBlockPropertyData\n  }\n  CardIcon {\n    ...ReferenceData\n  }\n  CardImage {\n    ...ReferenceData\n  }\n  CardImageLayout\n}": types.CardBlockDataFragmentDoc,
     "fragment CarouselBlockData on CarouselBlock {\n  CarouselItemsContentArea {\n    ...IContentListItem\n    ...BlockData\n  }\n}": types.CarouselBlockDataFragmentDoc,
     "fragment ContentRecsElementData on ContentRecsElement {\n  ElementDeliveryApiKey\n  ElementRecommendationCount\n}": types.ContentRecsElementDataFragmentDoc,
+    "fragment DictionaryData on Dictionary {\n  DictionaryItems {\n    ...DictionaryItemPropertyData\n  }\n  DictionaryKey\n}": types.DictionaryDataFragmentDoc,
+    "fragment DictionaryItemData on DictionaryItem {\n  DictionaryItemKey\n  DictionaryItemValue\n}": types.DictionaryItemDataFragmentDoc,
+    "fragment DictionaryItemPropertyData on DictionaryItemProperty {\n  DictionaryItemKey\n  DictionaryItemValue\n}": types.DictionaryItemPropertyDataFragmentDoc,
+    "fragment HeaderBlockData on HeaderBlock {\n  site_logo {\n    ...ReferenceData\n  }\n  site_logo_dark {\n    ...ReferenceData\n  }\n  site_main_navigation {\n    ...IContentListItem\n  }\n  site_utility_navigation {\n    ...IContentListItem\n  }\n}": types.HeaderBlockDataFragmentDoc,
     "fragment HeadingElementData on HeadingElement {\n  headingText\n}": types.HeadingElementDataFragmentDoc,
     "fragment HeroBlockData on HeroBlock {\n  heroImage: HeroImage {\n    ...ReferenceData\n  }\n  eyebrow: Eyebrow\n  heroHeading: Heading\n  heroSubheading: SubHeading\n  heroDescription: Description {\n    json\n    html\n  }\n  heroColor: HeroColor\n  heroButton: HeroButton {\n    ...ButtonBlockPropertyData\n  }\n}": types.HeroBlockDataFragmentDoc,
     "fragment ImageElementData on ImageElement {\n  altText\n  imageLink {\n    ...ReferenceData\n  }\n}": types.ImageElementDataFragmentDoc,
     "fragment LayoutSettingsBlockData on LayoutSettingsBlock {\n  mainMenu {\n    ...IContentListItem\n  }\n  contactInfoHeading\n  serviceButtons {\n    ...IContentListItem\n  }\n  contactInfo {\n    json\n    html\n  }\n  footerMenus {\n    ...IContentListItem\n  }\n  copyright\n  legalLinks {\n    ...LinkItemData\n  }\n  appIdentifiers\n}": types.LayoutSettingsBlockDataFragmentDoc,
     "fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {\n  _metadata {\n    displayName\n  }\n  MenuMenuHeading\n  MegaMenuUrl {\n    ...LinkData\n  }\n  MegaMenuContentArea {\n    ...IContentData\n    ...MenuNavigationBlockData\n    ...BlogPostPageMenuBlock\n  }\n}": types.MegaMenuGroupBlockDataFragmentDoc,
     "fragment MenuNavigationBlockData on MenuNavigationBlock {\n  _metadata {\n    displayName\n  }\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}": types.MenuNavigationBlockDataFragmentDoc,
+    "fragment NavigationMenuBlockData on NavigationMenuBlock {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}": types.NavigationMenuBlockDataFragmentDoc,
+    "fragment NavigationMenuBlockPropertyData on NavigationMenuBlockProperty {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}": types.NavigationMenuBlockPropertyDataFragmentDoc,
     "fragment OdpEmbedBlockData on OdpEmbedBlock {\n  ContentId\n}": types.OdpEmbedBlockDataFragmentDoc,
+    "fragment OfficeLocationData on OfficeLocation {\n  OfficeTitle\n  OfficeAddressStreet1\n  OfficeAddressStreet2\n  OfficeAddressCity\n  OfficeAddressPostalCode\n  OfficeAddressCountry\n  OfficePhone\n  OfficeEmail\n}": types.OfficeLocationDataFragmentDoc,
     "fragment BlogPostPageMenuBlock on BlogPostPage {\n  meta: _metadata {\n    published\n    url {\n      ...LinkData\n    }\n  }\n  topics: Topic\n  heading: Heading\n  author: ArticleAuthor\n  image: BlogPostPromoImage {\n    ...ReferenceData\n  }\n  sharing: SeoSettings {\n    description: MetaDescription\n    image: SharingImage {\n      ...ReferenceData\n    }\n  }\n}": types.BlogPostPageMenuBlockFragmentDoc,
     "fragment PageSeoSettingsData on PageSeoSettings {\n  MetaTitle\n  MetaDescription\n  MetaKeywords\n  SharingImage {\n    ...ReferenceData\n  }\n  GraphType\n}": types.PageSeoSettingsDataFragmentDoc,
     "fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {\n  MetaTitle\n  MetaDescription\n  MetaKeywords\n  SharingImage {\n    ...ReferenceData\n  }\n  GraphType\n}": types.PageSeoSettingsPropertyDataFragmentDoc,
@@ -38,6 +47,8 @@ const documents = {
     "fragment TestimonialElementData on TestimonialElement {\n  customerName\n  customerLocation\n  customerImage {\n    ...ReferenceData\n  }\n  referenceTitle\n  referenceText {\n    json\n  }\n}": types.TestimonialElementDataFragmentDoc,
     "fragment TextBlockData on TextBlock {\n  overline: TextBlockOverline\n  headingSize: TextBlockHeadingSize\n  heading: TextBlockHeading\n  description: TextBlockDescription {\n    json\n    html\n  }\n  center: TextCenter\n  width: TextBlockWidth\n  className: TextClassName\n}": types.TextBlockDataFragmentDoc,
     "fragment VideoElementData on VideoElement {\n  title\n  video {\n    ...ReferenceData\n  }\n  placeholder {\n    ...ReferenceData\n  }\n}": types.VideoElementDataFragmentDoc,
+    "fragment WebsiteFooterData on WebsiteFooter {\n  FooterMainOfficeLocation {\n    ...IContentListItem\n  }\n  FooterFirstLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterSecondLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterThirdLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterLogo {\n    ...ReferenceData\n  }\n  FooterLogoAltText\n  FooterLegalLinks {\n    ...LinkItemData\n  }\n}": types.WebsiteFooterDataFragmentDoc,
+    "fragment elementTestingData on elementTesting {\n  Title\n  readTime\n}": types.elementTestingDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  BlankExperienceSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
     "query getBlankExperienceMetaData($key: String!, $locale: [Locales]) {\n  page: BlankExperience(where: {_metadata: {key: {eq: $key}}}, locale: $locale) {\n    items {\n      meta: _metadata {\n        url {\n          base\n        }\n        displayName\n      }\n      seo: BlankExperienceSeoSettings {\n        title: MetaTitle\n        description: MetaDescription\n        image: SharingImage {\n          ...ReferenceData\n        }\n        type: GraphType\n      }\n    }\n  }\n}": types.getBlankExperienceMetaDataDocument,
     "fragment BlogSectionExperienceData on BlogSectionExperience {\n  ...ExperienceData\n}": types.BlogSectionExperienceDataFragmentDoc,
@@ -45,6 +56,8 @@ const documents = {
     "query getBlogSectionExperienceMetaData($key: String!, $version: String, $locale: [Locales!]) {\n  page: BlogSectionExperience(\n    where: {_metadata: {key: {eq: $key}, version: {eq: $version}}}\n    locale: $locale\n  ) {\n    items {\n      _metadata {\n        displayName\n        published\n        url {\n          base\n          default\n        }\n      }\n      seo_data {\n        ...PageSeoSettingsPropertyData\n      }\n    }\n  }\n}": types.getBlogSectionExperienceMetaDataDocument,
     "fragment ImageMediaComponentData on ImageMedia {\n  alt: AltText\n  meta: _metadata {\n    url {\n      default\n    }\n    name: displayName\n  }\n}": types.ImageMediaComponentDataFragmentDoc,
     "fragment VideoMediaComponentData on VideoMedia {\n  meta: _metadata {\n    url {\n      default\n    }\n    name: displayName\n  }\n}": types.VideoMediaComponentDataFragmentDoc,
+    "fragment ArticleGroupPageData on ArticleGroupPage {\n  LandingPageSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleGroupTitle\n  articleGroupIntro {\n    json\n    html\n  }\n  MainContent {\n    ...BlockData\n  }\n}": types.ArticleGroupPageDataFragmentDoc,
+    "fragment ArticlePageData on ArticlePage {\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}": types.ArticlePageDataFragmentDoc,
     "query getBlogPostPageMetaData($key: String!, $version: String, $locale: [Locales!]) {\n  BlogPostPage(\n    where: {_metadata: {key: {eq: $key}, version: {eq: $version}}}\n    locale: $locale\n  ) {\n    pages: items {\n      cms: _metadata {\n        title: displayName\n        published\n        url {\n          base\n          default\n        }\n      }\n      title: Heading\n      author: ArticleAuthor\n      image: BlogPostPromoImage {\n        ...ReferenceData\n      }\n      topics: Topic\n      seo: SeoSettings {\n        title: MetaTitle\n        description: MetaDescription\n        keywords: MetaKeywords\n        image: SharingImage {\n          ...ReferenceData\n        }\n        type: GraphType\n      }\n    }\n  }\n}": types.getBlogPostPageMetaDataDocument,
     "fragment BlogPostPageData on BlogPostPage {\n  blogTitle: Heading\n  blogSubtitle: ArticleSubHeading\n  blogImage: BlogPostPromoImage {\n    ...ReferenceData\n  }\n  blogBody: BlogPostBody {\n    json\n  }\n  blogAuthor: ArticleAuthor\n  blogTopics: Topic\n  continueReading {\n    ...IContentListItem\n    ...BlockData\n  }\n}": types.BlogPostPageDataFragmentDoc,
     "fragment BlogPostPageSearchResult on BlogPostPage {\n  title: Heading\n  image: BlogPostPromoImage {\n    ...ReferenceData\n  }\n  author: ArticleAuthor\n  seodata: SeoSettings {\n    MetaTitle\n    MetaDescription\n  }\n  _metadata {\n    published\n  }\n}": types.BlogPostPageSearchResultFragmentDoc,
@@ -90,6 +103,10 @@ export function gql(source: "query getDefaultArticleList($locale: [Locales!]) {\
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function gql(source: "fragment BannerBlockData on BannerBlock {\n  Title\n}"): (typeof documents)["fragment BannerBlockData on BannerBlock {\n  Title\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function gql(source: "fragment ButtonBlockData on ButtonBlock {\n  children: ButtonText\n  url: ButtonUrl {\n    ...LinkData\n  }\n  className: ButtonClass\n  buttonType: ButtonType\n  buttonVariant: ButtonVariant\n}"): (typeof documents)["fragment ButtonBlockData on ButtonBlock {\n  children: ButtonText\n  url: ButtonUrl {\n    ...LinkData\n  }\n  className: ButtonClass\n  buttonType: ButtonType\n  buttonVariant: ButtonVariant\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -102,11 +119,31 @@ export function gql(source: "fragment CTAElementData on CTAElement {\n  cta_text
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function gql(source: "fragment CardBlockData on CardBlock {\n  CardHeading\n  CardSubheading\n  CardDescription {\n    json\n    html\n  }\n  CardColor\n  CardButton {\n    ...ButtonBlockPropertyData\n  }\n  CardIcon {\n    ...ReferenceData\n  }\n  CardImage {\n    ...ReferenceData\n  }\n  CardImageLayout\n}"): (typeof documents)["fragment CardBlockData on CardBlock {\n  CardHeading\n  CardSubheading\n  CardDescription {\n    json\n    html\n  }\n  CardColor\n  CardButton {\n    ...ButtonBlockPropertyData\n  }\n  CardIcon {\n    ...ReferenceData\n  }\n  CardImage {\n    ...ReferenceData\n  }\n  CardImageLayout\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function gql(source: "fragment CarouselBlockData on CarouselBlock {\n  CarouselItemsContentArea {\n    ...IContentListItem\n    ...BlockData\n  }\n}"): (typeof documents)["fragment CarouselBlockData on CarouselBlock {\n  CarouselItemsContentArea {\n    ...IContentListItem\n    ...BlockData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment ContentRecsElementData on ContentRecsElement {\n  ElementDeliveryApiKey\n  ElementRecommendationCount\n}"): (typeof documents)["fragment ContentRecsElementData on ContentRecsElement {\n  ElementDeliveryApiKey\n  ElementRecommendationCount\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment DictionaryData on Dictionary {\n  DictionaryItems {\n    ...DictionaryItemPropertyData\n  }\n  DictionaryKey\n}"): (typeof documents)["fragment DictionaryData on Dictionary {\n  DictionaryItems {\n    ...DictionaryItemPropertyData\n  }\n  DictionaryKey\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment DictionaryItemData on DictionaryItem {\n  DictionaryItemKey\n  DictionaryItemValue\n}"): (typeof documents)["fragment DictionaryItemData on DictionaryItem {\n  DictionaryItemKey\n  DictionaryItemValue\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment DictionaryItemPropertyData on DictionaryItemProperty {\n  DictionaryItemKey\n  DictionaryItemValue\n}"): (typeof documents)["fragment DictionaryItemPropertyData on DictionaryItemProperty {\n  DictionaryItemKey\n  DictionaryItemValue\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment HeaderBlockData on HeaderBlock {\n  site_logo {\n    ...ReferenceData\n  }\n  site_logo_dark {\n    ...ReferenceData\n  }\n  site_main_navigation {\n    ...IContentListItem\n  }\n  site_utility_navigation {\n    ...IContentListItem\n  }\n}"): (typeof documents)["fragment HeaderBlockData on HeaderBlock {\n  site_logo {\n    ...ReferenceData\n  }\n  site_logo_dark {\n    ...ReferenceData\n  }\n  site_main_navigation {\n    ...IContentListItem\n  }\n  site_utility_navigation {\n    ...IContentListItem\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -134,7 +171,19 @@ export function gql(source: "fragment MenuNavigationBlockData on MenuNavigationB
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function gql(source: "fragment NavigationMenuBlockData on NavigationMenuBlock {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}"): (typeof documents)["fragment NavigationMenuBlockData on NavigationMenuBlock {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment NavigationMenuBlockPropertyData on NavigationMenuBlockProperty {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}"): (typeof documents)["fragment NavigationMenuBlockPropertyData on NavigationMenuBlockProperty {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function gql(source: "fragment OdpEmbedBlockData on OdpEmbedBlock {\n  ContentId\n}"): (typeof documents)["fragment OdpEmbedBlockData on OdpEmbedBlock {\n  ContentId\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment OfficeLocationData on OfficeLocation {\n  OfficeTitle\n  OfficeAddressStreet1\n  OfficeAddressStreet2\n  OfficeAddressCity\n  OfficeAddressPostalCode\n  OfficeAddressCountry\n  OfficePhone\n  OfficeEmail\n}"): (typeof documents)["fragment OfficeLocationData on OfficeLocation {\n  OfficeTitle\n  OfficeAddressStreet1\n  OfficeAddressStreet2\n  OfficeAddressCity\n  OfficeAddressPostalCode\n  OfficeAddressCountry\n  OfficePhone\n  OfficeEmail\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -174,6 +223,14 @@ export function gql(source: "fragment VideoElementData on VideoElement {\n  titl
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function gql(source: "fragment WebsiteFooterData on WebsiteFooter {\n  FooterMainOfficeLocation {\n    ...IContentListItem\n  }\n  FooterFirstLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterSecondLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterThirdLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterLogo {\n    ...ReferenceData\n  }\n  FooterLogoAltText\n  FooterLegalLinks {\n    ...LinkItemData\n  }\n}"): (typeof documents)["fragment WebsiteFooterData on WebsiteFooter {\n  FooterMainOfficeLocation {\n    ...IContentListItem\n  }\n  FooterFirstLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterSecondLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterThirdLinkList {\n    ...NavigationMenuBlockPropertyData\n  }\n  FooterLogo {\n    ...ReferenceData\n  }\n  FooterLogoAltText\n  FooterLegalLinks {\n    ...LinkItemData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment elementTestingData on elementTesting {\n  Title\n  readTime\n}"): (typeof documents)["fragment elementTestingData on elementTesting {\n  Title\n  readTime\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function gql(source: "fragment BlankExperienceData on BlankExperience {\n  BlankExperienceSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}"): (typeof documents)["fragment BlankExperienceData on BlankExperience {\n  BlankExperienceSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -199,6 +256,14 @@ export function gql(source: "fragment ImageMediaComponentData on ImageMedia {\n 
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment VideoMediaComponentData on VideoMedia {\n  meta: _metadata {\n    url {\n      default\n    }\n    name: displayName\n  }\n}"): (typeof documents)["fragment VideoMediaComponentData on VideoMedia {\n  meta: _metadata {\n    url {\n      default\n    }\n    name: displayName\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment ArticleGroupPageData on ArticleGroupPage {\n  LandingPageSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleGroupTitle\n  articleGroupIntro {\n    json\n    html\n  }\n  MainContent {\n    ...BlockData\n  }\n}"): (typeof documents)["fragment ArticleGroupPageData on ArticleGroupPage {\n  LandingPageSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleGroupTitle\n  articleGroupIntro {\n    json\n    html\n  }\n  MainContent {\n    ...BlockData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment ArticlePageData on ArticlePage {\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}"): (typeof documents)["fragment ArticlePageData on ArticlePage {\n  articleSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  articleHeroImage {\n    ...ReferenceData\n  }\n  articleSummary {\n    json\n    html\n  }\n  articleTitle\n  articleAuthors\n  articleBody {\n    json\n    html\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
